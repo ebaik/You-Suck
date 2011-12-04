@@ -13,6 +13,7 @@ CREATE TABLE `users`
 `country` varchar(32) NOT NULL,
 `address` varchar(32) NOT NULL,
 `phone` char(12) default NULL,
+`registration_time` datetime default NULL,
 PRIMARY KEY (`id`)
 );
 
@@ -34,5 +35,6 @@ CREATE TABLE `posts`
 `text` varchar(300) NOT NULL,
 `user_id` int,
 `company_id` int,
+`post_time` datetime default NULL,
 PRIMARY KEY(`id`)
 );
