@@ -4,9 +4,9 @@ $setupContext = array(
 	'doctrine_cachetype' => 'ArrayCache',
 	'dbConnection' => array(
 		  'driver' => 'pdo_mysql',
-		  'dbname' => 'ys',
+		  'dbname' => 'suckDB1',
 		  'host' => 'localhost',
 		  'user' => 'root',
-		  'password' => 'root'	)
+		  'password' => 'yousuck'	)
 
 );
