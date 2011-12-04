@@ -3,6 +3,9 @@
 // Define path to application directory
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
+defined('APPLICATION_ENTITIES') || define('APPLICATION_ENTITIES', realpath(__DIR__ . '/../application/common/models'));
+defined('APPLICATION_COMMON') || define('APPLICATION_COMMON', realpath(__DIR__ . '/../application/common'));
+defined('APPLICATION_MODELS') || define('APPLICATION_MODELS', realpath(__DIR__ . '/../application/models'));
 
 // Define application environment
 defined('APPLICATION_ENV')
