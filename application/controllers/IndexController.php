@@ -1,5 +1,9 @@
 <?php
 
+require_once APPLICATION_ENTITIES . '/User.php';
+require_once APPLICATION_MODELS . '/UserService.php';
+
+
 class IndexController extends Zend_Controller_Action
 {
 
@@ -10,7 +14,12 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $userservice = new UserService();
+        $userservice->createUser();
+
+        //$this->view->html = $userservice->getUser(1);
+        $this->view->html = $userservice->getByEmail('aa');
+        
     }
 
 
