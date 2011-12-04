@@ -489,3 +489,10 @@ html body * dd.clear
 {
 	display: block;
 }
+
+.complaints {background-color: #ccc;}
+.vent {background-color: pink;}
+
+@media screen and (max-device-width: 320px) {
+	.container_12 .grid_8, .container_12 .grid_4 {width: 100%}
+}

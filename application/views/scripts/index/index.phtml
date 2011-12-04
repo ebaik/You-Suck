@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="keywords" content="You suck, complaints, gripes, customer service, bad experience" />
 		<meta name="description" content="We group your complaints so you can be heard" />
+		<meta content='width=device-width, initial-scale=1.0' name='viewport'>
 		<link rel="stylesheet" href="css/ys.css" />
 		<style>
 		</style>
@@ -12,9 +13,24 @@
 		<script src="js/mustache.js"></script>
 	</head>
 	<body>
-		<div id="welcome" class="container_12">
-   				<h1>Welcome to the YouSuck App</h1>
-   			 	<h2>This is your project's main page</h2>
+		<div id="youSuck" class="container_12">
+   				<h1>YouSuck</h1>
+   			 	<ul>
+   			 		<li>
+   			 			<form>
+   			 				<input type="search" placeholder="Search companines"/>
+   			 			</form>
+   			 		</li>
+   			 		<li><a href="">Post Complaints</a></li>
+   			 		<li><a href="">My Posts</a></li>
+   			 		<li><a href="">Sign In</a></li>
+   			 	</ul>
+   			 	<div class="grid_8 complaints">
+   			 		<p>Column one for complaint feed</p>
+   			 	</div>
+   			 	<div class="grid_4 vent">
+   			 		<p>Column two for the "sidebar"</p>
+   			 	</div>
 		</div>
 	</body>
 
@@ -23,20 +39,3 @@
         echo $user->getName();
 ?>
 </html>
-
-<!--script>
-			var view = {
-  title: "Joe",
-  calc: function() {
-    return 2 + 4;
-  }
-}
-
-var template = "<input name='whatever'/> spends {{calc}}";
-
-var html = Mustache.to_html(template, view);	
-		(function($){
-			$('#welcome').html(html);
-			
-		})(jQuery);
-		</script-->
