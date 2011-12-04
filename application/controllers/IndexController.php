@@ -14,11 +14,7 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $userservice = new UserService();
-        $userservice->createUser();
-
-        //$this->view->html = $userservice->getUser(1);
-        $this->view->html = $userservice->getByEmail('aa');
+        
         
     }
 
