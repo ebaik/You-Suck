@@ -15,7 +15,8 @@ class ExecuteContext{
     private $config;
     private $dbConfig;
     private $dbEntityManager;
-
+	private $user_obj;
+    
     function __construct($setup)
     {
         $dbConnection = $setup["dbConnection"];
@@ -56,7 +57,7 @@ class ExecuteContext{
 
 
         } catch (Exception $ex) {
-
+            error_log("Commit Exception:" . $ex->getMessage());
         }
     }
 
@@ -67,6 +68,18 @@ class ExecuteContext{
         return $obj;
     }
     
-
+	//temporary function 
+	public function setGlobalUserObject($user)
+	{
+		$this->user_obj = $user;
+	}
+	
+	public function getGlobalUserObject()
+	{
+        if (!isset($this->user_obj)){
+            $this->user_obj = $this->getMetaDataObject('User',1);
+        }
+		return $this->user_obj;
+	}
 
 }

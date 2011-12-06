@@ -1,18 +1,27 @@
 <?php
 
+require_once APPLICATION_ENTITIES . '/Posts.php';
+
 class PostService {
     
-    public  function postUser($postarr, $userid){
+    public function submitPost($postarr, $userid){
         // action body
-        $exe = Zend_Registry::get("exe");
-        $post = new Posts();
-        $post->setCompanyId($postarr['company_id']);
-        $post->setCreatedAt($postarr['post_time']);
-        $post->setText($postarr['text']);
-        $post->setUserId($userid);
-        $exe->persist($post);
-        $exe->commit();
-
+    	try {
+	        $exe = Zend_Registry::get("exe");
+	        $post = new Posts();
+	        $post->setCompanyId($postarr['company_id']);
+	        $post->setPostTime(date('Y-m-d H:i:s'));
+	        $post->setText($postarr['post_text']);
+	        $post->setUserId($userid);
+	        $exe->persist($post);
+	        $exe->commit();
+	        return true;
+    	}
+    	catch (Exception $ex) {
+            error_log("Post exception:" . $ex->getMessage());
+            return false;
+        }
+    	
     }
 
     public function getPost($id){
@@ -43,5 +52,19 @@ class PostService {
         }
         return $posts;
     }
+    
+    public function getLatestPost()
+    {
+    	$exe = Zend_Registry::get("exe");
+        $em = $exe->getMetaDataEntityManager();
+        $query = $em->createQuery('select p from posts p order by post_time desc limit 10 ');
+        $itr = $query->iterate();
+        $posts = array();
+        foreach ($itr as $user) {
+            $posts[] =  $user[0];
+        }
+        return $posts;
+    }
+
 }
 

@@ -27,9 +27,13 @@ class Posts
      */
     private $company_id;
 
-    /** @Column(name="post_time", type="date", nullable="true") */
-    private $createdAt;
+    /** @Column(name="post_time", type="string", nullable="true") */
+    private $post_time;
 
+    
+    /** @Column(name="anonymous_flag", type="boolean", nullable="true") */
+    private $anonymous_flag;
+    
     public function setCompanyId($company_id)
     {
         $this->company_id = $company_id;
@@ -70,13 +74,23 @@ class Posts
         return $this->user_id;
     }
 
-    public function setCreatedAt($createdAt)
+    public function setPostTime($post_time)
     {
-        $this->createdAt = $createdAt;
+        $this->post_time = $post_time;
     }
 
-    public function getCreatedAt()
+    public function getPostTime()
     {
-        return $this->createdAt;
+        return $this->post_time;
+    }
+    
+    public function setAnonymous_flag($anonymous_flag)
+    {
+    	$this->anonymous_flag = $anonymous_flag;
+    }
+    
+    public function getAnonymous_flag()
+    {
+    	return $this->anonymous_flag;
     }
 }

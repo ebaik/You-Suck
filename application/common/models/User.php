@@ -2,7 +2,7 @@
 
 /**
  * @Entity
- * @Table(name="user", indexes={@index(name="email_idx", columns={"email"}), @index(name="id_idx", columns={"id"})})
+ * @Table(name="users", indexes={@index(name="email_idx", columns={"email"}), @index(name="id_idx", columns={"id"})})
  */
 class User
 {
@@ -13,19 +13,19 @@ class User
     private $id;
 
     /**
-     * @Column(name="fbUID",nullable="true")
+     * @Column(name="lastname", length=50, nullable="true")
      */
-    private $fbUID;
+    private $lastname;
 
     /**
-     * @Column(name="fullname", length=50, nullable="true")
+     * @Column(name="fbuid", length=50, nullable="true")
      */
-    private $fullname;
+    private $fbuid;
 
     /**
-     * @Column(name="username", length=50, nullable="true")
+     * @Column(name="firstname", length=50, nullable="true")
      */
-    private $username;
+    private $firstname;
 
     /**
      * @Column(name="domain", length=50, nullable="true")
@@ -68,9 +68,14 @@ class User
     /** @Column(name="password", length=50) */
     private $password;
 
-    /** @Column(name="registration_time", type="date", nullable="true") */
-    private $createdAt;
+    /** @Column(name="registration_time", type="string", nullable="true") */
+    private $registration_time;
 
+    /** @Column(name="username", type="string", nullable="true") */
+	private $username;
+	
+	/** @Column(name="logo_file_name", type="string", nullable="true") */
+	private $logofilename;
 
     public function setAddress($address)
     {
@@ -102,14 +107,15 @@ class User
         return $this->country;
     }
 
-    public function setCreatedAt($createdAt)
+    public function setRegistrationTime($registration_time)
     {
-        $this->createdAt = $createdAt;
+        $this->registration_time = $registration_time;
+        
     }
 
-    public function getCreatedAt()
+    public function getRegistrationTime()
     {
-        return $this->createdAt;
+        return $this->registration_time;
     }
 
     public function setDomain($domain)
@@ -132,24 +138,14 @@ class User
         return $this->email;
     }
 
-    public function setFbUID($fbUID)
+    public function setLastname($lastname)
     {
-        $this->fbUID = $fbUID;
+        $this->lastname = $lastname;
     }
 
-    public function getFbUID()
+    public function getLastname()
     {
-        return $this->fbUID;
-    }
-
-    public function setFullname($fullname)
-    {
-        $this->fullname = $fullname;
-    }
-
-    public function getFullname()
-    {
-        return $this->fullname;
+        return $this->lastname;
     }
 
     public function setId($id)
@@ -192,14 +188,14 @@ class User
         return $this->state;
     }
 
-    public function setUsername($username)
+    public function setFirstname($firstname)
     {
-        $this->username = $username;
+        $this->firstname = $firstname;
     }
 
-    public function getUsername()
+    public function getFirstname()
     {
-        return $this->username;
+        return $this->firstname;
     }
 
     public function setZip($zip)
@@ -211,4 +207,36 @@ class User
     {
         return $this->zip;
     }
+    
+    public function setUsername($username)
+    {
+    	$this->zip = $username;
+    }
+    
+    public function getUsername()
+    {
+    	return $this->username;
+    }
+
+    public function setLogofilename($logofilename)
+    {
+    	$this->zip = $logofilename;
+    }
+    
+    public function getLogofilename()
+    {
+    	return $this->logofilename;
+    }
+    
+    public function setFbuid($fbuid)
+    {
+        $this->fbuid = $fbuid;
+    }
+
+    public function getFbuid()
+    {
+        return $this->fbuid;
+    }
+
+
 }

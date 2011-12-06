@@ -7,35 +7,110 @@
 		<meta name="description" content="We group your complaints so you can be heard" />
 		<meta content='width=device-width, initial-scale=1.0' name='viewport'>
 		<link rel="stylesheet" href="css/ys.css" />
-		<style>
-		</style>
 		<script src="js/jquery.js"></script>
 		<script src="js/mustache.js"></script>
+     	<script src="js/index.js"></script>
 	</head>
 	<body>
 		<div id="youSuck" class="container_12">
-   				<h1>YouSuck</h1>
-   			 	<ul>
-   			 		<li>
-   			 			<form>
-   			 				<input type="search" placeholder="Search companines"/>
-   			 			</form>
-   			 		</li>
-   			 		<li><a href="">Post Complaints</a></li>
-   			 		<li><a href="">My Posts</a></li>
-   			 		<li><a href="">Sign In</a></li>
-   			 	</ul>
-   			 	<div class="grid_8 complaints">
-   			 		<p>Column one for complaint feed</p>
+			
+				<header class="main">
+	   				<h1><a href="/" class="goHome">You <br/>Suck</a></h1>
+	   				<div class="tasks">
+	   			 			<form id="search_box" class="search">
+	   			 				<input type="search" placeholder="Search companies"/>
+                                                                <a href="" class="icon magnify">z</a>
+	   			 			</form>
+	   			 			<a href="post" class="button vent">post complaint</a>
+	   			 			<ul>
+	   			 		<li><a href="">About</a></li>
+	   			 		<li><a href="">Team</a></li>
+	   			 		<li><a href="">Blog</a></li>
+	   			 		<li><a href="">Help</a></li>	
+	   			 		<li><a href="">Terms</a></li>
+	   			 		<?php if ( !isset($this->user) || empty($this->user)){ ?>
+	   			 		<li><a href="/login">Log in</a></li>
+            <?php } else { ?>
+    <li><a href="/login/logout">Log out</a></li>
+            <?php } ?>
+	   			 	</ul>
+	   			 </div>
+	   			 </header>
+	   			 
+	   		<div class="grid_12">
+	   			<div class="upper">
+	   			 <hgroup class="complaints">
+	   			 	<h2>Making Complaints Useful</h2>
+	   			 	<h3><span>Don't let your voice go unheard. Tell others and </span>spread the word to change stuff for the better.</h3>
+	   			 </hgroup>
+	   			 <div class="suffer feature">
+  	   			   <img src="img/suffer.png" alt="Suffer">
+  	   			   <div class="subhead">Don't suffer in silence</div>
+  	   			   <p><a href="">Tell the story</a> of how you were wronged to the world.</p>
+     			   </div>
+     			   <div class="heard feature">
+  	   			   <img src="img/heard.png" alt="Suffer">
+  	   			   <div class="subhead">Be heard with others</div>
+  	   			   <p>Obtain <a href="">critical mass</a> by submitting your complaint.</p>
+  	   			 </div>
+  	   			 <div class="right feature">
+    	   		   <img src="img/right.png" alt="Suffer">
+    	   		   <div class="subhead">Set things right</div>
+    	   		   <p>Hold <a href="">companies</a> responsible so it doesn't happen again.</p>
+    	   		 </div>
+	   			 </div>
+   			 </div>
+   			 	<div id="complaints_list" class="grid_8">
+   			 		<div class="comps">
+	   			 		<h2>Complaints</h2>
+	   			 		
+	   			 		<?php 
+	   			 			foreach($this->posts as $p )
+	   			 			{
+
+	   			 				
+	   			 				if(!empty($p['post_text']))
+	   			 				{
+	   			 				echo "
+		   			 				<div class='recentComplaints'>
+					   			 		<div class='userIcon'>
+					   			 			<figure><img src='img/people/blank_face.jpg'/><figcaption>".$p['name']."</figcaption></figure>
+					   			 		</div>
+					   			 		<div class='blurb'><p>".$p['post_text']."</p><p class='read-more'><a href='#' class='button'>Read More</a></p></div>
+					   			 		<div class='totalComments'><span>7</span>comments</div>
+				   			 		</div>";
+	   			 				}
+	   			 			}
+	   			 		?>
+	   			 		
+	   			 		
+   			 		</div>
    			 	</div>
-   			 	<div class="grid_4 vent">
-   			 		<p>Column two for the "sidebar"</p>
+   			 	<div class="grid_4">
+   			 		<div class="posts">
+	   			 		<a href="post" class="button postComplaint">Post Complaint</a>
+	   			 		<p class="aboutYouSuck">About You Suck</p>
+	   			 		<p class="mission">Our mission is to be the place where negative reviews or complaints about any company can be posted and broadcasted. So that as a group, the individual consumer has a voice to influence businesses to change for the better.</p>
+	   			 		<p><a href="">More about us</a></p>
+	   			 		<p class="appStore"><img src="img/appstore.png"/></p>
+   			 		</div>
    			 	</div>
+   			 	<footer>
+					<p>You Suck: Follow us on <a href="twitter.com">Twitter</a> or <a href="facebook.com">Facebook<a></p>
+					<ul>
+					  <li><a href="">About</a></li>
+					  <li>|</li>
+					  <li><a href="">Team</a></li>
+					  <li>|</li>
+					  <li><a href="">Blog</a></li>
+					  <li>|</li>
+					  <li><a href="">Help</a></li>	
+					  <li>|</li>
+					  <li><a href="">Terms</a></li>
+					  <li>|</li>
+					  <li><a href="">Log in</a></li>
+					</ul>
+				</footer>
 		</div>
 	</body>
-
-    <?php $user = $this->html;
-        echo $user->getId();
-        echo $user->getName();
-?>
 </html>

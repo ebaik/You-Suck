@@ -1,5 +1,8 @@
 <?php
 
+require_once APPLICATION_ENTITIES . '/Companies.php';
+
+
 class CompanyService {
     
     public  function createCompany($arr){
@@ -9,12 +12,23 @@ class CompanyService {
         $company->setPhoneNumber($arr['phone_number']);
         $company->setNumberOfComplaint(0);
         $exe = Zend_Registry::get("exe");
-
         $exe->persist($company);
         $exe->commit();
     }
 
-public function getCompany($id){
+    public static function getAllCompanys(){
+        $exe = Zend_Registry::get("exe");
+        $em = $exe->getMetaDataEntityManager();
+        $query = $em->createQuery('select c from companies c');
+        $itr = $query->iterate();
+        $companys = array();
+        foreach ($itr as $user) {
+            $companys[] = $user[0];
+        }
+        return $companys;
+    }
+
+    public function getCompany($id){
         $exe = Zend_Registry::get("exe");
         return $exe->getMetaDataObject('Company', $id);
     }

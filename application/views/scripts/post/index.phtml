@@ -1,14 +1,112 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Welcome to You Suck App</title>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="You suck, complaints, gripes, customer service, bad experience" />
+		<meta name="description" content="We group your complaints so you can be heard" />
+		<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+		<link rel="stylesheet" href="css/ys.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/mustache.js"></script>
+      	<script src="js/index.js"></script>
+	</head>
   <body>
-    <form method="post" action="">
-      Company:<br /> <input type="text" name="company" width="80" /><br />
+  	<div class="container_12 youSuck">
+  		<header class="main">
+	   				<h1><a href="/" class="goHome">You <br/>Suck</a></h1>
+	   				<div class="tasks">
+	   			 			<form id="search_box" class="search">
+	   			 				<input type="search" placeholder="Search companies"/>
+                                                                <a href="" class="icon magnify">z</a>
+	   			 			</form>
+	   			 			<button class="button vent">post complaint</button>
+	   			 			<ul>
+	   			 		<li><a href="">About</a></li>
+	   			 		<li><a href="">Team</a></li>
+	   			 		<li><a href="">Blog</a></li>
+	   			 		<li><a href="">Help</a></li>	
+	   			 		<li><a href="">Terms</a></li>
+	   			 		<?php if ( !isset($this->user) || empty($this->user)){ ?>
+	   			 		<li><a href="/login">Log in</a></li>
+            <?php } else { ?>
+    <li><a href="/login/logout">Log out</a></li>
+            <?php } ?>
+	   			 	</ul>
+	   			 </div>
+	   			 </header>
+		<h1 class="accessAid">Enter your complaint</h1>
+    <form id="complaints_form" method="post" action="" class="grid_8">
+      <p id="suggestion">When writing your complaint please consider constructive suggestions and ideas.</p>
+      
+      <h5>Company:</h5> 
+      <input type="text" name="company" class="company" />
+      
       <div>
-        <span>Complaint:</span><br />
-        <textarea  name="complaint" cols="70" rows="20"></textarea></br>
+        <h5>The backstory (no limit, go nuts)</h5>
+        <textarea  name="synopsys"></textarea>
       </div>
-      <input type="submit" name="submit" value="submit" />
-      <input type="reset" value="clear" />
+      
+      <div id="postUserInfo" >
+      	<img src="img/people/bobby.png"/>
+      	<ul>
+      		<li>Bobby B.</li>
+      		<li>
+      		  <input type="checkbox" name="make_anonymos" />
+      		  <span><b>Make me anonymous</b> (Don't show my name)</span>
+      		</li>      		
+      	</ul>
+      	<input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
+      </div>
+      
     </form>
+    <div class="grid_4 trending">
+    	<h5>TRENDING NOW</h5>
+    	<div>
+    		<img src="img/companies/delta.png"/>
+    		<em class="datebig">10/2</em>
+    		<ul>
+    			<li>Complaints</li>
+    			<li><a href="">View Thread</a></li>
+    		</ul>
+    	</div>
+    	<div>
+    		<img src="img/companies/western_union.png" />
+    		<em class="datebig">10/2</em>
+    		<ul>
+    			<li>Complaints</li>
+    			<li><a href="">View Thread</a></li>
+    		</ul>
+    	</div>
+    	<div>
+    		<img src="img/companies/safeway.png"/>
+    		<em class="datebig">10/2</em>
+    		<ul>
+    			<li>Complaints</li>
+    			<li><a href="">View Thread</a></li>
+    		</ul>
+    	</div>
+    	<img src="img/available_at_iphone.png" />
+    </div>
+
+
+<footer >
+<p>You Suck: Follow us on <a href="twitter.com">Twitter</a> or <a href="facebook.com">Facebook<a></p>
+<ul>
+  <li><a href="">About</a></li>
+  <li>|</li>
+  <li><a href="">Team</a></li>
+  <li>|</li>
+  <li><a href="">Blog</a></li>
+  <li>|</li>
+  <li><a href="">Help</a></li>	
+  <li>|</li>
+  <li><a href="">Terms</a></li>
+  <li>|</li>
+  <li><a href="">Log in</a></li>
+</ul>
+</footer>
+    </div>
   </body>
 </html>
   
