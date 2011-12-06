@@ -1,0 +1,28 @@
+<?php $posts = $this->posts ?>
+<head>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+   <script type="text/javascript">
+     google.load("visualization", "1", {packages:["corechart"]});
+     google.setOnLoadCallback(drawChart);
+     function drawChart() {
+       var data = new google.visualization.DataTable();
+       data.addColumn('string', 'Time');
+       data.addColumn('number', 'Complaints');
+       data.addColumn('number', 'Resolution');
+
+       data.addRows(<?php echo count($posts) ?>);
+         <?php $i = 0 ; foreach ($posts as $post) { ?>
+       data.setValue(<?php echo $i ?>, 0, '<?php echo $i +2; $c = rand(10,30) ?>');
+       data.setValue(<?php echo $i ?>, 1, <?php echo $c ?>);
+       data.setValue(<?php echo $i ; $i++ ?>, 2, <?php echo ($c - 5) ?>);
+
+        <?php } ?>
+
+       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+       chart.draw(data, {width: 400, height: 240, title: 'Company Performance'});
+     }
+   </script>
+    </head>
+<body>
+    <div id="chart_div"></div>
+  </body>

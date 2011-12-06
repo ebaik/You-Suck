@@ -1,0 +1,42 @@
+= Instructions To update your KFID Client=
+
+1. Replace the following files into your lib folder:
+BaseLogger.php			   
+KFIRestClient.php
+UserContext.php			   
+
+2. Configure the following template files by copying *.template into *.
+DerivedLogger.php.template
+UserContextConfig.php.template
+
+= Running Unit Tests =
+Prerequisite: phpunit installation
+After configuring your test client, run: phpunit test/KFIDTest.php
+
+= Releases =
+== Version 1.2.3 Release ==
+Date: 2011-08-05
+* Fixed bug with signature handling which affects PHP versions earlier than 5.3.
+
+== Version 1.2.2 Release ==
+Date: 2011-07-18
+* Renamed getApiKey to getKabamApiKey to avoid confusion from Facebook's API Key.
+* Fixed unit test to be less flakey when testing against downed kfid server.
+
+== Version 1.2.1 Release ==
+Date: 2011-07-05
+* Fixed bug: Curl handle not closed on error.
+
+== Version 1.2.0 Release ==
+Date: 2011-06-17
+* Added verbose error logging to HTTP errors.
+* Added retry logic to retry once on failure
+* Reduced timeout to 1 second.
+
+== Version 1.1.0 Release ==
+Date: 2011-06-08
+* First release after initial release encompassing both changes from KOC and GOR.
+* We modified the UserContextConfig.php to be common format and added a few variables. Please configure your .t.
+* We changes the logger so that each game team can log their errors differently. Please configure your DerivedLogger from the template given.
+* We fixed our signature code so that it correctly and always signs the request to establish trust between the client and server. As long as the secretkey in your config is correct, you should be ok with this change.
+* Unit tests verified.

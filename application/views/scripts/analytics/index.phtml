@@ -1,0 +1,5 @@
+<form method="get" action="/analytics/company">
+    <?php require_once APPLICATION_MODELS . '/CompanyService.php';
+    echo $this->selectValuesObjHelper('company', CompanyService::getAllCompanys(), '', 'id', 'CompanyName'); ?>
+  <input type="submit" value="Submit" />
+</form>

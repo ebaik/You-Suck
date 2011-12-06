@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Welcome to You Suck App</title>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="You suck, complaints, gripes, customer service, bad experience" />
+		<meta name="description" content="We group your complaints so you can be heard" />
+		<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+		<link rel="stylesheet" href="../css/ys.css" />
+		<style>
+		</style>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/mustache.js"></script>
+                <script src="../js/index.js"></script>
+	</head>
+    <body>
+
+    
+
+      <?php if ( isset($this->user) && !empty($this->user)){
+     echo "user signed in";
+ } ?>
+<div id="loginPage" class="container_12">
+				<header class="main">
+	   				<h1><span class="you">You </span>Suck</h1>
+	   				<ul>
+	   			 		<li><a href="">About</a></li>
+	   			 		<li><a href="">Team</a></li>
+	   			 		<li><a href="">Blog</a></li>
+	   			 		<li><a href="">Help</a></li>	
+	   			 		<li><a href="">Terms</a></li>
+<?php if ( !isset($this->user) || empty($this->user)){ ?>
+	   			 		<li><a href="/login">Log in</a></li>
+            <?php } else { ?>
+    <li><a href="/login/logout">Log out</a></li>
+            <?php } ?>	   			 	</ul>
+	   			 </header>
+<h2>we're here to help you get heard, welcome!</h2>
+
+<div id="loginRegister">
+  <p>if you already have an account</p>
+  <p>you can just <a href="">login</a></p>
+</div>
+
+<div id="loginArea">
+  <a id="facebookLink" href='http://www.facebook.com/dialog/oauth?client_id=249701408427601&redirect_uri=http://www.yousuckapp.com:8084/login/facebook&scope=email'>Connect via Facebook</a>
+
+  <span id="spanOR">or</span>      
+
+  <form id="formLogin" action="/user/registersubmit" method="POST">
+      <input type="text" name="first_name" class="loginInput" placeholder="Your Name" />
+      <input type="text" name="email" class="loginInput" placeholder="Email Address" />
+      <input type="password" name="password" class="loginInput" placeholder="Password" />
+      	
+      <input type="submit" value="Register" class="button" />
+  </form>
+</div>
+
+
+<footer >
+<p>You Suck: Follow us on <a href="twitter.com">Twitter</a> or <a href="facebook.com">Facebook<a></p>
+<ul>
+  <li><a href="">About</a></li>
+  <li>|</li>
+  <li><a href="">Team</a></li>
+  <li>|</li>
+  <li><a href="">Blog</a></li>
+  <li>|</li>
+  <li><a href="">Help</a></li>	
+  <li>|</li>
+  <li><a href="">Terms</a></li>
+  <li>|</li>
+  <li><a href="">Log in</a></li>
+</ul>
+</footer>
+</div>
+
+</body>
+</html>
