@@ -87,6 +87,4 @@ class PostController extends BaseController
 		echo $return_json;
 		
     }
-    
-
 }
