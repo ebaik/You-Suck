@@ -1,5 +1,31 @@
 
 
+// combo css loader
+$.getCSS = function() {
+    var i=0, size=arguments.length;
+    var callback;
+    var path = '';
+    
+    for(;i<size;i++) {
+        if((typeof arguments[i])!=='function') {
+            if(i==0) {
+                path += arguments[i];
+            } else {
+                path += ';'+ arguments[i];
+            }
+        } else {
+            callback = arguments[i];
+        }console.log(path);
+        if(path) {
+            loadingURL = window.location.origin+'/'+'combo'+'?f='+path;
+            $.get(loadingURL, function(data) {
+                $("<style type=\"text/css\">" + data + "</style>").appendTo(document.head);
+                callback(data, status);
+            });
+        }
+    }
+};
+
 // create the map to the modules
 var youSuck = {
     'map': {
@@ -87,6 +113,8 @@ var youSuck = {
         var callback = '';
         var loadingURL = '';
         var _this = this;
+        var callback;
+        
         for(;i<size;i++) {
             if((typeof arguments[i])!=='function') {
                 if(!_this.map[arguments[i]].loaded) {
@@ -128,7 +156,7 @@ $.get(stylesheet, function(contents){
  
  */
 
-$(document).ready(function() {
+$(document).ready(function() {$.getCSS();
     youSuck.use('common-utils', function(youSuck) {
         var pageControllerName = youSuck.common.utils.getPageControllerName();
 console.log(pageControllerName);
