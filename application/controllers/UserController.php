@@ -17,7 +17,7 @@ class UserController extends BaseController
 
     public function registersubmitAction(){
         // action body
-		error_log("submit");
+error_log("submit");
         $userservice = new UserService();
         $user = $userservice->createUser($_REQUEST);
         $myAuth = Zend_Auth::getInstance();

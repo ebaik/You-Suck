@@ -240,6 +240,13 @@ button, input {
 	width: 59%;
 }
 
+.blurb p:first-child {
+    max-height: 110px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
 .read-more {
     display: none;
 }
