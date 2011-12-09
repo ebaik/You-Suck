@@ -36,7 +36,46 @@ youSuck.modules.search_box = function(id, searchDoneCallback) {
             e.preventDefault();
             getSearchResults(searchDoneCallback);
         });
+        
+        // load the autocomplete jquery plugin
+        
+        
+        youSuck.use('autocomplete', function(youSuck) {
+            
+            var selectItem = function(li) {
+                console.log('***selectItem', li);
+            };
+    
+            var findValue = function(li) {
+                console.log('***findValue', li);
+            };
+    
+            var formatItem = function(row) {
+                return row;
+            };
+            
+            // load the autocomplete css
+            $.getCSS('css/jquery.autocomplete.css', function(data) {
+                $("#search_box input").autocomplete("company/suggest", {
+                    delay:10,
+                    minChars:2,
+                    matchSubset:1,
+                    matchContains:1,
+                    cacheLength:10,
+                    onItemSelect:selectItem,
+                    onFindValue:findValue,
+                    formatItem:formatItem,
+                    autoFill:true
+                });
+            });
+            
+            
+            
+            
+        });
     };
+    
+    
     
     getSearchResults = function(searchDoneCallback) {
         var query = input_box.val();   

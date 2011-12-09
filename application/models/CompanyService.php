@@ -43,5 +43,24 @@ class CompanyService {
         }
         return null;
     }
+    
+    public function getCompanyByString($str) {
+        
+        $exe = Zend_Registry::get("exe");
+        $em = $exe->getMetaDataEntityManager();
+        $query = $em->createQuery("select c.company_name from companies c where c.company_name like '%$str%'");
+        $result = $query->getResult();
+
+        if (isset($result) && !empty($result)){
+            $company_names = array();
+            foreach($result as $rec) 
+            {
+                $company_names[] = $rec['company_name'];
+            }
+            return $company_names;
+        }
+        return null;
+        
+    }
 
 }

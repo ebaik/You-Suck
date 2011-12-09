@@ -29,6 +29,11 @@ $.getCSS = function() {
 // create the map to the modules
 var youSuck = {
     'map': {
+        //lib
+        'autocomplete': {
+            'path': 'js/lib/jquery.autocomplete.js',
+            'loaded': 0
+        },
         // common
         'common-utils': {
             'path': 'js/common/utils.js',

@@ -1,5 +1,6 @@
 <?php
 require_once 'BaseController.php';
+require_once APPLICATION_MODELS . '/CompanyService.php';
 
 class CompanyController extends BaseController 
 {
@@ -13,13 +14,17 @@ class CompanyController extends BaseController
     // get the top 10 companies from the db table companies based on the query string
     public function suggestAction() 
     {
-        $query = $_REQUEST['q'];
-        $sql = "select company_name from companies where company_name like '%$query%'";
+        $q = $this->_getParam('q');
         
         $exe = Zend_Registry::get("exe");
-	$em = $exe->getMetaDataEntityManager();
-        
-        $this->view->companies = 'citibank boa delta';
+        $cs = new CompanyService();
+        $company_names = $cs->getCompanyByString($q);
+        $companies = "";
+        foreach($company_names as $company) 
+        {
+            $companies .= "\n".$company;
+        }
+        $this->view->companies = $companies;
     }
     
 }
