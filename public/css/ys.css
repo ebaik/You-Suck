@@ -794,6 +794,8 @@ html body * dd.clear
 	margin:10px;
 }
 
+
+
 .trending {
 	font-size: 0.8em;
 	padding-top: 100px;
@@ -915,6 +917,10 @@ html body * dd.clear
 	width:100%;
 	display:block;
 
+}
+
+.container_12 .grid_4.trending {
+    float: right;
 }
 
 @media screen and (max-device-width: 320px) {

@@ -30,8 +30,12 @@ $.getCSS = function() {
 var youSuck = {
     'map': {
         //lib
-        'autocomplete': {
+        'jquery.autocomplete': {
             'path': 'js/lib/jquery.autocomplete.js',
+            'loaded': 0
+        },
+        'jquery.query': {
+            'path': 'js/lib/jquery.query-2.1.7.js',
             'loaded': 0
         },
         // common
@@ -39,7 +43,7 @@ var youSuck = {
             'path': 'js/common/utils.js',
             'loaded': 0
         },
-        // controller
+        // controllers
         'controllers-index_index': {
             'path': 'js/controllers/index_index.js',
             'loaded': 0
@@ -54,6 +58,10 @@ var youSuck = {
         },
         'controllers-user_register': {
             'path': 'js/controllers/user_register.js',
+            'loaded': 0
+        },
+        'controllers-post_show': {
+            'path': 'js/controllers/post_show.js',
             'loaded': 0
         },
         // UI modules

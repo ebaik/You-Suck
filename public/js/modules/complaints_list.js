@@ -25,27 +25,52 @@ youSuck.modules.complaints_list = function(id) {
 
                 html = substitute(template, {'search_results': dataObj});
                 $('#'+id).html(html);
-                $('div.grid_12').slideUp();
+                // show the readmore 
+                if($('div.recentComplaints')) {
+                    $('div.recentComplaints').each(function(id) {
+
+                        if($(this).height()>110) {
+                            var readMore = $(this).find('p.read-more');
+                            readMore.show();
+                            bindUI();
+                        }
+                    });
+                }
+                
             });
+        } else {
+            if($('div.recentComplaints')) {
+                $('div.recentComplaints').each(function(id) {
+
+                    if($(this).height()>110) {
+                        var readMore = $(this).find('p.read-more');
+                        readMore.show();
+                    }
+                });
+                bindUI();
+            }
         }
         
-        bindUI();
+        
         
     };
     
     init = function() {
-        $('div.recentComplaints').each(function(id) {
+        if($('div.recentComplaints')) {
+            $('div.recentComplaints').each(function(id) {
             
-            if($(this).height()>110) {
-                var readMore = $(this).find('p.read-more');
-                readMore.show();
-            }
-        });
+                if($(this).height()>110) {
+                    var readMore = $(this).find('p.read-more');
+                    readMore.show();
+                }
+            });
+        }
+        
         
         _this.render();
     };
     
-    init();
+    //init();
     
    
     

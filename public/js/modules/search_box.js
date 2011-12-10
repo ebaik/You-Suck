@@ -4,10 +4,11 @@ youSuck.modules.search_box = function(id, searchDoneCallback) {
     var substitute = youSuck.common.utils.substitute;
     var template, dataObj={};
     var html = '';
-    var input_box, search_button;
+    var input_box, search_button, search_form;
     
     this.render = function() {
-        if(!$('#'+id).html()) {
+        search_form = $('#'+id);
+        if(!search_form.html()) {
             youSuck.use('templates-search_box', function(data, status) {
                 template = youSuck.templates.search_box;
                 html = substitute(template, dataObj);
@@ -22,25 +23,33 @@ youSuck.modules.search_box = function(id, searchDoneCallback) {
             bindUI();
         }
         
-    };
-    
+    };    
     bindUI = function() {
-        input_box.keypress(function(e){
-            if(e.which == 13){
-                e.preventDefault();
-                getSearchResults(searchDoneCallback);
+//        input_box.keypress(function(e){
+//            if(e.which == 13){
+//                getSearchResults(searchDoneCallback);
+//            }
+//        });
+        var redirect_search = function() {
+            var query = input_box.val();
+            if(query) {
+                window.location.href = window.location.href+"post/show?query="+query;
             }
+        };
+        search_form.submit(function(e) {
+            e.preventDefault();
+            redirect_search();
         });
         
         search_button.click(function(e) {
-            e.preventDefault();
-            getSearchResults(searchDoneCallback);
+            redirect_search();
+            //getSearchResults(searchDoneCallback);
         });
         
         // load the autocomplete jquery plugin
         
         
-        youSuck.use('autocomplete', function(youSuck) {
+        youSuck.use('jquery.autocomplete', function(youSuck) {
             
             var selectItem = function(li) {
                 console.log('***selectItem', li);
