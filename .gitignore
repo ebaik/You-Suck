@@ -1,0 +1,4 @@
+#ignore setting folder
+.settings/*
+.buildpath
+.project
