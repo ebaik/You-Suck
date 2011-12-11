@@ -2,7 +2,6 @@
 
 require_once APPLICATION_ENTITIES . '/Companies.php';
 
-
 class CompanyService {
     
     public  function createCompany($arr){
@@ -61,6 +60,24 @@ class CompanyService {
         }
         return null;
         
+    }
+    
+    public function getCompanyAnalytics($company='delta', $scale='day') {
+        if(empty($company)) {
+            $company = 'delta';
+        }
+        $exe = Zend_Registry::get("exe");
+        $em = $exe->getMetaDataEntityManager();
+        $stmt = $em->getConnection()->prepare("select DATE(p.post_time) as date, count(p.id) as cnt from posts p join companies c on (p.company_id=c.id) where c.company_name='$company' group by DATE(p.post_time);");
+        $stmt->execute();
+        $res = $stmt->fetchAll();
+        $data = array();
+        foreach($res as $i=>$rec) 
+        {
+            $data[$i][] = $rec['date'];
+            $data[$i][] = intval($rec['cnt']);
+        }    
+        return $data;
     }
 
 }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Welcome to You Suck App</title>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="You suck, complaints, gripes, customer service, bad experience" />
+		<meta name="description" content="We group your complaints so you can be heard" />
+		<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+		<link rel="stylesheet" href="/css/ys.css" />
+                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+                <script src="/js/lib/jquery.js"></script>
+                <script src="/js/lib/mustache.js"></script>
+                <script src="/js/index.js"></script>
+                <script type="text/javascript" src="/js/controllers/analytics_show.js"></script>
+                  
+                </script>
+          
+    </script>
+	</head>
+  <body>
+  	<div class="container_12 youSuck">
+  		<header class="main">
+	   				<h1><a href="/" class="goHome">You <br/>Suck</a></h1>
+	   				<div class="tasks">
+	   			 			<form id="search_box" class="search">
+	   			 				<input type="search" placeholder="Search companies"/>
+                                                                <a href="" class="icon magnify">z</a>
+	   			 			</form>
+	   			 			<button class="button vent">post complaint</button>
+	   			 			<ul>
+	   			 		<li><a href="">About</a></li>
+	   			 		<li><a href="">Team</a></li>
+	   			 		<li><a href="">Blog</a></li>
+	   			 		<li><a href="">Help</a></li>	
+	   			 		<li><a href="">Terms</a></li>
+	   			 		<?php if ( !isset($this->user) || empty($this->user)){ ?>
+	   			 		<li><a href="/login">Log in</a></li>
+            <?php } else { ?>
+    <li><a href="/login/logout">Log out</a></li>
+            <?php } ?>
+	   			 	</ul>
+	   			 </div>
+	   			 </header>
+    <div id="chart" class="grid_8">
+        
+    </div>  
+    <div class="grid_4 trending">
+    	<h5>TRENDING NOW</h5>
+    	<div>
+    		<img src="/img/companies/delta.png"/>
+    		<em class="datebig">10/2</em>
+    		<ul>
+    			<li>Complaints</li>
+    			<li><a href="">View Thread</a></li>
+    		</ul>
+    	</div>
+    	<div>
+    		<img src="/img/companies/western_union.png" />
+    		<em class="datebig">10/2</em>
+    		<ul>
+    			<li>Complaints</li>
+    			<li><a href="">View Thread</a></li>
+    		</ul>
+    	</div>
+    	<div>
+    		<img src="/img/companies/safeway.png"/>
+    		<em class="datebig">10/2</em>
+    		<ul>
+    			<li>Complaints</li>
+    			<li><a href="">View Thread</a></li>
+    		</ul>
+    	</div>
+    	<img src="/img/available_at_iphone.png" />
+    </div>
+
+
+<footer >
+<p>You Suck: Follow us on <a href="twitter.com">Twitter</a> or <a href="facebook.com">Facebook<a></p>
+<ul>
+  <li><a href="">About</a></li>
+  <li>|</li>
+  <li><a href="">Team</a></li>
+  <li>|</li>
+  <li><a href="">Blog</a></li>
+  <li>|</li>
+  <li><a href="">Help</a></li>	
+  <li>|</li>
+  <li><a href="">Terms</a></li>
+  <li>|</li>
+  <li><a href="">Log in</a></li>
+</ul>
+</footer>
+    </div>
+      
+      
+      
+    
+  
+    
+  </body>
+</html>

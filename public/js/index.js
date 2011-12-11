@@ -38,6 +38,10 @@ var youSuck = {
             'path': 'js/lib/jquery.query-2.1.7.js',
             'loaded': 0
         },
+        'google.jsapi': {
+            'path': 'js/lib/jsapi.js',
+            'loaded': 0
+        }, 
         // common
         'common-utils': {
             'path': 'js/common/utils.js',
@@ -62,6 +66,10 @@ var youSuck = {
         },
         'controllers-post_show': {
             'path': 'js/controllers/post_show.js',
+            'loaded': 0
+        },
+        'controllers-analytics_show': {
+            'path': 'js/controllers/analytics_show.js',
             'loaded': 0
         },
         // UI modules
@@ -155,27 +163,19 @@ var youSuck = {
     }
 };
 
-/*
- var stylesheet = "foo.css";
-var callback = function(){
-  alert("CSS is now included");
-};
-
-$.get(stylesheet, function(contents){
-  $("<style type=\"text/css\">" + contents + "</style>").appendTo(document.head);
-  callback();
-});
- 
- 
- */
-
-$(document).ready(function() {$.getCSS();
+$(document).ready(function() {
     youSuck.use('common-utils', function(youSuck) {
+        
         var pageControllerName = youSuck.common.utils.getPageControllerName();
 console.log(pageControllerName);
-        youSuck.use(pageControllerName, function(youSuck) {
+        if(pageControllerName !== 'controllers-analytics_show') {
+            youSuck.use(pageControllerName, function(youSuck) {
 
-        });
-
+            });
+        }
     });
 });
+
+
+
+
