@@ -1,0 +1,6 @@
+#ignore setting folder
+.settings/*
+#ignore buildpath file
+.buildpath
+#ignore project file
+.project
