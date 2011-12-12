@@ -878,6 +878,11 @@ html body * dd.clear
 	font-weight: bold;
 	
 }
+.fb-login-button {
+    float: left;
+    width: 229px;
+    height: 40px;
+}
 #spanOR {
 	float:left;
 	margin: 0px 50px 0 10px;

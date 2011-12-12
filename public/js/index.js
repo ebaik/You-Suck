@@ -72,6 +72,10 @@ var youSuck = {
             'path': 'js/controllers/analytics_show.js',
             'loaded': 0
         },
+        'controllers-login_default': {
+            'path': 'js/controllers/login_default.js',
+            'loaded': 0
+        },
         // UI modules
         'modules-search_box': {
             'path': 'js/modules/search_box.js',

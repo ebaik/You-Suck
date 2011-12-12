@@ -17,6 +17,11 @@ class LoginController extends BaseController
         // action body
         
     }
+    
+    public function defaultAction() 
+    {
+        
+    }
 
     public function loginAction()
     {

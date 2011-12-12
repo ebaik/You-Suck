@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>
+		<title>Welcome to You Suck App</title>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="You suck, complaints, gripes, customer service, bad experience" />
+		<meta name="description" content="We group your complaints so you can be heard" />
+		<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+		<link rel="stylesheet" href="/css/ys.css" />
+		<style>
+		</style>
+		<script src="/js/lib/jquery.js"></script>
+		<script src="/js/lib/mustache.js"></script>
+                <script src="/js/index.js"></script>
+	</head>
+    <body>
+
+<div id="fb-root"></div>   
+<div id="loginPage" class="container_12">
+<header class="main">
+	   				<h1><span class="you">You </span>Suck</h1>
+	   				<ul>
+	   			 		<li><a href="">About</a></li>
+	   			 		<li><a href="">Team</a></li>
+	   			 		<li><a href="">Blog</a></li>
+	   			 		<li><a href="">Help</a></li>	
+	   			 		<li><a href="">Terms</a></li>
+<?php if ( !isset($this->user) || empty($this->user)){ ?>
+	   			 		<li><a href="/login">Log in</a></li>
+            <?php } else { ?>
+    <li><a href="/login/logout">Log out</a></li>
+            <?php } ?>	   			 	</ul>
+	   			 </header>
+
+<h2>welcome back to the place where you're heard!</h2>
+
+<div id="loginRegister">
+  <p>if you don't have an account</p>
+  <p>you can <a href="/user/register">register</a> easily</p>
+</div>
+
+<div id="loginArea">
+  <div class="fb-login-button" data-perms="email">Login with Facebook</div>
+  <span id="spanOR">or</span>      
+
+  <form id="formLogin" action="login/login" method="get">
+      <input type="text" name="username" class="loginInput" placeholder="Email Address"/>
+      <input type="password" name="password" class="loginInput" placeholder="Password"/>
+      <a href="">Forget your password?</a>
+      <input type="submit" value="login" class="button" />
+  </form>
+</div>
+
+
+
+<footer >
+<p>You Suck: Follow us on <a href="twitter.com">Twitter</a> or <a href="facebook.com">Facebook<a></p>
+<ul>
+  <li><a href="">About</a></li>
+  <li>|</li>
+  <li><a href="">Team</a></li>
+  <li>|</li>
+  <li><a href="">Blog</a></li>
+  <li>|</li>
+  <li><a href="">Help</a></li>	
+  <li>|</li>
+  <li><a href="">Terms</a></li>
+  <li>|</li>
+  <li><a href="">Log in</a></li>
+</ul>
+</footer>
+	   			 
+</div>
+
+</body>
+</html>
