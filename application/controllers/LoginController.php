@@ -15,12 +15,10 @@ class LoginController extends BaseController
     public function indexAction()
     {
         // action body
-        
     }
     
     public function defaultAction() 
     {
-        
     }
 
     public function loginAction()
@@ -31,7 +29,6 @@ class LoginController extends BaseController
             $this->view->html = 'sucess';
             $myAuth = Zend_Auth::getInstance();
             $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
-            $this->preDispatch();
             
             return $this->_redirect('/');
         } else {
@@ -41,19 +38,51 @@ class LoginController extends BaseController
 
     }
 
+    // auth can be done by the following two way:
+    // 1. site login -- 
+    // input: username, password
+    // ops: check the user table, get the user info, store it in the session and cookie
+    // 2. fb connect login
+    // input: access_token
+    // ops: get the acces token and get the user info from graph api, store it in the db, session and cookie
+    // access_token: "AAADsdNZCvss4BAN2IrdUXZAFWkDIBZCU1J7UMmA11aTefmM0vXRTjVvlWKPhLhiq77BhMr4qGggiFjfR8JZBcVtDm808ZCZBobrAZBMZCRmb0xdZAuJYHlaCG" 
+    // base_domain: "yousuckapp.com"
+    // expires: 1323676800
+    // secret: "zrFiDL4f_sATwQSGxBWZtA__"
+    // session_key: "2.AQDw0nQ93Gee_gEU.3600.1323676800.1-1693922445"
+    // sig: "826c46f50e617736468ca7d6d6d46838"
+    // uid: "1693922445"
     public function authAction()
     {
         $userservice = new UserService();
-        $user = $userservice->checklogin($_REQUEST['username'], $_REQUEST['password']);
-        if (isset($user) && !empty($user)) {
-            $this->view->html = 'sucess';
+        if(isset($_REQUEST['username']) && $_REQUEST['password']) {
+            // regular login
+            $user = $userservice->checklogin($_REQUEST['username'], $_REQUEST['password']);
+            if (isset($user) && !empty($user)) {
+                $myAuth = Zend_Auth::getInstance();
+                $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
+                $this->view->html = 1;
+            } else {
+                $this->view->html = 0;
+            }
+            setcookie('userid', $user->getId());
+            setcookie('firstname', $user->getFirstname(s));
+            return;
+        } else if(isset($_REQUEST['access_token'])) {
+            // fb login
+            $graph_url = "https://graph.facebook.com/me?access_token=".$_REQUEST['access_token'];
+            $fbuser = json_decode(file_get_contents($graph_url));
+            if (!isset($user) || empty($user) ){
+                $user = $userservice->createUser(get_object_vars($fbuser));
+            }
+            $this->view->html = 1;
             $myAuth = Zend_Auth::getInstance();
             $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
-            $this->preDispatch();
-            $this->view->html = 1;
-        } else {
-            $this->view->html = 0;
+            setcookie('userid', $user->getId());
+            setcookie('firstname', $user->getFirstname());
+            return;
         }
+        $this->view->html = 0;
     }
 
     public function facebookAction()
@@ -81,7 +110,7 @@ class LoginController extends BaseController
             $this->view->html = 'sucess';
             $myAuth = Zend_Auth::getInstance();
             $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
-            $this->preDispatch();
+            
             return $this->_redirect('/');
         }
     }

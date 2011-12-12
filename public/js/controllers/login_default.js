@@ -9,9 +9,20 @@ youSuck.controllers.login_default = new function() {
         });
         /* All the events registered */
         FB.Event.subscribe('auth.login', function(response) {
-         console.log('auth.login', response);
-         // do something with response
-         //login();
+            console.log('auth.login', response);
+            // pass the access token to the server
+            var access_token = response.session.access_token;
+            if(access_token) {
+                $.post('/login/auth', {
+                    'access_token': access_token
+                }, function(auth) {
+                    if(auth==="1") {
+                        window.location.href = '/';
+                    }
+
+                });
+            }
+            
         });
         FB.Event.subscribe('auth.logout', function(response) {
          console.log('auth.logout', response);
@@ -43,4 +54,15 @@ youSuck.controllers.login_default = new function() {
        js.src = "//connect.facebook.net/en_US/all.js";
        d.getElementsByTagName('head')[0].appendChild(js);
      }(document));
+     
+     
+     // regular login
+     
+     youSuck.use('modules-login_form', function(youSuck) {console.log('modules-login_form');
+        var id = 'formLogin';
+        var login_form = new youSuck.modules.login_form(id);
+
+        login_form.render();
+    });
+     
 };

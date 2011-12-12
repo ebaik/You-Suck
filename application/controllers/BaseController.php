@@ -1,5 +1,5 @@
 <?php
-
+require_once APPLICATION_MODELS . '/UserService.php';
 class BaseController extends Zend_Controller_Action{
 
     public function preDispatch()

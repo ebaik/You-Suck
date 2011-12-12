@@ -90,11 +90,11 @@ var youSuck = {
             'loaded': 0
         },
         'modules-login_form': {
-            'path': 'js/modules/login_form_module.js',
+            'path': 'js/modules/login_form.js',
             'loaded': 0
         },
         'modules-register_form': {
-            'path': 'js/modules/register_form_module.js',
+            'path': 'js/modules/register_form.js',
             'loaded': 0
         },
         // templates

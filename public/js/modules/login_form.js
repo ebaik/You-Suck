@@ -2,11 +2,13 @@
 // login module
 
 youSuck.modules.login_form = function(id) {
-    
+       
     var substitute = youSuck.common.utils.substitute;
     var template, dataObj;
     var login_form=$('#'+id);
-    
+    var username=$('#'+id+' input[name="username"]');
+    var password=$('#'+id+' input[name="password"]');
+ 
     this.render = function() {
         youSuck.use('templates-login_form', function(youSuck) {
             if(!login_form.html()) {
@@ -19,16 +21,22 @@ youSuck.modules.login_form = function(id) {
     
     bindUI = function() {
         login_form.submit(function(e) {
-            //e.preventDefault();
+            e.preventDefault();
             console.log('submit');
+            console.log(username.val());
+            console.log(password.val());
+            if(username.val() && password.val()) {
+                $.post('login/auth', {
+                    'username': username.val(),
+                    'password': password.val()
+                }, function(response) {
+                    if(response==="1") {
+                        window.location.href = '/';
+                    }
+
+                });
+            }
             
-//            $.post('login', {
-//                'username': 'testuser',
-//                'password': '123456'
-//            }, function(response) {
-//                console.log(response);
-//                
-//            });
             
         });
     }
