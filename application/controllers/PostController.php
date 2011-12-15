@@ -67,8 +67,8 @@ class PostController extends BaseController
 		        	$fullname = array();
 		        	if(!empty($res[$i]['firstname']))
 		        		$fullname[] = $res[$i]['firstname'];
-		        	if(!empty($res[$i]['lastname']))
-		        		$fullname[] = $res[$i]['lastname'];
+//		        	if(!empty($res[$i]['lastname']))
+//		        		$fullname[] = $res[$i]['lastname'];
 		        	$name = implode(' ', $fullname);
 		        	$output[] = array('fullname'=>$name, 'text'=>$res[$i]['text'], 'post_time'=>$res[$i]['post_time']);
 		        	

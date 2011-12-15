@@ -30,8 +30,8 @@ class IndexController extends BaseController
 	            $fullname = array();
 		        if(!empty($res[$i]['firstname']))
 		    	   	$fullname[] = $res[$i]['firstname'];
-		       	if(!empty($res[$i]['lastname']))
-		       		$fullname[] = $res[$i]['lastname'];
+//		       	if(!empty($res[$i]['lastname']))
+//		       		$fullname[] = $res[$i]['lastname'];
 		       	$name = implode(' ', $fullname);
 		       	$posts[$i]['name'] =  $name;
 	            $i++;
