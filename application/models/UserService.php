@@ -13,6 +13,7 @@ class UserService
             $exe = Zend_Registry::get("exe");
             return $exe->getMetaDataObject("User", $params['id']);
         }
+        return null;
     }
 
     public function createUser($arr)

@@ -40,6 +40,7 @@ class CompanyService {
         if (isset($result[0]) && !empty($result[0])){
             return $result[0];
         }
+//        
         return null;
     }
     
