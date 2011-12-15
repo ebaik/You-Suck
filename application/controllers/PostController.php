@@ -28,16 +28,31 @@ class PostController extends BaseController
     
     public function submitAction()
     {
-		$company_name = trim($this->_getParam('company'));
-		$synopsys = trim($this->_getParam('synopsys'));
-		//$synopsys = 'test post';
-		$exe = Zend_Registry::get("exe");
-        $user_obj = $exe->getGlobalUserObject();
+	$company_name = trim($this->_getParam('company_name'));
+	$synopsys = trim($this->_getParam('synopsys'));
+	// get user info
+        // if the user doesnt login, use the anonymous user
+        $user_obj = UserService::getLoggedInUser();
+        if(!isset($user_obj)) {
+            $exe = Zend_Registry::get("exe");
+            $user_obj = $exe->getGlobalUserObject();
+        }
+	
 
         $cs = new CompanyService();
-        $company_name = 'delta';
+        //$company_name = 'delta';
         $company_obj = $cs->getCompanyByName($company_name);
-		
+        // temp solution
+        // if the company doesnt exist in the companies table,
+        // we insert it into the companies table
+        if(!isset($company_obj)) {
+            $arr['company_name'] = $company_name;
+            $arr['industry'] = '';
+            $arr['phone_number'] = '';
+            $cs->createCompany($arr);
+        }
+	$company_obj = $cs->getCompanyByName($company_name);
+        
         $ps = new PostService();
         $postarr['company_id'] = $company_obj->getId(); 
         $postarr['post_text'] = $synopsys; 

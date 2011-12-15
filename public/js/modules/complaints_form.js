@@ -2,9 +2,11 @@
 
 youSuck.modules.complaints_form = function(id) {
 
-    var substitute = youSuck.common.utils.substitute;
+    var utils = youSuck.common.utils;
+    var substitute = utils.substitute;
     var template, dataObj;
     var html = '';
+    var getCookie = utils.getCookie;
    
     this.render = function() {
         if(!$('#'+id).html()) {
@@ -35,6 +37,11 @@ youSuck.modules.complaints_form = function(id) {
             console.log(company);
             console.log(synopsys);
             
+            // on the client side, we only submit the form data
+            // the server side will check the credential of the user
+            // and decide whehter to store it as an anonymous post or not
+            // it is not reliable to pass the user id and firstname in the
+            // cookie to the server
             var data = {
                 'company_name': company, 
                 'synopsys': synopsys
