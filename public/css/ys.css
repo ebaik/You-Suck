@@ -113,6 +113,9 @@ button, input {
 .comps h2 {
 	margin-top: 0;
 }
+.userComment {
+	margin-bottom: 20px;
+}
 .you {
 	display: block;
 }
@@ -258,11 +261,11 @@ button, input {
     text-transform: lowercase;
     font-family: Times New Roman;
 }
-. {
-	width: 19%;
-}
 .aboutYouSuck {
 	margin-top: 45px;
+}
+.clear {
+	clear: both;
 }
 
 /*
