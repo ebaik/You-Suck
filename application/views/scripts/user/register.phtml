@@ -14,7 +14,7 @@
                 <script src="../js/index.js"></script>
 	</head>
     <body>
-
+<div id="fb-root"></div> 
     
 
       <?php if ( isset($this->user) && !empty($this->user)){
@@ -43,8 +43,7 @@
 </div>
 
 <div id="loginArea">
-  <a id="facebookLink" href='http://www.facebook.com/dialog/oauth?client_id=249701408427601&redirect_uri=http://www.yousuckapp.com:8084/login/facebook&scope=email'>Connect via Facebook</a>
-
+  <div class="fb-login-button" data-scope="email">Login with Facebook</div>
   <span id="spanOR">or</span>      
 
   <form id="formLogin" action="/user/registersubmit" method="POST">
