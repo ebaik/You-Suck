@@ -91,7 +91,9 @@ footer a, footer a:visited {
     position: absolute !important;
     text-indent: -9999em !important;
     top: 0 !important;
-
+}
+.first {
+	margin-top: 0;
 }
 .icon {
     font-weight: normal;
