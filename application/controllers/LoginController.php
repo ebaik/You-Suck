@@ -62,8 +62,8 @@ class LoginController extends BaseController
                 $myAuth = Zend_Auth::getInstance();
                 $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
                 $this->view->html = 1;
-                setcookie('userid', $user->getId());
-                setcookie('firstname', $user->getFirstname());
+                setcookie('userid', $user->getId(), 0, '/', 'yousuckapp.com');
+                setcookie('firstname', $user->getFirstname(), 0, '/', 'yousuckapp.com');
                 return;
             } else {
                 $this->view->html = 0;
@@ -80,8 +80,8 @@ class LoginController extends BaseController
             $this->view->html = 1;
             $myAuth = Zend_Auth::getInstance();
             $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
-            setcookie('userid', $user->getId());
-            setcookie('firstname', $user->getFirstname());
+            setcookie('userid', $user->getId(), 0, '/', 'yousuckapp.com');
+            setcookie('firstname', $user->getFirstname(), 0, '/', 'yousuckapp.com');
             return;
         }
         $this->view->html = 0;
