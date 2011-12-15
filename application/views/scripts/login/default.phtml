@@ -26,7 +26,7 @@
 	   			 		<li><a href="">Help</a></li>	
 	   			 		<li><a href="">Terms</a></li>
 <?php if ( !isset($this->user) || empty($this->user)){ ?>
-	   			 		<li><a href="/login">Log in</a></li>
+	   			 		<li><a href="/login/default">Log in</a></li>
             <?php } else { ?>
     <li><a href="/login/logout">Log out</a></li>
             <?php } ?>	   			 	</ul>
@@ -40,10 +40,11 @@
 </div>
 
 <div id="loginArea">
-  <div class="fb-login-button" data-perms="email">Login with Facebook</div>
+  <div class="fb-login-button" data-scope="email">Login with Facebook</div>
   <span id="spanOR">or</span>      
 
   <form id="formLogin" action="login/login" method="get">
+      <div class="errorBox"></div>
       <input type="text" name="username" class="loginInput" placeholder="Email Address"/>
       <input type="password" name="password" class="loginInput" placeholder="Password"/>
       <a href="">Forget your password?</a>

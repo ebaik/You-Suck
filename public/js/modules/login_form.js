@@ -8,6 +8,7 @@ youSuck.modules.login_form = function(id) {
     var login_form=$('#'+id);
     var username=$('#'+id+' input[name="username"]');
     var password=$('#'+id+' input[name="password"]');
+    var errorBox=$('#'+id+' .errorBox');
  
     this.render = function() {
         youSuck.use('templates-login_form', function(youSuck) {
@@ -26,12 +27,14 @@ youSuck.modules.login_form = function(id) {
             console.log(username.val());
             console.log(password.val());
             if(username.val() && password.val()) {
-                $.post('login/auth', {
+                $.post('/login/auth', {
                     'username': username.val(),
                     'password': password.val()
                 }, function(response) {
                     if(response==="1") {
                         window.location.href = '/';
+                    } else {
+                        errorBox.html('Authentication Failed!');
                     }
 
                 });

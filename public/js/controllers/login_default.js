@@ -11,7 +11,7 @@ youSuck.controllers.login_default = new function() {
         FB.Event.subscribe('auth.login', function(response) {
             console.log('auth.login', response);
             // pass the access token to the server
-            var access_token = response.session.access_token;
+            var access_token = response.authResponse.accessToken;
             if(access_token) {
                 $.post('/login/auth', {
                     'access_token': access_token

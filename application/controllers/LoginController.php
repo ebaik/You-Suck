@@ -62,16 +62,18 @@ class LoginController extends BaseController
                 $myAuth = Zend_Auth::getInstance();
                 $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
                 $this->view->html = 1;
+                setcookie('userid', $user->getId());
+                setcookie('firstname', $user->getFirstname());
+                return;
             } else {
                 $this->view->html = 0;
+                return;
             }
-            setcookie('userid', $user->getId());
-            setcookie('firstname', $user->getFirstname(s));
-            return;
         } else if(isset($_REQUEST['access_token'])) {
             // fb login
             $graph_url = "https://graph.facebook.com/me?access_token=".$_REQUEST['access_token'];
             $fbuser = json_decode(file_get_contents($graph_url));
+            $user = $userservice->getByfbuid($fbuser->id);
             if (!isset($user) || empty($user) ){
                 $user = $userservice->createUser(get_object_vars($fbuser));
             }
