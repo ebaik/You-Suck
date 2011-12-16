@@ -2,13 +2,14 @@
 // index/index page controller
 
 youSuck.controllers.index_index = new function() {
+    
     /**
      * redering the search box and complaints list
      */
     youSuck.use('modules-search_box', 'modules-complaints_list', function(youSuck) {
         
         var search_box_id = 'search_box';
-        var search_box =  new youSuck.modules.search_box(search_box_id, youSuck.common.utils.getPageControllerObjectName());
+        var search_box =  new youSuck.modules.search_box(search_box_id);
         search_box.render();
         
         var complaints_list_id = 'complaints_list';

@@ -9,15 +9,6 @@ youSuck.common.utils = {
         var pageControllerName = 'controllers-'+controller+'_'+action;
         return pageControllerName;
     },
-    getPageControllerObjectName: function() {
-        var path = window.location.pathname;
-        var parts = path.split('/');
-        var controller = 'index', action = 'index';
-        if(parts[1]) controller = parts[1];
-        if(parts[2]) action = parts[2];
-        var pageControllerObjectName = controller+'_'+action;
-        return pageControllerObjectName;
-    },
     substitute: function(template, dataObj) {
         return Mustache.to_html(template, dataObj);
     },
