@@ -18,12 +18,12 @@ youSuck.modules.complaints_list = function(id) {
         });
     };
     
-     _this.render = function(dataObj) {console.log(complaints_list);
-        if(dataObj) {
-            youSuck.use('templates-complaints_list', function(youSuck) {
+     _this.render = function(dataObj) {
+        if(dataObj) {console.log(dataObj);
+            youSuck.use('templates-complaints_list', function(youSuck) {console.log('get the template');
                 template = youSuck.templates.complaints_list;
 
-                html = substitute(template, {'search_results': dataObj});
+                var html = substitute(template, {'search_results': dataObj});
                 $('#'+id).html(html);
                 // show the readmore 
                 if($('div.recentComplaints')) {

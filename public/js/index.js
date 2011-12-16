@@ -162,6 +162,8 @@ var youSuck = {
             $.getScript(loadingURL, function(data, status) {
                 callback(_this);
             });
+        } else {
+            callback(_this);
         }
         
     }

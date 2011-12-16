@@ -1,6 +1,10 @@
 
 
-youSuck.modules.search_box = function(id) {
+// if controller is post_show, then
+// search_box renders results directly
+// on the /post/show page instead of 
+// redirecting to the /post/show page
+youSuck.modules.search_box = function(id, controller, renderComplaintsList) {
     var substitute = youSuck.common.utils.substitute;
     var template, dataObj={};
     var html = '';
@@ -25,20 +29,30 @@ youSuck.modules.search_box = function(id) {
         
     };    
     bindUI = function() {
-
-        var redirect_search = function() {
-            var query = input_box.val();
+        
+        var redirect_search = function(query) {
             if(query) {
                 window.location.href = window.location.origin+"/post/show?query="+query;
             }
         };
         search_form.submit(function(e) {
+            var query = input_box.val();
             e.preventDefault();
-            redirect_search();
+            if(controller !== 'post_show') {
+                redirect_search(query);
+            } else {
+                renderComplaintsList(query);
+            }
+            
         });
         
         search_button.click(function(e) {
-            redirect_search();
+            var query = input_box.val();
+            if(controller !== 'post_show') {
+                redirect_search(query);
+            } else {
+                renderComplaintsList(query);
+            }
         });
         
         // load the autocomplete jquery plugin
