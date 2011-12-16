@@ -28,7 +28,7 @@ class LoginController extends BaseController
         if (isset($user) && !empty($user)) {
             $this->view->html = 'sucess';
             $myAuth = Zend_Auth::getInstance();
-            $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
+            $myAuth->getStorage()->write('id=' . $user->getId());
             
             return $this->_redirect('/');
         } else {
