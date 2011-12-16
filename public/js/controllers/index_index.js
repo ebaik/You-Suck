@@ -18,7 +18,9 @@ youSuck.controllers.index_index = new function() {
         
         var complaints_list_id = 'complaints_list';
         var complaints_list = new youSuck.modules.complaints_list(complaints_list_id);
+
         complaints_list.render();
+
         // display the search results on the page
         
         

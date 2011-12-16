@@ -2,6 +2,7 @@
 require_once 'BaseController.php';
 require_once APPLICATION_MODELS . '/CompanyService.php';
 
+
 class CompanyController extends BaseController 
 {
     
@@ -14,6 +15,7 @@ class CompanyController extends BaseController
     // get the top 10 companies from the db table companies based on the query string
     public function suggestAction() 
     {
+
         $q = $this->_getParam('q');
         
         $exe = Zend_Registry::get("exe");
@@ -25,6 +27,7 @@ class CompanyController extends BaseController
             $companies .= "\n".$company;
         }
         $this->view->companies = $companies;
+
     }
     
 }

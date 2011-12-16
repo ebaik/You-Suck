@@ -25,6 +25,7 @@ youSuck.modules.complaints_list = function(id) {
 
                 html = substitute(template, {'search_results': dataObj});
                 $('#'+id).html(html);
+
                 // show the readmore 
                 if($('div.recentComplaints')) {
                     $('div.recentComplaints').each(function(id) {
@@ -52,10 +53,12 @@ youSuck.modules.complaints_list = function(id) {
         }
         
         
+
         
     };
     
     init = function() {
+<<<<<<< HEAD
         if($('div.recentComplaints')) {
             $('div.recentComplaints').each(function(id) {
             
@@ -66,11 +69,24 @@ youSuck.modules.complaints_list = function(id) {
             });
         }
         
+=======
+        $('div.recentComplaints').each(function(id) {
+            
+            if($(this).height()>110) {
+                var readMore = $(this).find('p.read-more');
+                readMore.show();
+            }
+        });
+>>>>>>> 183a3a29423697c4c5ed80277df489e049be1790
         
         _this.render();
     };
     
+<<<<<<< HEAD
     //init();
+=======
+    init();
+>>>>>>> 183a3a29423697c4c5ed80277df489e049be1790
     
    
     

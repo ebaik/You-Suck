@@ -29,6 +29,7 @@ $.getCSS = function() {
 // create the map to the modules
 var youSuck = {
     'map': {
+
         //lib
         'jquery.autocomplete': {
             'path': 'js/lib/jquery.autocomplete.js',
@@ -134,8 +135,10 @@ var youSuck = {
         var callback = '';
         var loadingURL = '';
         var _this = this;
+
         var callback;
         
+
         for(;i<size;i++) {
             if((typeof arguments[i])!=='function') {
                 if(!_this.map[arguments[i]].loaded) {
@@ -163,13 +166,29 @@ var youSuck = {
     }
 };
 
+/*
+ var stylesheet = "foo.css";
+var callback = function(){
+  alert("CSS is now included");
+};
+
+$.get(stylesheet, function(contents){
+  $("<style type=\"text/css\">" + contents + "</style>").appendTo(document.head);
+  callback();
+});
+ 
+ 
+ */
+
 $(document).ready(function() {
     youSuck.use('common-utils', function(youSuck) {
+
         
         var pageControllerName = youSuck.common.utils.getPageControllerName();
 console.log(pageControllerName);
         if(pageControllerName !== 'controllers-analytics_show') {
             youSuck.use(pageControllerName, function(youSuck) {
+
 
             });
         }
