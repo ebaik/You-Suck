@@ -154,7 +154,7 @@ var youSuck = {
             } else {
                 callback = arguments[i];
             }
-            
+
         }    
         console.log(path);
         if(path) {
