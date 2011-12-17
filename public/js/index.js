@@ -17,7 +17,7 @@ $.getCSS = function() {
             callback = arguments[i];
         }console.log(path);
         if(path) {
-            loadingURL = window.location.origin+'/'+'combo'+'?f='+path;
+            loadingURL = 'http://'+window.location.host+'/'+'combo'+'?f='+path;
             $.get(loadingURL, function(data) {
                 $("<style type=\"text/css\">" + data + "</style>").appendTo(document.head);
                 callback(data, status);
@@ -119,7 +119,7 @@ var youSuck = {
             'loaded': 0
         }
     },
-    'combo': window.location.origin+'/'+'combo',
+    'combo': 'http://'+window.location.host+'/'+'combo',
     'common': {
         
     },
@@ -139,6 +139,7 @@ var youSuck = {
         var loadingURL = '';
         var _this = this;
         var callback;
+        var modules = [];
         
         for(;i<size;i++) {
             if((typeof arguments[i])!=='function') {
@@ -148,21 +149,26 @@ var youSuck = {
                     } else {
                         path += ';' + _this.map[arguments[i]].path;
                     }
-                    _this.map[arguments[i]].loaded = 1;
+                    modules.push(_this.map[arguments[i]]);
                 }
                     
             } else {
                 callback = arguments[i];
             }
 
-        }    
-        console.log(path);
+        }
         if(path) {
             loadingURL = _this.combo+'?f='+path;
             $.getScript(loadingURL, function(data, status) {
+                console.log('finish loading '+loadingURL);
+                var j=0, size2=modules.length;
+                for(;j<size2;j++) {
+                    modules[j].loaded=1;
+                }
                 callback(_this);
             });
         } else {
+            console.log('no need to download but directly make the callback');
             callback(_this);
         }
         
@@ -171,9 +177,8 @@ var youSuck = {
 
 $(document).ready(function() {
     youSuck.use('common-utils', function(youSuck) {
-        
+       
         var pageControllerName = youSuck.common.utils.getPageControllerName();
-console.log(pageControllerName);
         if(pageControllerName !== 'controllers-analytics_show') {
             youSuck.use(pageControllerName, function(youSuck) {
 

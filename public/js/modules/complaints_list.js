@@ -19,8 +19,8 @@ youSuck.modules.complaints_list = function(id) {
     };
     
      _this.render = function(dataObj) {
-        if(dataObj) {console.log(dataObj);
-            youSuck.use('templates-complaints_list', function(youSuck) {console.log('get the template');
+        if(dataObj) {
+            youSuck.use('templates-complaints_list', function(youSuck) {
                 template = youSuck.templates.complaints_list;
 
                 var html = substitute(template, {'search_results': dataObj});
