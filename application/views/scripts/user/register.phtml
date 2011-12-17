@@ -20,20 +20,23 @@
       <?php if ( isset($this->user) && !empty($this->user)){
      echo "user signed in";
  } ?>
-<div id="loginPage" class="container_12">
+<div id="loginPage" class="container_12 youSuck">
 				<header class="main">
-	   				<h1><span class="you">You </span>Suck</h1>
-	   				<ul>
-	   			 		<li><a href="">About</a></li>
-	   			 		<li><a href="">Team</a></li>
-	   			 		<li><a href="">Blog</a></li>
-	   			 		<li><a href="">Help</a></li>	
-	   			 		<li><a href="">Terms</a></li>
-<?php if ( !isset($this->user) || empty($this->user)){ ?>
-	   			 		<li><a href="/login/default">Log in</a></li>
-            <?php } else { ?>
-    <li><a href="/login/logout">Log out</a></li>
-            <?php } ?>	   			 	</ul>
+	   				<h1><a href="/" class="goHome">You <br/>Suck</a></h1>
+	   				<div class="tasks">
+		   				<ul>
+		   			 		<li><a href="">About</a></li>
+		   			 		<li><a href="">Team</a></li>
+		   			 		<li><a href="http://blankyousuck.tumblr.com/" target="_new">Blog</a></li>
+		   			 		<li><a href="">Help</a></li>	
+		   			 		<li><a href="">Terms</a></li>
+	<?php if ( !isset($this->user) || empty($this->user)){ ?>
+		   			 		<li><a href="/login/default">Log in</a></li>
+	            <?php } else { ?>
+	    <li><a href="/login/logout">Log out</a></li>
+	            <?php } ?>	   			 	
+	            		</ul>
+            		</div>
 	   			 </header>
 <h2>we're here to help you get heard, welcome!</h2>
 
