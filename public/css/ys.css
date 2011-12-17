@@ -947,7 +947,7 @@ html body * dd.clear
 	.main, .tasks, .upper {
 		margin-bottom: 10px;
 	}
-	.main ul, .magnify, .mission, .aboutYouSuck, #postUserInfo b {
+	.magnify, .mission, .aboutYouSuck, #postUserInfo b {
 		display: none;
 	}
 	.you, .complaints span {
@@ -991,7 +991,7 @@ html body * dd.clear
 		margin-left: 0;
 	}
 	.tasks {
-		margin-top: 80px;
+		margin-top: 30px;
 	}
 	.suffer img, .heard img, .right img {
 		width: 40%;
