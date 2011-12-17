@@ -17,6 +17,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         Zend_Registry::set('exe', $exe);
         return $exe;
     }
+    
+     protected function _initViewHelpers() {
+     	$this->bootstrap('layout');
+        $layout = $this->getResource('layout');
+        $view = $layout->getView();
+        $view->user = $user = Zend_Auth::getInstance()->getStorage()->read();
+     }
 
 }
 

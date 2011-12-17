@@ -51,7 +51,7 @@ class UserService
 
     public function checklogin($username, $password)
     {
-    	$user = $this->getByUsername($username);
+    	$user = $this->getByEmail($username);
     	if (!isset($user) || empty($user)) {
             return null;
         }

@@ -11,49 +11,18 @@
 		<script src="/js/lib/mustache.js"></script>
       	<script src="/js/index.js"></script>
 	</head>
-        <body>
-            <div class="container_12 youSuck">
-                <header class="main">
-	   				<h1><a href="/" class="goHome">You <br/>Suck</a></h1>
-	   				<div class="tasks">
-	   			 			<form id="search_box" class="search">
-	   			 				<input type="search" placeholder="Search companies"/>
-                                                                <a href="" class="icon magnify">z</a>
-	   			 			</form>
-	   			 			<button class="button vent">post complaint</button>
-	   			 			<ul>
-	   			 		<li><a href="">About</a></li>
-	   			 		<li><a href="">Team</a></li>
-	   			 		<li><a href="">Blog</a></li>
-	   			 		<li><a href="">Help</a></li>	
-	   			 		<li><a href="">Terms</a></li>
-	   			 		<?php if ( !isset($this->user) || empty($this->user)){ ?>
-	   			 		<li><a href="/login">Log in</a></li>
-            <?php } else { ?>
-    <li><a href="/login/logout">Log out</a></li>
-            <?php } ?>
-	   			 	</ul>
-	   			 </div>
-	   			 </header>
-                
-                
-                <footer >
-<p>You Suck: Follow us on <a href="twitter.com">Twitter</a> or <a href="facebook.com">Facebook<a></p>
-<ul>
-  <li><a href="">About</a></li>
-  <li>|</li>
-  <li><a href="">Team</a></li>
-  <li>|</li>
-  <li><a href="">Blog</a></li>
-  <li>|</li>
-  <li><a href="">Help</a></li>	
-  <li>|</li>
-  <li><a href="">Terms</a></li>
-  <li>|</li>
-  <li><a href="">Log in</a></li>
-</ul>
-</footer>
-                
-            </div>
-        </body>
+<body>
+<div class="container_12 youSuck">
+<?php 
+	echo $this->render('header.phtml');
+?>  
+<?php
+	echo $this->layout()->content;
+?>  
+<?php 
+	echo $this->render('footer.phtml');
+?>  
+</div>
+</body>
+</html>
         

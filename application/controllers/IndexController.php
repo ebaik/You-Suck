@@ -36,6 +36,7 @@ class IndexController extends BaseController
 		       	$posts[$i]['name'] =  $name;
 	            $i++;
 	        }
+	       
 	        $this->view->posts = $posts;
 	       
     	}
