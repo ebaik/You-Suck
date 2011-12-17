@@ -48,6 +48,7 @@
       </div>
       
       <div id="postUserInfo" >
+        <?php if($this->user) {?>  
       	<img src="img/people/bobby.png"/>
       	<ul>
       		<li>Bobby B.</li>
@@ -57,8 +58,16 @@
       		</li>      		
       	</ul>
       	<input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
+        <?php } else {?>
+        <span class="grid_3"><a href="/login/default">Login</a></span>
+        <span class="grid_1">or</span>
+        <span class="grid_8">
+            <input type="text" name="name" class="" placeholder="Name"/>
+            <input type="text" name="email" class="" placeholder="Email"/>
+            <input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
+        </span>
+        <?php }?>
       </div>
-      
     </form>
     <div class="grid_4 trending">
     	<h5>TRENDING NOW</h5>
