@@ -49,7 +49,7 @@ youSuck.modules.complaints_form = function(id) {
             
             $.post('post/submit', data, function(response) {
                 console.log('hellohello');
-                $(location).attr('href',window.location.origin);
+                $(location).attr('href','http://'+window.location.origin);
             });
             
         });

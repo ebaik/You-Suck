@@ -51,8 +51,10 @@ class UserService
 
     public function checklogin($username, $password)
     {
+
     	$user = $this->getByEmail($username);
     	if (!isset($user) || empty($user)) {
+
             return null;
         }
         if (md5($password) == $user->getPassword()) {

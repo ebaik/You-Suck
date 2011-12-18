@@ -10,9 +10,6 @@ youSuck.controllers.post_index = new function() {
         var search_box =  new youSuck.modules.search_box(search_box_id, youSuck.common.utils.getPageControllerObjectName());
         search_box.render();
         
-        var complaints_list_id = 'complaints_list';
-        var complaints_list = new youSuck.modules.complaints_list(complaints_list_id);
-        complaints_list.render();
         
     });
     /**
