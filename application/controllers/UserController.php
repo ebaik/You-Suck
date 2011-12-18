@@ -21,12 +21,35 @@ error_log("submit");
         $userservice = new UserService();
         $user = $userservice->createUser($_REQUEST);
         $myAuth = Zend_Auth::getInstance();
-            $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
-            $this->preDispatch();
+        $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
+        $this->preDispatch();
         return $this->_redirect('/');
 
 
     }
+    
+    public function createAction() {
+        $userservice = new UserService();
+        $user = $userservice->createUser($_REQUEST);
+        $myAuth = Zend_Auth::getInstance();
+        $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
+        $this->view->html = 1;
+    }
+    
+    public function emailregisteredAction() {
+        $email = trim($_REQUEST['email']);
+        if(!empty($email)) {
+            $user_service = new UserService();
+            if($user_service->getByEmail($email)) {
+                $this->view->html = 1;
+            } else {
+                $this->view->html = 0;
+            }
+        } else {
+            $this->view->html = 1;
+        }
+    }
+    
     public function indexAction()
     {
 
