@@ -13,6 +13,7 @@ class PostService {
 	        $post->setPostTime(date('Y-m-d H:i:s'));
 	        $post->setText($postarr['post_text']);
 	        $post->setUserId($userid);
+                $post->setAnonymous_flag($postarr['anonymous_flag']);
 	        $exe->persist($post);
 	        $exe->commit();
 	        return true;
