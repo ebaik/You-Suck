@@ -30,12 +30,34 @@ class PostController extends BaseController
     {
 	$company_name = trim($this->_getParam('company_name'));
 	$synopsys = trim($this->_getParam('synopsys'));
+        $name = trim($this->_getParam('name'));
+        $email = trim($this->_getParam('email'));
+        $check_anonymous = trim($this->_getParam('check_anonymous'));
 	// get user info
         // if the user doesnt login, use the anonymous user
         $user_obj = UserService::getLoggedInUser();
         if(!isset($user_obj)) {
             $exe = Zend_Registry::get("exe");
             $user_obj = $exe->getGlobalUserObject();
+            
+            // if the user doesnt login
+            // take the name and email and insert them if we havent
+            if(!empty($name) && !empty($email)) 
+            {
+                $userService = new UserService();
+                $user_obj = $userService->getByEmail($email);
+                if(!$user_obj) 
+                {
+                    $arr['email'] = $email;
+                    $arr['first_name'] = $name;
+                    $arr['password'] = '';
+                    $user_obj = $userService->createUser($arr);
+                }
+            } else {
+                echo '0';
+                exit;
+            }
+            
         }
 	
 
@@ -56,6 +78,7 @@ class PostController extends BaseController
         $ps = new PostService();
         $postarr['company_id'] = $company_obj->getId(); 
         $postarr['post_text'] = $synopsys; 
+        $postarr['anonymous_flag'] = $check_anonymous;error_log('check_anonymous', $check_anonymous);
         
         $res = $ps->submitPost($postarr, $user_obj->getId());
         echo $res;

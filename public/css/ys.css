@@ -35,6 +35,9 @@ header {
 	background-color: #F15B3F;
 	overflow: auto;
 }
+.searchStuff {
+	float: left;
+}
 header h1 {
 	float: left;
 }
@@ -42,7 +45,7 @@ header ul {
 	float: right;
 	list-style-type: none;
 	padding: 0;
-	margin: 0;
+	margin: 20px 0 0 20px;
 }
 header li {
 	display: inline-block;
@@ -152,11 +155,6 @@ button, input {
 .main h1 {
 	margin: 15px 0 15px 30px;
 }
-.main ul {
-	margin-right: 30px;
-	margin-top: 33px;
-	float: right;
-}
 .main a {
 	color: #fff;
 }
@@ -167,8 +165,11 @@ button, input {
 	letter-spacing: 1px;
 	
 }
-.complaints span {display: block;}
+.complaints span {
+	display: block;
+}
 .tasks {
+	float: right;
 	margin-top: 10px;
 	margin-bottom: 35px;
 }
@@ -946,7 +947,7 @@ html body * dd.clear
 	.main, .tasks, .upper {
 		margin-bottom: 10px;
 	}
-	.main ul, .magnify, .mission, .aboutYouSuck, #postUserInfo b {
+	.magnify, .mission, .aboutYouSuck, #postUserInfo b {
 		display: none;
 	}
 	.you, .complaints span {
@@ -990,7 +991,7 @@ html body * dd.clear
 		margin-left: 0;
 	}
 	.tasks {
-		margin-top: 80px;
+		margin-top: 30px;
 	}
 	.suffer img, .heard img, .right img {
 		width: 40%;
@@ -1014,17 +1015,8 @@ html body * dd.clear
   margin: 8px 50px 0 11px;
   font-size: 29px;
 }
-.main ul {
-  margin-right: 21px;
-  margin-top: 16px;
-  float: right;
-  color:#000;
-}
 header{
   background:transparent url(../img/logo_splash.png) no-repeat -21px -25px;
-}
-.main ul{
-  margin-top:11px;
 }
 .main li a {
   font-size:12px;
