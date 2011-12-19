@@ -30,10 +30,16 @@ class CommentService {
         
     }
     
+    // fields returned:
+    // content
+    // ceated time of content
+    // firstname of author
     public function getCommentsByPostId($post_id) {
         $comments = array();
         if(!empty($post_id)) {
-            $sql = "select * from comments where post_id=$post_id";
+            $sql = "select c.content, c.created, u.firstname 
+                    from comments c join users u on (c.author_id=u.id) 
+                    where c.post_id=$post_id";
             $stmt = $this->em->getConnection()->prepare($sql);
             $stmt->execute();
             $comments = $stmt->fetchAll(PDO::FETCH_CLASS);

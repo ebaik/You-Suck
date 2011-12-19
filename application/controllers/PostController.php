@@ -7,6 +7,7 @@ require_once APPLICATION_ENTITIES . '/Companies.php';
 require_once APPLICATION_MODELS . '/UserService.php';
 require_once APPLICATION_MODELS . '/CompanyService.php';
 require_once APPLICATION_MODELS . '/PostService.php';
+require_once APPLICATION_MODELS . '/CommentService.php';
 
 class PostController extends BaseController
 {
@@ -136,7 +137,12 @@ class PostController extends BaseController
         $id = $this->_getParam('id');
         if(isset($id)) 
         {
-            
+            $ps = new PostService();
+            $post = $ps->getPost($id);
+            $cs = new CommentService();
+            $comments = $cs->getCommentsByPostId($id);
+            $this->view->post = $post;
+            $this->view->comments = $comments;
         } 
         else 
         {
