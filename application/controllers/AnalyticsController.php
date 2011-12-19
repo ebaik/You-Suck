@@ -18,7 +18,9 @@ class AnalyticsController extends BaseController
     
     public function companyAction(){
         $serv = new PostService();
-        $this->view->posts = $serv->getPostByCompany($_REQUEST['company']);
+        $this->_helper->layout->disableLayout();
+	$this->_helper->viewRenderer->setNoRender(TRUE);
+        echo $serv->getPostByCompany($_REQUEST['company']);
     }
     
     public function showAction() {
@@ -31,7 +33,9 @@ class AnalyticsController extends BaseController
         $exe = Zend_Registry::get("exe");
         $cs = new CompanyService();
         $result = $cs->getCompanyAnalytics($company, $scale);
-        $this->view->json = json_encode($result);
+        $this->_helper->layout->disableLayout();
+	$this->_helper->viewRenderer->setNoRender(TRUE);
+        echo json_encode($result);
     }
     
 }

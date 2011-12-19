@@ -15,7 +15,7 @@ $.getCSS = function() {
             }
         } else {
             callback = arguments[i];
-        }console.log(path);
+        }
         if(path) {
             loadingURL = 'http://'+window.location.host+'/'+'combo'+'?f='+path;
             $.get(loadingURL, function(data) {

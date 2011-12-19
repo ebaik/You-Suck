@@ -22,8 +22,9 @@ class ComboController extends BaseController
         {
             $comboJS .= file_get_contents($file);
         }
-        
-        $this->view->comboJS = $comboJS;
+        $this->_helper->layout->disableLayout();
+	$this->_helper->viewRenderer->setNoRender(TRUE);
+        echo $comboJS;
     }
     
 }

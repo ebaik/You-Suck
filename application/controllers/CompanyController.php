@@ -24,7 +24,9 @@ class CompanyController extends BaseController
         {
             $companies .= "\n".$company;
         }
-        $this->view->companies = $companies;
+        $this->_helper->layout->disableLayout();
+	$this->_helper->viewRenderer->setNoRender(TRUE);
+        echo $companies;
     }
     
 }

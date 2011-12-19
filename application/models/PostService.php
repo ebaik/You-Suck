@@ -66,6 +66,27 @@ class PostService {
         }
         return $posts;
     }
+    
+    public function getMorePost($offset=0, $size=10) {
+        $exe = Zend_Registry::get("exe");
+        $em = $exe->getMetaDataEntityManager();
+        $sql = "select p.text, if(p.anonymous_flag, 'Anonymous', u.firstname) as firstname, c.company_name 
+                from 
+                    posts p join users u on u.id=p.user_id
+                    join companies c on p.company_id=c.id
+                ORDER BY p.post_time desc limit $offset,$size";
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute();
+        $res = $stmt->fetchAll();
+        $data = array();
+        foreach($res as $i=>$rec) 
+        {
+            $data[$i]['text'] = substr($rec['text'], 0, 70).'...';
+            $data[$i]['firstname'] = $rec['firstname'];
+            $data[$i]['company_name'] = $rec['company_name'];
+        }    
+        return $data;
+    }
 
 }
 

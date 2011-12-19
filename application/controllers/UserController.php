@@ -33,20 +33,24 @@ error_log("submit");
         $user = $userservice->createUser($_REQUEST);
         $myAuth = Zend_Auth::getInstance();
         $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
-        $this->view->html = 1;
+        $this->_helper->layout->disableLayout();
+	$this->_helper->viewRenderer->setNoRender(TRUE);
+        echo 1;
     }
     
     public function emailregisteredAction() {
+        $this->_helper->layout->disableLayout();
+	$this->_helper->viewRenderer->setNoRender(TRUE);
         $email = trim($_REQUEST['email']);
         if(!empty($email)) {
             $user_service = new UserService();
             if($user_service->getByEmail($email)) {
-                $this->view->html = 1;
+                echo 1;
             } else {
-                $this->view->html = 0;
+                echo 0;
             }
         } else {
-            $this->view->html = 1;
+            echo 1;
         }
     }
     
