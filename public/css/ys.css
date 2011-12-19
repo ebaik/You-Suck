@@ -256,7 +256,7 @@ button, input {
 }
 
 .read-more {
-    display: none;
+    display: block;
 }
 
 .read-more a.button {
