@@ -133,7 +133,15 @@ class PostController extends BaseController
     
     public function itemAction()
     {
-        
+        $id = $this->_getParam('id');
+        if(isset($id)) 
+        {
+            
+        } 
+        else 
+        {
+            
+        }
     }
     
 }
