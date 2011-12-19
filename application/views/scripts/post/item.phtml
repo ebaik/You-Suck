@@ -28,6 +28,19 @@
    				<p class="first">This is other user's comment on the the complaint</p>	
    			</div>
    		</div>
-   		<div class="container_12">
+                
+   		<div class="container_12 postComment">
+                    <?php if(!isset($this->user)) {?>
    			<p><input type="submit" class="button" value="Log in to Comment" /></p>
+                    <?php } else {?>
+                        <div class="grid_3">
+   				<img src="../img/people/blank_face.jpg" />
+   				Username
+   			</div>
+   			<div class="grid_9">
+                                <textarea></textarea>
+   			</div>
+                        <p><input type="submit" class="button" value="Post a Comment" /></p>
+                    <?php } ?>    
    		</div>
+                
