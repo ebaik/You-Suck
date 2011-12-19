@@ -8,14 +8,14 @@ youSuck.modules.complaints_list = function(id) {
     var _this = this;
     
     bindUI = function() {
-        var read_more = $('p.read-more');
-        read_more.click(function(e) {
-            e.preventDefault();
-            $($(this).parent().children()[0]).css({
-                'max-height': 9999
-            });
-            
-        });
+//        var read_more = $('p.read-more');
+//        read_more.click(function(e) {
+//            e.preventDefault();
+//            $($(this).parent().children()[0]).css({
+//                'max-height': 9999
+//            });
+//            
+//        });
     };
     
      _this.render = function(dataObj) {
