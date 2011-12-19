@@ -23,7 +23,9 @@ class IndexController extends BaseController
                 $ps = new PostService();
                 $posts = $ps->getMorePost();
                 $this->view->posts = $posts;
-	       
+	        //require_once APPLICATION_MODELS . '/CommentService.php';
+                //$cs = new CommentService;
+                //$cs->getCommentsByPostId(184);
     	}
     	catch (Exception $ex) {
             error_log("Index exception:" . $ex->getMessage());
