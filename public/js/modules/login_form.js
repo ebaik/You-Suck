@@ -32,7 +32,7 @@ youSuck.modules.login_form = function(id) {
                     'password': password.val()
                 }, function(response) {
                     if(response==="1") {
-                        window.location.href = '/';
+                        window.location.href = document.referrer;
                     } else {
                         errorBox.html('Authentication Failed!');
                     }
