@@ -30,8 +30,7 @@ youSuck.modules.search_box = function(id, controller, renderComplaintsList) {
     bindUI = function() {
 
         var redirect_search = function(query) {
-            var query = input_box.val();
-            if(query) {
+        	if(query) {
                 window.location.href = window.location.origin+"/post/show?query="+query;
             }
         };
