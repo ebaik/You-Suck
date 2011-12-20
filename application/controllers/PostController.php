@@ -166,7 +166,12 @@ class PostController extends BaseController
     }
     
     public function mypostAction() {
-        
+        $user = UserService::getLoggedInUser();
+        $user_id = $user->getId();
+        $ps = new PostService;
+        $posts = $ps->getMorePostsByUser($user_id);
+        $this->view->user = $user;
+        $this->view->posts = $posts;
     }
     
     

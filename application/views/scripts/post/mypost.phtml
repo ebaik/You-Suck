@@ -2,18 +2,15 @@
     <h3>My Posts<h3>
     <div class="userprofile">
         <img src="../img/people/blank_face.jpg" />
-        <span>Liang</span>
+        <span><?php echo $this->user->getFirstName();?></span>
     </div>
     <div id="post_list">
+        <?php foreach($this->posts as $post) {?>
         <div class="post_item">
-            <h4><a href="http://yousuckapp.com:8083/analytics/show?company=boa&amp;scale=day">boa You Suck</a><span>Nov 11, 2011</span></h4>
-            <p>Need help with jQuery.trim() or have a question about it? Visit the jQ...</p>
-            <p class="read-more"><a href="/post/item?id=185" class="button">Read More</a></p>
+            <h4><a href="http://yousuckapp.com:8083/analytics/show?company=<?php echo $post->company_name;?>&scale=day"><?php echo $post->company_name;?> You Suck</a><span>Nov 11, 2011</span></h4>
+            <p><?php echo $post->text;?></p>
+            <p class="read-more"><a href="/post/item?id=<?php echo $post->id;?>" class="button">Read More</a></p>
         </div>
-        <div class="post_item">
-            <h4><a href="http://yousuckapp.com:8083/analytics/show?company=delta&amp;scale=day">delta You Suck</a><span>Nov 11, 2011</span></h4>
-            <p>Need help with jQuery.trim() or have a question about it? Visit the jQ...</p>
-            <p class="read-more"><a href="/post/item?id=185" class="button">Read More</a></p>
-        </div>
+        <?php }?>
     </div>    
 <div>    

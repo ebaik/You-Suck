@@ -88,6 +88,24 @@ class PostService {
         }    
         return $data;
     }
+    
+    public function getMorePostsByUser($user_id, $offset=0, $size=10) {
+        
+        $posts = array();
+        if(!empty($user_id)) {
+            $exe = Zend_Registry::get("exe");
+            $em = $exe->getMetaDataEntityManager();
+            $sql = "select posts.id, posts.text, companies.company_name, posts.post_time
+                    from posts join companies on posts.company_id=companies.id
+                    where user_id=$user_id
+                    limit $offset,$size";
+            $stmt = $em->getConnection()->prepare($sql);error_log($sql);
+            $stmt->execute();
+            $posts = $stmt->fetchAll(PDO::FETCH_CLASS);
+        }
+        
+        return $posts;
+    }
 
 }
 
