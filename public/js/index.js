@@ -101,6 +101,18 @@ var youSuck = {
             'path': 'js/modules/register_form.js',
             'loaded': 0
         },
+        'modules-comment_item': {
+            'path': 'js/modules/comment_item.js',
+            'loaded': 0
+        },
+        'modules-comments_list': {
+            'path': 'js/modules/comments_list.js',
+            'loaded': 0
+        },
+        'modules-comments_form': {
+            'path': 'js/modules/comments_form.js',
+            'loaded': 0
+        },
         // templates
         'templates-search_box': {
             'path': 'js/templates/search_box.js',
@@ -120,6 +132,14 @@ var youSuck = {
         },
         'templates-register_form': {
             'path': 'js/templates/register_form.js',
+            'loaded': 0
+        },
+        'templates-comment_item': {
+            'path': 'js/templates/comment_item.js',
+            'loaded': 0
+        },
+        'templates-comments_list': {
+            'path': 'js/templates/comments_list.js',
             'loaded': 0
         }
     },
