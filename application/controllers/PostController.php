@@ -165,4 +165,9 @@ class PostController extends BaseController
         echo json_encode(array('status'=>1, 'firstname'=>$user->getFirstName()));
     }
     
+    public function mypostAction() {
+        
+    }
+    
+    
 }
