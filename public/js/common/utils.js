@@ -18,6 +18,9 @@ youSuck.common.utils = {
         var pageControllerObjectName = controller+'_'+action;
         return pageControllerObjectName;
     },
+    getPathFromURL: function(url) {
+        
+    },
     substitute: function(template, dataObj) {
         return Mustache.to_html(template, dataObj);
     },

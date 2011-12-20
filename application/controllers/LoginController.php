@@ -54,6 +54,8 @@ class LoginController extends BaseController
     // uid: "1693922445"
     public function authAction()
     {
+        $this->_helper->layout->disableLayout();
+	$this->_helper->viewRenderer->setNoRender(TRUE);
         $userservice = new UserService();
         if(isset($_REQUEST['username']) && $_REQUEST['password']) {
             // regular login
@@ -61,12 +63,12 @@ class LoginController extends BaseController
             if (isset($user) && !empty($user)) {
                 $myAuth = Zend_Auth::getInstance();
                 $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
-                $this->view->html = 1;
+                echo 1;
                 setcookie('userid', $user->getId(), 0, '/', 'yousuckapp.com');
                 setcookie('firstname', $user->getFirstname(), 0, '/', 'yousuckapp.com');
                 return;
             } else {
-                $this->view->html = 0;
+                echo 0;
                 return;
             }
         } else if(isset($_REQUEST['access_token'])) {
@@ -77,14 +79,14 @@ class LoginController extends BaseController
             if (!isset($user) || empty($user) ){
                 $user = $userservice->createUser(get_object_vars($fbuser));
             }
-            $this->view->html = 1;
+            echo 1;
             $myAuth = Zend_Auth::getInstance();
             $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
             setcookie('userid', $user->getId(), 0, '/', 'yousuckapp.com');
             setcookie('firstname', $user->getFirstname(), 0, '/', 'yousuckapp.com');
             return;
         }
-        $this->view->html = 0;
+        echo 0;
     }
 
     public function facebookAction()

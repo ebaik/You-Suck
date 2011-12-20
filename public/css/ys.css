@@ -254,7 +254,7 @@ button, input {
 }
 
 .read-more {
-    display: none;
+    display: block;
 }
 
 .read-more a.button {
@@ -267,6 +267,11 @@ button, input {
 }
 .clear {
 	clear: both;
+}
+
+.postComment textarea {
+    width: 365px;
+    height: 95px;
 }
 
 /*
@@ -991,7 +996,7 @@ html body * dd.clear
 		margin-left: 0;
 	}
 	.tasks {
-		margin-top: 30px;
+		margin-top: 80px;
 	}
 	.suffer img, .heard img, .right img {
 		width: 40%;

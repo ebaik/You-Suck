@@ -15,7 +15,7 @@ $.getCSS = function() {
             }
         } else {
             callback = arguments[i];
-        }console.log(path);
+        }
         if(path) {
             loadingURL = 'http://'+window.location.host+'/'+'combo'+'?f='+path;
             $.get(loadingURL, function(data) {
@@ -77,6 +77,10 @@ var youSuck = {
             'path': 'js/controllers/login_default.js',
             'loaded': 0
         },
+        'controllers-post_item': {
+            'path': 'js/controllers/post_item.js',
+            'loaded': 0
+        },
         // UI modules
         'modules-search_box': {
             'path': 'js/modules/search_box.js',
@@ -98,6 +102,18 @@ var youSuck = {
             'path': 'js/modules/register_form.js',
             'loaded': 0
         },
+        'modules-comment_item': {
+            'path': 'js/modules/comment_item.js',
+            'loaded': 0
+        },
+        'modules-comments_list': {
+            'path': 'js/modules/comments_list.js',
+            'loaded': 0
+        },
+        'modules-comments_form': {
+            'path': 'js/modules/comments_form.js',
+            'loaded': 0
+        },
         // templates
         'templates-search_box': {
             'path': 'js/templates/search_box.js',
@@ -117,6 +133,14 @@ var youSuck = {
         },
         'templates-register_form': {
             'path': 'js/templates/register_form.js',
+            'loaded': 0
+        },
+        'templates-comment_item': {
+            'path': 'js/templates/comment_item.js',
+            'loaded': 0
+        },
+        'templates-comments_list': {
+            'path': 'js/templates/comments_list.js',
             'loaded': 0
         }
     },

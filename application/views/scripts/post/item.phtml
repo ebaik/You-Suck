@@ -1,0 +1,39 @@
+
+	   		<h1 class="accessAid">About company page</h1>
+	   		<div class="grid_9">
+                                <p class="first"><?php echo $this->post->getText();?></p>
+	   		</div>
+			<div class="grid_3">
+				<a href="" class="button">Flag for abuse</a>
+   			</div>
+   		</div>
+   		<div id="comments_list" class="container_12">
+   			<h2>Comments</h2>
+   		
+                    <?php foreach($this->comments as $comment) {?>
+                    <div class="container_12 userComment">
+                            <div class="grid_3">
+                                    <img src="../img/people/blank_face.jpg" />
+                                    <?php echo $comment->firstname;?>
+                            </div>
+                            <div class="grid_9">
+                                    <p class="first"><?php echo $comment->content;?></p>
+                            </div>
+                    </div>
+                    <?php }?>
+                </div>
+   		<div class="container_12 postComment">
+                    <?php if(!isset($this->user)) {?>
+   			<p><a class="button" href="/login/default"/>Log in to Comment</a></p>
+                    <?php } else {?>
+                        <div class="grid_3">
+   				<img src="../img/people/blank_face.jpg" />
+   				<?php echo $this->user->getFirstName();?>
+   			</div>
+   			<form id="commentsForm" class="grid_9">
+                                <textarea></textarea>
+                                <p><input type="submit" class="button" value="Post a Comment" /></p>
+   			</form>
+                    <?php } ?>    
+   		</div>
+                

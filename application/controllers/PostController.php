@@ -7,6 +7,7 @@ require_once APPLICATION_ENTITIES . '/Companies.php';
 require_once APPLICATION_MODELS . '/UserService.php';
 require_once APPLICATION_MODELS . '/CompanyService.php';
 require_once APPLICATION_MODELS . '/PostService.php';
+require_once APPLICATION_MODELS . '/CommentService.php';
 
 class PostController extends BaseController
 {
@@ -131,5 +132,39 @@ class PostController extends BaseController
     {
         
     }
+    
+    public function itemAction()
+    {
+        $id = $this->_getParam('id');
+        if(isset($id)) 
+        {
+            $ps = new PostService();
+            $post = $ps->getPost($id);
+            $cs = new CommentService();
+            $comments = $cs->getCommentsByPostId($id);
+            $this->view->post = $post;
+            $this->view->comments = $comments;
+        } 
+        else 
+        {
+            
+        }
+    }
+    
+    public function postcommentAction() {
+        $post_id = $this->_getParam('post_id');
+        $content = $this->_getParam('content');
+        $user = UserService::getLoggedInUser();
+        $author_id = $user->getId();
+        
+        $cs = new CommentService();
+        $cs->create($content, $author_id, $post_id);
+        
+        $this->_helper->layout->disableLayout();
+	$this->_helper->viewRenderer->setNoRender(TRUE);
+        
+        echo json_encode(array('status'=>1, 'firstname'=>$user->getFirstName()));
+    }
+    
 
 }
