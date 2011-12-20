@@ -13,7 +13,21 @@ youSuck.controllers.index_index = new function() {
         
         var complaints_list_id = 'complaints_list';
         var complaints_list = new youSuck.modules.complaints_list(complaints_list_id);
+
         complaints_list.render();
+<<<<<<< HEAD
+=======
+
+        // display the search results on the page
+        
+        
+        
+        
+        
+        
+        
+        
+>>>>>>> ab7470b7797882bb0f6515f1541e62ec68d3a2d8
         
     });
     /**
