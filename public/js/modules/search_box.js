@@ -1,6 +1,9 @@
 
-
-youSuck.modules.search_box = function(id, searchDoneCallback) {
+// if controller is post_show, then
+// search_box renders results directly
+// on the /post/show page instead of 
+// redirecting to the /post/show page
+youSuck.modules.search_box = function(id, controller, renderComplaintsList) {
     var substitute = youSuck.common.utils.substitute;
     var template, dataObj={};
     var html = '';
@@ -25,25 +28,30 @@ youSuck.modules.search_box = function(id, searchDoneCallback) {
         
     };    
     bindUI = function() {
-//        input_box.keypress(function(e){
-//            if(e.which == 13){
-//                getSearchResults(searchDoneCallback);
-//            }
-//        });
-        var redirect_search = function() {
+
+        var redirect_search = function(query) {
             var query = input_box.val();
             if(query) {
-                window.location.href = window.location.href+"post/show?query="+query;
+                window.location.href = window.location.origin+"/post/show?query="+query;
             }
         };
         search_form.submit(function(e) {
+           var query = input_box.val();
             e.preventDefault();
-            redirect_search();
+            if(controller !== 'post_show') {
+                redirect_search(query);
+            } else {
+                renderComplaintsList(query);
+            }
         });
         
         search_button.click(function(e) {
-            redirect_search();
-            //getSearchResults(searchDoneCallback);
+            var query = input_box.val();
+            if(controller !== 'post_show') {
+                redirect_search(query);
+            } else {
+                renderComplaintsList(query);
+            }
         });
         
         // load the autocomplete jquery plugin
@@ -65,7 +73,7 @@ youSuck.modules.search_box = function(id, searchDoneCallback) {
             
             // load the autocomplete css
             $.getCSS('css/jquery.autocomplete.css', function(data) {
-                $("#search_box input").autocomplete("company/suggest", {
+                $("#search_box input").autocomplete("/company/suggest", {
                     delay:10,
                     minChars:2,
                     matchSubset:1,
@@ -83,29 +91,4 @@ youSuck.modules.search_box = function(id, searchDoneCallback) {
             
         });
     };
-    
-    
-    
-    getSearchResults = function(searchDoneCallback) {
-        var query = input_box.val();   
-        /*
-         * $complaints = array(
-                array('fullname'=>'liang huang', 'text'=>'delta really really sucks', 'post_time'=>'2011-11-16'),
-                array('fullname'=>'jason qing', 'text'=>'delta really really sucks', 'post_time'=>'2011-11-29')
-            );
-         * 
-         * [{"fullname":"liang huang","text":"delta really really sucks","post_time":"2011-11-16"},{"fullname":"jason qing","text":"delta really really sucks","post_time":"2011-11-29"}]
-         */
-        //var mockResponse = '[{"fullname":"liang huang","text":"delta really really sucks","post_time":"2011-11-16"},{"fullname":"jason qing","text":"delta really really sucks","post_time":"2011-11-29"}]';
-        
-        //var mockResults = $.parseJSON(mockResponse);
-        
-        $.getJSON('post/search?query='+query, function(data) {
-            searchDoneCallback(data);
-        });
-    }
-    
-    
-    
-    
 };

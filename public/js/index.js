@@ -202,28 +202,10 @@ var youSuck = {
     }
 };
 
-/*
- var stylesheet = "foo.css";
-var callback = function(){
-  alert("CSS is now included");
-};
-
-$.get(stylesheet, function(contents){
-  $("<style type=\"text/css\">" + contents + "</style>").appendTo(document.head);
-  callback();
-});
- 
- 
- */
 
 $(document).ready(function() {
     youSuck.use('common-utils', function(youSuck) {
-<<<<<<< HEAD
-       
-=======
 
-        
->>>>>>> ab7470b7797882bb0f6515f1541e62ec68d3a2d8
         var pageControllerName = youSuck.common.utils.getPageControllerName();
         if(pageControllerName !== 'controllers-analytics_show') {
             youSuck.use(pageControllerName, function(youSuck) {
