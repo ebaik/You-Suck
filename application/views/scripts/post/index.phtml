@@ -1,6 +1,5 @@
-
-<h1 class="accessAid">Enter your complaint</h1>
-
+<div class="container_12">
+	<h1 class="accessAid">Enter your complaint</h1>
     <form id="complaints_form" method="post" action="" class="grid_8">
       <p id="suggestion">When writing your complaint please consider constructive suggestions and ideas.</p>
       
@@ -23,14 +22,6 @@
       		</li>      		
       	</ul>
       	<input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
-        <?php } else {?>
-        <span class="grid_3"><a href="/login/default">Login</a></span>
-        <span class="grid_1">or</span>
-        <span class="grid_8">
-            <input type="text" name="name" class="" placeholder="Name" value=""/>
-            <input type="text" name="email" class="" placeholder="Email" value=""/>
-            <input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
-        </span>
         <?php }?>
       </div>
     </form>
@@ -62,5 +53,17 @@
     	</div>
     	<img src="img/available_at_iphone.png" />
     </div>
+</div>
+<?php if(!($this->user)) {?>  
+	<div class="container_12">
+		<div class="grid_3"><a href="/login/default">Login</a></div>
+	   	<div class="grid_1">or</div>
+	  	<div class="grid_8">
+	            <input type="text" name="name" class="" placeholder="Name" value=""/>
+	            <input type="text" name="email" class="" placeholder="Email" value=""/>
+	            <input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
+	 	</div>
+	</div>
+<?php }?>
 
   

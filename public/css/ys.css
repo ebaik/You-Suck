@@ -53,6 +53,9 @@ header li {
 .footerSpacer {
 	height: 100%;
 }
+.footer {
+	margin-top: 20px;
+}
 footer {
 	background-color: #fff;
 	overflow: auto;
@@ -252,15 +255,8 @@ button, input {
     overflow: hidden;
     
 }
-
 .read-more {
     display: block;
-}
-
-.read-more a.button {
-    padding: 4px;
-    text-transform: lowercase;
-    font-family: Times New Roman;
 }
 .aboutYouSuck {
 	margin-top: 45px;
