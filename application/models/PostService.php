@@ -98,6 +98,7 @@ class PostService {
             $sql = "select posts.id, posts.text, companies.company_name, posts.post_time
                     from posts join companies on posts.company_id=companies.id
                     where user_id=$user_id
+                    order by posts.post_time desc
                     limit $offset,$size";
             $stmt = $em->getConnection()->prepare($sql);error_log($sql);
             $stmt->execute();

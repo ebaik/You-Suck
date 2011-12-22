@@ -92,7 +92,7 @@ class PostController extends BaseController
 		$query = trim($this->_getParam('query'));
 		$exe = Zend_Registry::get("exe");
 		$em = $exe->getMetaDataEntityManager();
-		$sql = " select u.firstname, u.lastname,  p.text,  p.post_time from posts p, user u where p.user_id = u.id and p.text like '%$query%' ";
+		$sql = " select u.firstname, u.lastname,  p.text,  p.post_time from posts p, user u where p.user_id = u.id and p.text like '%$query%' order by p.post_time desc";
 		
 		$output = array();
      	
