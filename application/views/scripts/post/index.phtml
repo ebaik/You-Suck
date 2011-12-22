@@ -14,9 +14,9 @@
       
       <div id="postUserInfo" >
         <?php if($this->user) {?>  
-      	<img src="img/people/bobby.png"/>
+      	<img src="img/people/blank_face.jpg"/>
       	<ul>
-      		<li>Bobby B.</li>
+      		<li><?php echo $this->user->getFirstName();?></li>
       		<li>
       		  <input type="checkbox" name="make_anonymos" />
       		  <span><b>Make me anonymous</b> (Don't show my name)</span>
