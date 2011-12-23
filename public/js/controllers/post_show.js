@@ -10,7 +10,7 @@ youSuck.controllers.post_show = new function() {
         var search_box_id = 'search_box';
         var renderComplaintsList = function(query) {console.log('renderComplaintsList', query);
             $.getJSON('/post/search?query='+query, function(data) {
-                    complaints_list = new youSuck.modules.complaints_list(complaints_list_id)
+                    complaints_list = new youSuck.modules.complaints_list(complaints_list_id);
                     complaints_list.render(data);
             });
         };

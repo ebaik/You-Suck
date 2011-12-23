@@ -89,41 +89,13 @@ class PostController extends BaseController
     
     public function searchAction()
     {
-		$query = trim($this->_getParam('query'));
-		$exe = Zend_Registry::get("exe");
-		$em = $exe->getMetaDataEntityManager();
-		$sql = " select u.firstname, u.lastname,  p.text,  p.post_time from posts p, user u where p.user_id = u.id and p.text like '%$query%' order by p.post_time desc";
-		
-		$output = array();
-     	
-     	try{
-			$sql_res = $em->createQuery($sql);
-	        $itr = $sql_res->iterate();
-	        $i = 0;
-	        foreach ($itr as $res) {
-	        	if(!empty($res[$i]['text']))
-	        	{
-		        	$fullname = array();
-		        	if(!empty($res[$i]['firstname']))
-		        		$fullname[] = $res[$i]['firstname'];
-//		        	if(!empty($res[$i]['lastname']))
-//		        		$fullname[] = $res[$i]['lastname'];
-		        	$name = implode(' ', $fullname);
-		        	$output[] = array('fullname'=>$name, 'text'=>$res[$i]['text'], 'post_time'=>$res[$i]['post_time']);
-		        	
-	        	}
-	        	$i ++;
-	        }
-		}
-    	catch (Exception $ex){
-			error_log("Post controller exception:" . $ex->getMessage());
-		}
-		
-		$return_json = $this->_helper->json($output);
-		
-		$this->_helper->layout->disableLayout();
-		$this->_helper->viewRenderer->setNoRender(TRUE);
-		echo $return_json;
+        $query = trim($this->_getParam('query'));
+        $ps = new PostService();
+        $posts = $ps->getPostByCompanyName($query);
+
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(TRUE);
+        echo json_encode($posts);
 		
     }
     
