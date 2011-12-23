@@ -1,20 +1,18 @@
-<div id="fb-root"></div>   
-<h2>welcome back to the place where you're heard!</h2>
-
-<div id="loginRegister">
-  <p>if you don't have an account</p>
-  <p>you can <a href="/user/register">register</a> easily</p>
-</div>
-
-<div id="loginArea">
-  <div class="fb-login-button" data-scope="email">Login with Facebook</div>
-  <span id="spanOR">or</span>      
-
-  <form id="formLogin" action="login/login" method="get">
-      <div class="errorBox"></div>
-      <input type="text" name="username" class="loginInput" placeholder="Email Address"/>
-      <input type="password" name="password" class="loginInput" placeholder="Password"/>
-      <a href="">Forget your password?</a>
-      <input type="submit" value="login" class="button" />
-  </form>
+<div class="grid_12">
+	<div id="fb-root"></div>   
+	<h2 class="loginWelcome">Welcome back to the place where you're heard!</h2>
+	<div id="loginRegister">
+  		<p>If you don't have an account you can <a href="/user/register">register</a> easily.</p>
+	</div>
+	<div id="loginArea">
+  		<div class="fb-login-button" data-scope="email">Login with Facebook</div>
+  		<span id="spanOR">or</span>      
+		<form id="formLogin" action="login/login" method="get">
+      		<div class="errorBox"></div>
+      		<input type="text" name="username" class="loginInput" placeholder="Email Address"/>
+      		<input type="password" name="password" class="loginInput" placeholder="Password"/>
+      		<a href="">Forget your password?</a>
+      		<input type="submit" value="login" class="button" />
+  		</form>
+	</div>
 </div>

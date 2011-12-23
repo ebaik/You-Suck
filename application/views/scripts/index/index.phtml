@@ -1,52 +1,46 @@
-	
-	   			 
-	   		<div class="grid_12">
-	   			<div class="upper">
-	   			 <hgroup class="complaints">
-	   			 	<h2>Making Complaints Useful</h2>
-	   			 	<h3><span>Don't let your voice go unheard. Tell others and </span>spread the word to change stuff for the better.</h3>
-	   			 </hgroup>
-	   			 <div class="suffer feature">
-  	   			   <img src="img/suffer.png" alt="Suffer">
-  	   			   <div class="subhead">Don't suffer in silence</div>
-  	   			   <p><a href="">Tell the story</a> of how you were wronged to the world.</p>
-     			   </div>
-     			   <div class="heard feature">
-  	   			   <img src="img/heard.png" alt="Suffer">
-  	   			   <div class="subhead">Be heard with others</div>
-  	   			   <p>Obtain <a href="">critical mass</a> by submitting your complaint.</p>
-  	   			 </div>
-  	   			 <div class="right feature">
-    	   		   <img src="img/right.png" alt="Suffer">
-    	   		   <div class="subhead">Set things right</div>
-    	   		   <p>Hold <a href="">companies</a> responsible so it doesn't happen again.</p>
-    	   		 </div>
-	   			 </div>
-   			 </div>
-   			 	<div id="complaints_list" class="grid_8">
-   			 		<div class="comps">
-	   			 		<h2>Complaints</h2>
-	   			 		
-	   			 		<?php foreach($this->posts as $post) {?>
-                                                <div class='recentComplaints'>
-                                                    <div class='userIcon'>
-                                                            <figure><img src='img/people/blank_face.jpg'/><figcaption><?php echo $post['firstname'];?></figcaption></figure>
-                                                    </div>
-                                                    <div class='blurb'><h4><a href='<?php echo "http://yousuckapp.com:8083/analytics/show?company=".$post['company_name']."&scale=day";?>'><?php echo $post['company_name'];?> You Suck</a></h4><p><?php echo $post['text'];?></p><p class='read-more'><a href="/post/item?id=<?php echo $post['id'];?>" class='button'>Read More</a></p></div>
-                                                    <div class='totalComments'><span>7</span>comments</div>
-				   		</div>
-                                                <?php }?>
-	   			 		
-	   			 		
-   			 		</div>
-   			 	</div>
-   			 	<div class="grid_4">
-   			 		<div class="posts">
-	   			 		<a href="post" class="button postComplaint">Post Complaint</a>
-	   			 		<p class="aboutYouSuck">About You Suck</p>
-	   			 		<p class="mission">Our mission is to be the place where negative reviews or complaints about any company can be posted and broadcasted. So that as a group, the individual consumer has a voice to influence businesses to change for the better.</p>
-	   			 		<p><a href="">More about us</a></p>
-	   			 		<p class="appStore"><img src="img/appstore.png"/></p>
-   			 		</div>
-   			 	</div>
+<div class="upper">
+	<hgroup class="complaints">
+   		<h2>Making Complaints Useful</h2>
+   		<h3><span>Don't let your voice go unheard. Tell others and </span>spread the word to change stuff for the better.</h3>
+  	</hgroup>
+	<div class="suffer feature">
+   		<img src="img/suffer.png" alt="Suffer" />
+   		<div class="subhead">Don't suffer in silence</div>
+   		<p><a href="">Tell the story</a> of how you were wronged to the world.</p>
+ 	</div>
+	<div class="heard feature">
+		<img src="img/heard.png" alt="Suffer">
+		<div class="subhead">Be heard with others</div>
+		<p>Obtain <a href="">critical mass</a> by submitting your complaint.</p>
+	</div>
+	<div class="right feature">
+	  	<img src="img/right.png" alt="Suffer">
+	   	<div class="subhead">Set things right</div>
+	   	<p>Hold <a href="">companies</a> responsible so it doesn't happen again.</p>
+	 </div>
+</div>
+<div id="complaints_list" class="grid_8">
+ 	<div class="comps">
+	 	<h2>Complaints</h2>
+ 		<?php foreach($this->posts as $post) {?>
+        	<div class='recentComplaints'>
+             	<div class='userIcon'>
+                	<figure><img src='img/people/blank_face.jpg'/><figcaption><?php echo $post['firstname'];?></figcaption></figure>
+             	</div>
+           		<div class='blurb'><h4><a href='<?php echo "http://yousuckapp.com:8083/analytics/show?company=".$post['company_name']."&scale=day";?>'><?php echo $post['company_name'];?> You Suck</a></h4><p><?php echo $post['text'];?></p><p class='read-more'><a href="/post/item?id=<?php echo $post['id'];?>" class='button'>Read More</a></p></div>
+         		<div class='totalComments'><span>7</span>comments</div>
+   			</div>
+ 		<?php }?>
+ 	</div>
+</div>
+<div class="grid_4">
+ 	<div class="posts">
+	 	<a href="post" class="button postComplaint">Post Complaint</a>
+	 	<p class="aboutYouSuck">About You Suck</p>
+	 	<p class="mission">Our mission is to be the place where negative reviews or complaints about any company can be posted and broadcasted. So that as a group, the individual consumer has a voice to influence businesses to change for the better.</p>
+	 	<p><a href="">More about us</a></p>
+	 	<p class="appStore"><img src="img/appstore.png"/></p>
+ 	</div>
+</div>
+
    			 	

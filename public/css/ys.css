@@ -137,12 +137,6 @@ button, input {
 	padding: 0 60px;
 	margin-bottom: 40px;
 }
-.comps {
-	padding-left: 60px;
-}
-.posts {
-	padding-right: 60px
-}
 .postComplaint {
 	text-align: center;
 	display: block;
@@ -800,12 +794,8 @@ html body * dd.clear
 	padding:0;
 	margin:10px;
 }
-
-
-
 .trending {
 	font-size: 0.8em;
-	padding-top: 100px;
 }
 
 .trending div {
@@ -889,6 +879,9 @@ html body * dd.clear
     float: left;
     width: 229px;
     height: 40px;
+}
+.loginWelcome {
+	font-family: 'GothamHTFUltra';
 }
 #spanOR {
 	float:left;
