@@ -88,6 +88,48 @@ class PostService {
         }    
         return $data;
     }
+    
+    public function getMorePostsByUser($user_id, $offset=0, $size=10) {
+        
+        $posts = array();
+        if(!empty($user_id)) {
+            $exe = Zend_Registry::get("exe");
+            $em = $exe->getMetaDataEntityManager();
+            $sql = "select posts.id, posts.text, companies.company_name, posts.post_time
+                    from posts join companies on posts.company_id=companies.id
+                    where user_id=$user_id
+                    order by posts.post_time desc
+                    limit $offset,$size";
+            $stmt = $em->getConnection()->prepare($sql);error_log($sql);
+            $stmt->execute();
+            $posts = $stmt->fetchAll(PDO::FETCH_CLASS);
+        }
+        
+        return $posts;
+    }
+    
+    public function getPostByCompanyName($company_name, $offset=0, $size=10) {
+        $posts = array();
+        if(!empty($company_name)) {
+            $exe = Zend_Registry::get("exe");
+            $em = $exe->getMetaDataEntityManager();
+            $sql = "select users.firstname, concat(substring(posts.text, 1, 70), '...') as text, posts.post_time, companies.company_name, posts.id as post_id
+                    from
+                    posts join users on (posts.user_id=users.id)
+                    join companies on (posts.company_id=companies.id)
+                    where
+                    companies.company_name like '%$company_name%'
+                    order by posts.post_time desc
+                    limit $offset, $size;";
+            $stmt = $em->getConnection()->prepare($sql);
+            $stmt->execute();
+            $posts = $stmt->fetchAll(PDO::FETCH_CLASS);
+        }
+        
+        return $posts;
+        
+    }
+    
 
 }
 

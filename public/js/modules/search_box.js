@@ -32,7 +32,7 @@ youSuck.modules.search_box = function(id, controller, renderComplaintsList) {
         
         var redirect_search = function(query) {
             if(query) {
-                window.location.href = window.location.origin+"/post/show?query="+query;
+                window.location.href = 'http://'+window.location.host+"/post/show?query="+query;
             }
         };
         search_form.submit(function(e) {
