@@ -10,14 +10,11 @@
 	   	</div>
 	   	<ul>
 	   		<li><a href="">About</a></li>
-	   		<li><a href="http://blankyousuck.tumblr.com/" target="_new">Blog</a></li>
-	   		<li><a href="">Help</a></li>	
-	   		<li><a href="">Terms</a></li>
 	   		<?php if ( !isset($this->user) || empty($this->user)){ ?>
-	   			<li><a href="/login/default">Log in</a></li>
+	   			<li class="last"><a href="/login/default">Log in</a></li>
          	<?php } else { ?>
           		<li><a href="/post/mypost">My Post</a></li>
-    			<li><a href="/login/logout">Log out</a></li>
+    			<li class="last"><a href="/login/logout">Log out</a></li>
       		<?php } ?>
 	 	</ul>
 	</div>

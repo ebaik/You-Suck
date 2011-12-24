@@ -49,6 +49,8 @@ header ul {
 }
 header li {
 	display: inline-block;
+	padding: 0 10px 0 5px;
+	border-right: 1px solid #68bba8;
 }
 .footerSpacer {
 	height: 100%;
@@ -132,6 +134,9 @@ button, input {
 	display: block;
 	margin:0 auto;
 	max-width: 100%;
+}
+.last {
+	border-right: 0;
 }
 .upper {
 	padding: 0 60px;
