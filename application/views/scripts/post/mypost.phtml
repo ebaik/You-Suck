@@ -1,16 +1,22 @@
 <div id="mypost" class="grid_12">
-    <h3>My Posts</h3>
+    <h1>My Posts</h1>
     <div class="userprofile">
         <img src="../img/people/blank_face.jpg" />
         <span><?php echo $this->user->getFirstName();?></span>
     </div>
-    <div id="post_list">
-        <?php foreach($this->posts as $post) {?>
-        <div class="post_item">
-            <h4><a href="http://yousuckapp.com:8083/analytics/show?company=<?php echo $post->company_name;?>&scale=day"><?php echo $post->company_name;?> You Suck</a><span>Nov 11, 2011</span></h4>
-            <p><?php echo $post->text;?></p>
-            <p class="read-more"><a href="/post/item?id=<?php echo $post->id;?>" class="button">Read More</a></p>
-        </div>
-        <?php }?>
+    <div class="monthPost">
+    	<p class="month"><a href="post_list">November</a></p>
+	    <div id="post_list" class="postList">
+	        <?php foreach($this->posts as $post) {?>
+	        <div class="post_item">
+	        	<div class="nameDate">
+		            <a class="companyName" href="http://yousuckapp.com:8083/analytics/show?company=<?php echo $post->company_name;?>&scale=day"><?php echo $post->company_name;?> You Suck</a>
+		            <time datetime="2011-11-11" class="date">Nov 11, 2011</time>
+	            </div>
+	            <p><?php echo $post->text;?></p>
+	            <p class="read-more"><a href="/post/item?id=<?php echo $post->id;?>" class="button">Read More</a></p>
+	        </div>
+	        <?php }?>
+	    </div>
     </div>    
 </div>    

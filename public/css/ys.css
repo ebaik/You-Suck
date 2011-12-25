@@ -28,6 +28,10 @@ a {
 input[type="search"], input[type="submit"] {
 	-webkit-appearance: none;	
 }
+h1 {
+	margin-top: 0;
+	font-size: 1.5em;
+}
 figure {
 	margin: 0;
 }
@@ -257,16 +261,58 @@ button, input {
 .read-more {
     display: block;
 }
+p.read-more a {
+	display: inline-block;
+}
 .aboutYouSuck {
 	margin-top: 45px;
 }
 .clear {
 	clear: both;
 }
-
 .postComment textarea {
     width: 365px;
     height: 95px;
+}
+.userprofile {
+	margin-bottom: 20px;
+}
+.userprofile img, .userprofile span {
+	display: inline-block;
+	vertical-align: middle;
+}
+.userprofile span {
+	margin-left: 20px;
+}
+.nameDate {
+	overflow: auto;
+}
+.companyName {
+	float: left;
+}
+.date {
+	float: right;
+}
+.postList {
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.monthPost {
+	border: 1px solid #ccc;
+}
+.month {
+	margin: 0;
+    padding: 16px 0 16px 10px;
+    background-image: linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
+	background-image: -o-linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
+	background-image: -moz-linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
+	background-image: -webkit-linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
+	background-image: -ms-linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
+	background-color: #FCB040;    
+}
+.month a {
+	display: block;
+	color: #000;
 }
 
 /*
