@@ -32,5 +32,19 @@ class IndexController extends BaseController
             return false;
         }
     }
+    
+    public function aboutAction() {
+        
+    }
+    
+    public function helpAction() {
+        
+    }
+    
+    public function termsAction() {
+        
+    }
+    
+    
 }
 
