@@ -314,6 +314,9 @@ p.read-more a {
 	display: block;
 	color: #000;
 }
+.post_item {
+	margin-bottom: 30px;
+}
 
 /*
 	960 Grid System ~ Core CSS.
