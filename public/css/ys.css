@@ -299,19 +299,24 @@ p.read-more a {
 }
 .monthPost {
 	border: 1px solid #ccc;
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	border-radius: 10px 10px 0 0;
 }
 .month {
 	margin: 0;
     padding: 16px 0 16px 10px;
-    background-image: linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
-	background-image: -o-linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
-	background-image: -moz-linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
-	background-image: -webkit-linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
-	background-image: -ms-linear-gradient(top, #FCB040 0%, #fff 50%, #FCB040 100%);
-	background-color: #FCB040;    
+    background-image: linear-gradient(top, #ffc 0%, #fcb040 100%);
+	background-image: -o-linear-gradient(top, #ffc 0%, #fcb040 100%);
+	background-image: -moz-linear-gradient(top, #ffc 0%, #fcb040 100%);
+	background-image: -webkit-linear-gradient(top, #ffc 0%, #fcb040 100%);
+	background-image: -ms-linear-gradient(top, #ffc 0%, #fcb040 100%);
+	background-color: #FCB040;
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	border-radius: 10px 10px 0 0;   
 }
 .month a {
-	display: block;
 	color: #000;
 }
 .post_item {

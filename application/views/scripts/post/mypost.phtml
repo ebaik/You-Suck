@@ -5,7 +5,7 @@
         <span><?php echo $this->user->getFirstName();?></span>
     </div>
     <div class="monthPost">
-    	<p class="month"><a href="post_list">November</a></p>
+    	<p class="month"><a href="post_list" class="monthLink">November (2)</a></p>
 	    <div id="post_list" class="postList">
 	        <?php foreach($this->posts as $post) {?>
 	        <div class="post_item">
@@ -19,4 +19,13 @@
 	        <?php }?>
 	    </div>
     </div>    
-</div>    
+</div>
+<script>
+	$(function(){
+		$(".monthLink").click(function(ev){
+			$(".month").next().slideToggle();
+			ev.preventDefault();
+		});
+	});
+	
+</script>    
