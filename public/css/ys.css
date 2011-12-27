@@ -323,9 +323,11 @@ p.read-more a {
 .post_item {
 	margin-bottom: 30px;
 }
-
 .moreposts {
-    text-align: center;
+    overflow: auto;
+}
+.moreposts button {
+	float: right;
 }
 
 /*
