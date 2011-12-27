@@ -18,14 +18,14 @@
 	        </div>
 	        <?php }?>
 	    </div>
-    </div>    
+    </div>      
 </div>
 <script>
 	$(function(){
-		$(".monthLink").click(function(ev){
-			$(".month").next().slideToggle();
+		$(".monthLink").bind("click", toggleSlide);
+		function toggleSlide(ev) {
 			ev.preventDefault();
-		});
+			$(this).parents(".month").next().slideToggle();
+		}
 	});
-	
 </script>    
