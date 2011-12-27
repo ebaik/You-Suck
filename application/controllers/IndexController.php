@@ -33,6 +33,18 @@ class IndexController extends BaseController
         }
     }
     
+    public function morepostsAction() {
+        $offset = $this->_getParam('offset');
+        
+        $ps = new PostService();
+        $posts = $ps->getMorePost($offset);
+                
+        $this->_helper->layout->disableLayout();
+	$this->_helper->viewRenderer->setNoRender(TRUE);  
+        
+        echo json_encode($posts);
+    }
+    
     public function aboutAction() {
         
     }

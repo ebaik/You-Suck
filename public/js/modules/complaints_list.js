@@ -1,5 +1,5 @@
 
-youSuck.modules.complaints_list = function(id) {
+youSuck.modules.complaints_list = function(id, params) {
     
     var substitute = youSuck.common.utils.substitute;
     var complaints_list = $('#'+id);
@@ -16,6 +16,23 @@ youSuck.modules.complaints_list = function(id) {
 //            });
 //            
 //        });
+        
+        $('.moreposts').click(function(e) {
+            var offset = $('div.recentComplaints').size();
+            
+            if(params && params.query) {
+                var query = params.query;
+                $.getJSON('/post/search?query='+query+'&offset='+offset, function(data) {
+                    _this.render(data);
+                });
+            } else {
+                $.getJSON('/index/moreposts?&offset='+offset, function(data) {
+                    _this.render(data);
+                });
+            }
+            
+            
+        });
     };
     
      _this.render = function(dataObj) {
@@ -23,30 +40,33 @@ youSuck.modules.complaints_list = function(id) {
             youSuck.use('templates-complaints_list', function(youSuck) {
                 template = youSuck.templates.complaints_list;
 
-                var html = substitute(template, {'search_results': dataObj});
-                $('#'+id).html(html);
+                var html = substitute(template, {'search_results': dataObj, 'show_view_more': dataObj.length?true:false});
+                $('#'+id+' .moreposts').remove();
+                $('#'+id).append(html);
+                bindUI();
                 // show the readmore 
-                if($('div.recentComplaints')) {
-                    $('div.recentComplaints').each(function(id) {
-
-                        if($(this).height()>110) {
-                            var readMore = $(this).find('p.read-more');
-                            readMore.show();
-                            bindUI();
-                        }
-                    });
-                }
+//                if($('div.recentComplaints')) {
+//                    $('div.recentComplaints').each(function(id) {
+//
+//                        if($(this).height()>110) {
+//                            var readMore = $(this).find('p.read-more');
+//                            readMore.show();
+//                            bindUI();
+//                        }
+//                    });
+//                }
                 
             });
         } else {
             if($('div.recentComplaints')) {
-                $('div.recentComplaints').each(function(id) {
+//                $('div.recentComplaints').each(function(id) {
+//
+//                    if($(this).height()>110) {
+//                        var readMore = $(this).find('p.read-more');
+//                        readMore.show();
+//                    }
+//                });
 
-                    if($(this).height()>110) {
-                        var readMore = $(this).find('p.read-more');
-                        readMore.show();
-                    }
-                });
                 bindUI();
             }
         }
