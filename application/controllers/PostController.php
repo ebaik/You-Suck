@@ -90,8 +90,12 @@ class PostController extends BaseController
     public function searchAction()
     {
         $query = trim($this->_getParam('query'));
+        $offset = $this->_getParam('offset');
+        if(!isset($offset)) {
+            $offset = 0;
+        }
         $ps = new PostService();
-        $posts = $ps->getPostByCompanyName($query);
+        $posts = $ps->getPostByCompanyName($query, $offset);
 
         $this->_helper->layout->disableLayout();
         $this->_helper->viewRenderer->setNoRender(TRUE);

@@ -100,7 +100,7 @@ class PostService {
                     where user_id=$user_id
                     order by posts.post_time desc
                     limit $offset,$size";
-            $stmt = $em->getConnection()->prepare($sql);error_log($sql);
+            $stmt = $em->getConnection()->prepare($sql);
             $stmt->execute();
             $posts = $stmt->fetchAll(PDO::FETCH_CLASS);
         }
@@ -120,7 +120,7 @@ class PostService {
                     where
                     companies.company_name like '%$company_name%'
                     order by posts.post_time desc
-                    limit $offset, $size;";
+                    limit $offset, $size";
             $stmt = $em->getConnection()->prepare($sql);
             $stmt->execute();
             $posts = $stmt->fetchAll(PDO::FETCH_CLASS);

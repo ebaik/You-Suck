@@ -323,6 +323,10 @@ p.read-more a {
 	margin-bottom: 30px;
 }
 
+.moreposts {
+    text-align: center;
+}
+
 /*
 	960 Grid System ~ Core CSS.
 	Learn more ~ http://960.gs/
