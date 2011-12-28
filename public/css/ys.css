@@ -17,7 +17,6 @@
     font-style: normal;
 }
 /* LAYOUT 960 Grid System ~ Core CSS. Learn more ~ http://960.gs/. Licensed under GPL and MIT. */
-/* Containers ----------------------------------------------------------*/
 .container_12 {
 	width: 92%;
 	margin-left: 4%;
@@ -173,12 +172,17 @@ h1 {
 	margin-top: 0;
 	font-size: 1.5em;
 }
+h3 {
+  margin: 0;
+}
 figure {
 	margin: 0;
 }
-header {
-	background-color: #F15B3F;
+header.main {
 	overflow: auto;
+	margin-bottom: 30px;
+	background:transparent url(../img/logo_splash.png) no-repeat -21px -25px;
+	color: white;
 }
 #youSuck, .youSuck {
   margin: 0 auto;
@@ -298,7 +302,11 @@ button, input {
 .feature {
 	display: inline-block;
 	vertical-align: top;
-  	width: 30%;
+  	width: 25%;
+  	margin-right: 5%;
+}
+.right.feature {
+	margin-right: 0;
 }
 .postComplaint {
 	text-align: center;
@@ -307,10 +315,6 @@ button, input {
 .recentComplaints {
 	overflow: auto;
 	margin-bottom: 30px;
-}
-.main {
-	margin-bottom: 30px;
-	color: #fff;
 }
 .main h1 {
 	margin: 8px 50px 0 11px;
@@ -322,12 +326,17 @@ button, input {
 .main a {
 	color: #fff;
 }
+.main li a {
+  font-size: 0.75em;
+  color: #67A595;
+}
 .complaints h2 {
 	margin-top: 0;
 	margin-bottom: 5px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	
+	font-family: 'GothamHTFUltra';
+	color: #3E2E1D;
 }
 .complaints span {
 	display: block;
@@ -394,10 +403,27 @@ button, input {
 	width: 34px;
 	padding: 8px;
 	font-size: 2em;
+	font-family: 'GothamHTFUltra';
+  	color: #fff;
 	background-color: #FCB040;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
+	-moz-text-shadow: 0 1px black;
+	-webkit-text-shadow: 0 1px black;
+	text-shadow: 0 1px black;
+}
+.feature .subhead {
+  font-family: 'GothamHTFUltra';
+  text-transform: uppercase;
+  color: #3E2E1D;
+  font-size: 1.5em;
+  margin-right: 20px;
+}
+.feature p {
+  margin: 5px 0;
+  color: #3E2E1D;
+  font-size: 0.875em;
 }
 .vent {
 	text-transform: uppercase;
@@ -410,7 +436,6 @@ button, input {
 	margin-right: 1%;
 	width: 59%;
 }
-
 .blurb p:first-child {
     max-height: 110px;
     position: relative;
@@ -491,7 +516,6 @@ p.read-more a {
 #complaints_form {
 	font-size:0.8em;
 }
-
 #complaints_form textarea {
 	width: 490px;
 	height: 300px;
@@ -703,40 +727,3 @@ p.read-more a {
 	}
 }
 /* END MQ -------------------------------------------------------*/
-
-
-header{
-  background:transparent url(../img/logo_splash.png) no-repeat -21px -25px;
-}
-.main li a {
-  font-size:12px;
-  color:#67A595;
-}
-h3{
-  margin:0
-}
-
-.complaints h2{
-  font-family: 'GothamHTFUltra';
-  text-transform: uppercase;
-  color:#3E2E1D;
-}
-.totalComments span{
-  font-family: 'GothamHTFUltra';
-  color: white;
-  text-shadow: 0 1px black;
-}
-
-.feature .subhead{
-  font-family: 'GothamHTFUltra';
-  text-transform: uppercase;
-  color:#3E2E1D;
-  font-size:24px;
-  margin-right:20px
-}
-.feature p{
-  margin:5px 0;
-  color:#3E2E1D;
-  font-size:14px;
-  margin-right:40px;
-}
