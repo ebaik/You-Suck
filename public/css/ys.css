@@ -379,6 +379,7 @@ button, input {
 	padding: 10px;
 	text-shadow: 0 1px #000;
 	text-decoration: none;
+	cursor: pointer;
 }
 .search {
 	display: inline-block;
