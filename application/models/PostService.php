@@ -70,7 +70,7 @@ class PostService {
     public function getMorePost($offset=0, $size=10) {
         $exe = Zend_Registry::get("exe");
         $em = $exe->getMetaDataEntityManager();
-        $sql = "select p.id, p.text, if(p.anonymous_flag, 'Anonymous', u.firstname) as firstname, c.company_name 
+        $sql = "select p.id, p.text, if(p.anonymous_flag, 'Anonymous', u.firstname) as firstname, if(u.fbuid, concat('http://graph.facebook.com/', u.fbuid, '/picture?type=small'), 'img/people/blank_face.jpg') as profile_photo,c.company_name 
                 from 
                     posts p join users u on u.id=p.user_id
                     join companies c on p.company_id=c.id
@@ -85,6 +85,7 @@ class PostService {
             $data[$i]['text'] = substr($rec['text'], 0, 70).'...';
             $data[$i]['firstname'] = $rec['firstname'];
             $data[$i]['company_name'] = $rec['company_name'];
+            $data[$i]['profile_photo'] = $rec['profile_photo'];
         }    
         return $data;
     }
