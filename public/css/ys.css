@@ -179,6 +179,7 @@ figure {
 	margin: 0;
 }
 header.main {
+	position: relative;
 	overflow: auto;
 	margin-bottom: 30px;
 	background:transparent url(../img/logo_splash.png) no-repeat -21px -25px;
@@ -311,7 +312,9 @@ button, input {
 }
 .recentComplaints {
 	overflow: auto;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
 }
 .main h1 {
 	float: left;
@@ -666,8 +669,23 @@ p.read-more a {
 }
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
+	.grid_1,
+	.grid_2,
+	.grid_3,
+	.grid_4,
+	.grid_5,
+	.grid_6,
+	.grid_7,
+	.grid_8,
+	.grid_9,
+	.grid_10,
+	.grid_11,
+	.grid_12 {
+		display: block;
+		float: none;
+	}
 	.container_12 .grid_8, .container_12 .grid_4 {
-		width: 100%
+		width: 98%;
 	}
 	.main h1 {
 		display: block;
@@ -678,53 +696,80 @@ p.read-more a {
 	.tasks {
 		float: none;
 		display: block;
-		overflow: auto;
-		margin-top: 0;
+		margin-top: 40px;
 	}
 	.searchStuff {
-		float: right;
+		float: none;
+		display: block;
 		width: 100%;
+	}
+	header ul {
+		position: absolute;
+		top: 0;
+		right: 0;
+		float: none; 
+		display: block;
+		margin: 15px 0 0 0;
 	}
 	.search {	
 		display: block;
 	}
+	.search input {
+		margin-right: 3%;
+		height: 40px;
+		width: 75%;
+	}
+	.magnify {
+		padding: 9px 7%;
+		font-size: 1.5em;
+	}
 	.vent {
 		display: block;
-		margin-top: 10px;
+		margin-top: 15px;
 		text-align: center;
 	}
 	header.main, .tasks, .upper {
 		margin-bottom: 10px;
 	}
-	.feature {
-	    display: block;
-	    margin-right: 0;
-	    vertical-align: top;
-	    width: 100%;
+	.userIcon {
+	    margin-right: 4%;
 	}
-	.mission, .aboutYouSuck, #postUserInfo b {
+	.blurb {
+	    margin-right: 0;
+	    width: 75%;
+	}
+	.mission, 
+	.aboutYouSuck, 
+	#postUserInfo b, 
+	.upper,
+	.footer, 
+	.posts p {
 		display: none;
+	}
+	.postComplaint {
+		margin: 20px 0;
 	}
 	.you, .complaints span {
 		display: inline;
 	}
-	.search input {
-		width: 180px;
-	}
-	.upper, .comps, .posts {
+	.comps, .posts {
 		padding: 0;
 	}
 	.appStore {
 		margin-top: 15px;
 	}
-	.postComplaint {
-		width: 99%;
-	}
 	.complaints {
 		margin-top: 15px;
 	}
-	.blurb {
-		width: 50%;
+	.totalComments {
+    	float: none;
+    	display: block;
+    	clear: both;
+    	text-align: right;
+	}
+	.totalComments span {
+		display: inline-block;
+		margin-right: 5px;
 	}
 	.company {
 		width: 250px;
@@ -744,9 +789,6 @@ p.read-more a {
 	}
 	#postUserInfo ul {
 		margin-left: 0;
-	}
-	.tasks {
-		margin-top: 80px;
 	}
 	.suffer img, .heard img, .right img {
 		width: 40%;
