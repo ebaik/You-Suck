@@ -315,6 +315,9 @@ button, input {
 	margin-bottom: 20px;
 	padding: 10px;
 	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 .main h1 {
 	float: left;
@@ -401,20 +404,20 @@ button, input {
 }
 .totalComments {
 	text-align: center;
+	float: right;
 }
 .totalComments span {
 	margin: 0 auto 10px;
 	display: block;
 	text-align: center;
-	width: 34px;
 	padding: 8px;
 	font-size: 2em;
 	font-family: 'GothamHTFUltra';
   	color: #fff;
 	background-color: #FCB040;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
 	-moz-text-shadow: 0 1px black;
 	-webkit-text-shadow: 0 1px black;
 	text-shadow: 0 1px black;
@@ -435,12 +438,12 @@ button, input {
 	text-transform: uppercase;
 }
 .userIcon {
-	margin-right: 1%;
-	width: 19%;
+	margin-right: 10px;
+	width: 50px;
 }
 .blurb {
-	margin-right: 1%;
-	width: 59%;
+	margin-right: 10px;
+	width: 420px;
 }
 .blurb h4 {
 	margin-top: 0;
