@@ -191,9 +191,6 @@ header.main {
 .searchStuff {
 	float: left;
 }
-header h1 {
-	float: left;
-}
 header ul {
 	float: right;
 	list-style-type: none;
@@ -317,6 +314,7 @@ button, input {
 	margin-bottom: 30px;
 }
 .main h1 {
+	float: left;
 	margin: 8px 50px 0 11px;
 	font-family: 'GothamHTFUltra';
   	text-transform: uppercase;
@@ -436,6 +434,9 @@ button, input {
 .blurb {
 	margin-right: 1%;
 	width: 59%;
+}
+.blurb h4 {
+	margin-top: 0;
 }
 .blurb p:first-child {
     max-height: 110px;
@@ -663,28 +664,52 @@ p.read-more a {
 .container_12 .grid_4.trending {
     float: right;
 }
-/* MQ -------------------------------------------------------*/
+/* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
 	.container_12 .grid_8, .container_12 .grid_4 {
 		width: 100%
 	}
+	.main h1 {
+		display: block;
+		float: none;
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+	.tasks {
+		float: none;
+		display: block;
+		overflow: auto;
+		margin-top: 0;
+	}
+	.searchStuff {
+		float: right;
+		width: 100%;
+	}
+	.search {	
+		display: block;
+	}
 	.vent {
-		width: 270px;
-		display: inline-block;
+		display: block;
 		margin-top: 10px;
 		text-align: center;
 	}
-	.main, .tasks, .upper {
+	header.main, .tasks, .upper {
 		margin-bottom: 10px;
 	}
-	.magnify, .mission, .aboutYouSuck, #postUserInfo b {
+	.feature {
+	    display: block;
+	    margin-right: 0;
+	    vertical-align: top;
+	    width: 100%;
+	}
+	.mission, .aboutYouSuck, #postUserInfo b {
 		display: none;
 	}
 	.you, .complaints span {
 		display: inline;
 	}
 	.search input {
-		width: 280px;
+		width: 180px;
 	}
 	.upper, .comps, .posts {
 		padding: 0;
