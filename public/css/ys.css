@@ -524,6 +524,9 @@ p.read-more a {
 .moreposts button {
 	float: right;
 }
+#complaints_form {
+	margin-top: 25px;
+}
 #complaints_form textarea {
 	width: 490px;
 	height: 300px;
@@ -752,7 +755,8 @@ p.read-more a {
 	#postUserInfo b, 
 	.upper,
 	.footer, 
-	.posts p {
+	.posts p,
+	.trending {
 		display: none;
 	}
 	.postComplaint {
@@ -789,9 +793,6 @@ p.read-more a {
 	}
 	#postUserInfo {
 		width: 250px;
-	}
-	.trending {
-		padding-top: 10px;
 	}
 	#postSubmit {
 		width: 100%;
