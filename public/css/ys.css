@@ -169,10 +169,13 @@ input[type="search"], input[type="submit"] {
 	-webkit-appearance: none;	
 }
 h1 {
+	font-family: 'GothamHTFUltra';
 	margin-top: 0;
-	font-size: 1.5em;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	color: #3E2E1D;
 }
-h3 {
+h2 {
   margin: 0;
 }
 figure {
@@ -181,7 +184,7 @@ figure {
 header.main {
 	position: relative;
 	overflow: auto;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	background:transparent url(../img/logo_splash.png) no-repeat -21px -25px;
 	color: white;
 }
@@ -275,6 +278,7 @@ button, input {
 }
 .comps h2 {
 	margin-top: 0;
+	margin-bottom: 10px;
 }
 .userComment {
 	margin-bottom: 20px;
@@ -319,7 +323,7 @@ button, input {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
-.main h1 {
+.main .logo {
 	float: left;
 	margin: 8px 50px 0 11px;
 	font-family: 'GothamHTFUltra';
@@ -334,14 +338,6 @@ button, input {
   font-size: 0.75em;
   color: #67A595;
 }
-.complaints h2 {
-	margin-top: 0;
-	margin-bottom: 5px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-family: 'GothamHTFUltra';
-	color: #3E2E1D;
-}
 .complaints span {
 	display: block;
 }
@@ -350,7 +346,10 @@ button, input {
 	margin-top: 10px;
 	margin-bottom: 35px;
 }
-.complaints h3 {
+.complaints h1 {
+	margin-bottom: 5px;
+}
+.complaints h2 {
 	margin-top: 0;
 	font-size: 1em;
 	font-weight: normal;
@@ -525,9 +524,6 @@ p.read-more a {
 .moreposts button {
 	float: right;
 }
-#complaints_form {
-	font-size:0.8em;
-}
 #complaints_form textarea {
 	width: 490px;
 	height: 300px;
@@ -558,6 +554,9 @@ p.read-more a {
 	padding:0;
 	margin:10px;
 }
+.label {
+	display: block;
+}
 .trending {
 	font-size: 0.8em;
 }
@@ -565,9 +564,9 @@ p.read-more a {
 	margin: 7px 0 0 0;
 	height:50px;
 }
-.trending h5, #complaints_form h5 {
+.trending h5 {
 	margin: 10px 0 5px 0;
-	font-size:0.9em;
+	font-size: 0.9em;
 }
 
 .trending em {
@@ -671,6 +670,9 @@ p.read-more a {
 	display:block;
 
 }
+.company {
+	margin-bottom: 15px;
+}
 .container_12 .grid_4.trending {
     float: right;
 }
@@ -694,7 +696,7 @@ p.read-more a {
 	.container_12 .grid_8, .container_12 .grid_4 {
 		width: 98%;
 	}
-	.main h1 {
+	.main .logo {
 		display: block;
 		float: none;
 		margin-right: 0;
