@@ -55,13 +55,14 @@
     </div>
 
 <?php if(!($this->user)) {?>  
-	<div class="container_12">
-		<div class="grid_3"><a href="/login/default">Login</a></div>
-	   	<div class="grid_1">or</div>
-	  	<div class="grid_8">
-	            <input type="text" name="name" class="" placeholder="Name" value=""/>
-	            <input type="text" name="email" class="" placeholder="Email" value=""/>
-	            <input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
+	<div class="grid_12 clearfix loginModule">
+		<p class="or first"><a href="/login/default">Login</a><span>or</span></p>
+	  	<div class="login">
+	  		<label for="name" class="accessAid">Name</label>
+            <input type="text" id="name" name="name" class="" placeholder="Name" value="" />
+            <label for="email" class="accessAid">Email</label>
+            <input type="text" id="email" name="email" class="" placeholder="Email" value="" />
+            <input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
 	 	</div>
 	</div>
 <?php }?>

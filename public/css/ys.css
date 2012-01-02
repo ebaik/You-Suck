@@ -541,11 +541,6 @@ p.read-more a {
 	float: left;
 	margin: 0 5px 0 0;
 }
-
-#postSubmit {
-	float: right;
-}
-
 #suggestion {
 	margin-top: 0;
 	font-size:1.5em;
@@ -671,13 +666,50 @@ p.read-more a {
 	padding:0;
 	width:100%;
 	display:block;
-
 }
 .company {
 	margin-bottom: 15px;
 }
 .container_12 .grid_4.trending {
     float: right;
+}
+.loginModule {
+	margin-top: 20px;
+}
+.or, .login {
+	float: left;
+}
+.or {
+	width: 25%;
+	margin-right: 5%;
+}
+.login {
+	width: 30%;
+}
+.login input[type=text] {
+	display: block;
+	float: right;
+	margin-bottom: 10px;
+	border: 1px solid #999;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #939393;
+    height: 30px;
+    padding: 5px;
+}
+.login .button {
+	float: right;
+}
+.or a {
+	float: left;
+}
+.or span {
+	float: right;
+	color: #3B5998;
+    font-family: 'GothamHTFUltra';
+    font-size: 1.3em;
+    text-transform: uppercase;
 }
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
