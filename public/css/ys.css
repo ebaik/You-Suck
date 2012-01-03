@@ -498,7 +498,7 @@ p.read-more a {
     background-image: linear-gradient(top, #ffc 0%, #fcb040 100%);
 	background-image: -o-linear-gradient(top, #ffc 0%, #fcb040 100%);
 	background-image: -moz-linear-gradient(top, #ffc 0%, #fcb040 100%);
-	background-image: -webkit-linear-gradient(top, #ffc 0%, #fcb040 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc), to(#fcb040));
 	background-image: -ms-linear-gradient(top, #ffc 0%, #fcb040 100%);
 	background-color: #FCB040;
 	-webkit-border-radius: 10px 10px 0 0;
