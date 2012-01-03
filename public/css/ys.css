@@ -828,7 +828,8 @@ p.read-more a {
 	#loginRegister {
 		margin-bottom: 20px;
 	}
-	.defaultLogin {
+	.mob {
+		margin-bottom: 20px;
 		display: block;
 		width: 100%;
 	}
