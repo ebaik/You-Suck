@@ -1,18 +1,21 @@
-<div class="grid_12">
+<div class="grid_12" clearfix loginModule>
 	<div id="fb-root"></div>   
-	<h2 class="loginWelcome">Welcome back to the place where you're heard!</h2>
+	<h1 class="loginWelcome">Welcome back to the place where you're heard!</h1>
 	<div id="loginRegister">
   		<p>If you don't have an account you can <a href="/user/register">register</a> easily.</p>
 	</div>
-	<div id="loginArea">
+	<div id="loginArea" class="clearfix"> 
   		<div class="fb-login-button" data-scope="email">Login with Facebook</div>
-  		<span id="spanOR">or</span>      
-		<form id="formLogin" action="login/login" method="get">
+  		<div class="defaultOr">or</div>
+  		<form id="formLogin" action="login/login" method="get" class="login clearfix">
       		<div class="errorBox"></div>
-      		<input type="text" name="username" class="loginInput" placeholder="Email Address"/>
-      		<input type="password" name="password" class="loginInput" placeholder="Password"/>
-      		<a href="">Forget your password?</a>
-      		<input type="submit" value="login" class="button" />
+      		<label for="username" class="accessAid">Email</label>
+      		<input type="text" name="username" id="username" placeholder="Email Address"/>
+      		<label for="password" class="accessAid"></label>
+      		<input type="password" id="password" name="password" placeholder="Password"/>
+      		<p class="forgot"><a href="">Forget your password?</a></p>
+      		<label for="login" class="accessAid">Log in</label>
+      		<input type="submit" value="login" class="button defaultLogin" id="login" />
   		</form>
 	</div>
 </div>

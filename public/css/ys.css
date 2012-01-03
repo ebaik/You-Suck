@@ -615,13 +615,9 @@ p.read-more a {
 }
 .fb-login-button {
     float: left;
-    width: 229px;
-    height: 40px;
+    width: 189px;
 }
-.loginWelcome {
-	font-family: 'GothamHTFUltra';
-}
-#spanOR {
+#spanOR, .defaultOr {
 	float:left;
 	margin: 0px 50px 0 10px;
 	color: #3b5998;
@@ -629,36 +625,12 @@ p.read-more a {
 	font-family: 'GothamHTFUltra';
 	text-transform: uppercase;
 }
-#formLogin {
-	float: left;
-	width: 250px;
+.forgot {
+	margin-top: 0;
 }
-
-#formLogin input{
-	float: right;
-	margin: 0 0 10px 0;
-}
-
-.loginInput {
-	width: 100%;
-	color: #939393;
-	height: 30px;
-	padding:5px;
-	font-size:0.9em;
-	-moz-border-radius:5px;
-	-webkit-border-radius: 5px;
-	border: 1px solid #999;
-}
-
-#formLogin a, #formLogin a:visited {
+.forgot a {
 	color: #333333;
-	text-decoration: none;
 	font-size:0.8em;
-	float:left;
-	margin: 5px 0 30px 0;
-	padding:0;
-	width:100%;
-	display:block;
 }
 .company {
 	margin-bottom: 15px;
@@ -677,11 +649,10 @@ p.read-more a {
 	margin-right: 5%;
 }
 .login {
-	width: 25%;
+	width: 30%;
 }
-.login input[type=text] {
+.login input[type=text], .login input[type=password] {
 	display: block;
-	float: right;
 	margin-bottom: 10px;
 	border: 1px solid #999;
 	-webkit-border-radius: 5px;
@@ -690,9 +661,6 @@ p.read-more a {
 	color: #939393;
     height: 30px;
     padding: 5px;
-}
-.login .button {
-	float: right;
 }
 .or a {
 	float: left;
@@ -703,6 +671,10 @@ p.read-more a {
     font-family: 'GothamHTFUltra';
     font-size: 1.3em;
     text-transform: uppercase;
+}
+.errorBox {
+	margin: 10px 0;
+	color: #C02F0B;
 }
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
@@ -717,7 +689,8 @@ p.read-more a {
 	.grid_9,
 	.grid_10,
 	.grid_11,
-	.grid_12 {
+	.grid_12,
+	.defaultOr, .fb-login-button {
 		display: block;
 		float: none;
 	}
@@ -843,11 +816,21 @@ p.read-more a {
 	.or a {
 		margin-bottom: 10px;
 	}
-	.login input[type="text"] {
+	.login input[type="text"], .login input[type="password"]{
 		width: 96%;
 	}
 	.loginModule {
 		margin-bottom: 20px;
+	}
+	.defaultOr {
+		margin: 15px 0;
+	}
+	#loginRegister {
+		margin-bottom: 20px;
+	}
+	.defaultLogin {
+		display: block;
+		width: 100%;
 	}
 }
 /* END MQ -------------------------------------------------------*/
