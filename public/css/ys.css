@@ -676,6 +676,9 @@ p.read-more a {
 	margin: 10px 0;
 	color: #C02F0B;
 }
+.commentsList {
+	margin-top: 15px;
+}
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
 	.grid_1,
@@ -694,7 +697,10 @@ p.read-more a {
 		display: block;
 		float: none;
 	}
-	.container_12 .grid_8, .container_12 .grid_4 {
+	.container_12 .grid_8, 
+	.container_12 .grid_4,
+	.container_12 .grid_3,
+	.container_12 .grid_9 {
 		width: 98%;
 	}
 	.main .logo {
@@ -832,6 +838,9 @@ p.read-more a {
 		margin-bottom: 20px;
 		display: block;
 		width: 100%;
+	}
+	.commentsList {
+		margin-top: 30px;
 	}
 }
 /* END MQ -------------------------------------------------------*/

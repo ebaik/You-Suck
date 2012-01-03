@@ -1,11 +1,11 @@
-<h1 class="accessAid">About company page</h1>
+<h1>[Title of post]</h1>
 <div class="grid_9">
 	<p class="first"><?php echo $this->post->getText();?></p>
 </div>
 <div class="grid_3">
 	<a href="" class="button">Flag for abuse</a>
 </div> 
-<div id="comments_list" class="grid_12">
+<div id="comments_list" class="grid_12 commentsList">
 	<h2>Comments</h2>
             <?php foreach($this->comments as $comment) {?>
             <div class="userComment">
