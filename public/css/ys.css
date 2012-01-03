@@ -679,6 +679,9 @@ p.read-more a {
 .commentsList {
 	margin-top: 15px;
 }
+.analytics {
+	clear: both;
+}
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
 	.grid_1,
