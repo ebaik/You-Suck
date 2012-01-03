@@ -1,17 +1,19 @@
 <div class="grid_12">
-	<h2 class="loginWelcome">We're here to help you get heard, welcome!</h2>
-	<div id="loginRegister">
-	  <p>If you already have an account you can just <a href="/login/default">login</a>.</p>
-	</div>
+	<div id="fb-root"></div>   
+	<h1>We're here to help you get heard, welcome!</h1>
+	<p id="loginRegister">If you already have an account you can just <a href="/login/default">login</a>.</p>
 	<div id="loginArea">
 	  	<div class="fb-login-button" data-scope="email">Login with Facebook</div>
-	  	<span id="spanOR">or</span>      
-	  	<form id="formLogin" action="/user/registersubmit" method="POST">
+	  	<div class="defaultOr">or</div>      
+	  	<form id="formLogin" action="/user/registersubmit" method="POST" class="login clearfix">
 	      	<div class="errorBox"></div>
-	      	<input type="text" name="first_name" class="loginInput" placeholder="Your Name" />
-	      	<input type="text" name="email" class="loginInput" placeholder="Email Address" />
-	      	<input type="password" name="password" class="loginInput" placeholder="Password" />
-	      	<input type="submit" value="Register" class="button" />
+	      	<label for="firstName" class="accessAid">First Name</label>
+	      	<input type="text" name="first_name" id="firstName" placeholder="Your Name" />
+	      	<label for="email" class="accessAid">Email</label>
+	      	<input type="text" name="email" id="email" placeholder="Email Address" />
+	      	<label for="password" class="accessAid">Password</label>
+	      	<input type="password" name="password" id="password" placeholder="Password" />
+	      	<input type="submit" value="Register" class="button" id="register" />
 	  	</form>
 	</div>
 </div>
