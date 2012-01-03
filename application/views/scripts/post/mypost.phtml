@@ -1,8 +1,7 @@
 <div id="mypost" class="grid_12">
-    <h1>My Posts</h1>
+    <h1><?php echo $this->user->getFirstName();?>'s Posts</h1>
     <div class="userprofile">
         <img src="../img/people/blank_face.jpg" />
-        <span><?php echo $this->user->getFirstName();?></span>
     </div>
     <div class="monthPost">
     	<p class="month"><a href="post_list" class="monthLink">November (2)</a></p>
