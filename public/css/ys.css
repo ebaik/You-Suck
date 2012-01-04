@@ -459,7 +459,7 @@ button, input {
 }
 .blurb {
 	margin-right: 1.669449081803%;
-	width: 70.1168614357262%
+	width: 70.1168614357262%;
 }
 .blurb h4 {
 	margin-top: 0;
@@ -869,5 +869,13 @@ p.read-more a {
 		position: absolute;
 		top: 0;
 		right: 0;
+	}
+	.userIcon {
+		margin-right: 1.669449081803%;
+		width: 12.347245409015%;
+	}
+	.blurb {
+		margin-right: 1.669449081803%;
+		width: 66.1168614357262%;
 	}
 }
