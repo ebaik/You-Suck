@@ -692,6 +692,10 @@ p.read-more a {
 .analytics {
 	clear: both;
 }
+.flag {
+	display: block;
+	text-align: center;
+}
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
 	.grid_1,
@@ -858,6 +862,23 @@ p.read-more a {
 }
 /* Tablets-----------------------------------------*/
 @media screen and (min-device-width: 321px) and (max-device-width: 768px) {
+	.grid_1,
+	.grid_2,
+	.grid_3,
+	.grid_5,
+	.grid_6,
+	.grid_7,
+	.grid_9,
+	.grid_10,
+	.grid_11,
+	.grid_12 {
+		display: block;
+		float: none;
+	}
+	.container_12 .grid_3,
+	.container_12 .grid_9 {
+		width: 98%;
+	}
 	.tasks {
 		float: left;
 		display: block;
@@ -877,5 +898,21 @@ p.read-more a {
 	.blurb {
 		margin-right: 1.669449081803%;
 		width: 66.1168614357262%;
+	}
+	.trending {
+		display: none;
+	}
+	.commentsList {
+	    margin-top: 20px;
+	}
+	.flag {
+		float: right;
+		width: 35%;
+	}
+	#loginArea {
+		overflow: auto;
+	}
+	.footer {
+		overflow: auto;
 	}
 }
