@@ -29,7 +29,7 @@ class CompanyService {
 
     public function getCompany($id){
         $exe = Zend_Registry::get("exe");
-        return $exe->getMetaDataObject('Company', $id);
+        return $exe->getMetaDataObject('Companies', $id);
     }
 
     public function getCompanyByName($name){
