@@ -105,7 +105,8 @@ class PostController extends BaseController
     
     public function showAction()
     {
-        
+        $company_name = trim($this->_getParam('query'));
+        $this->view->company_name = $company_name;
     }
     
     public function itemAction()
