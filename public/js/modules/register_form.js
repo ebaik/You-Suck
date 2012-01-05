@@ -1,7 +1,6 @@
 
 
 youSuck.modules.register_form = function(id) {
-    console.log('in register form');
     var register_form = $('#'+id);
     var error_box = $('#'+id+' .errorBox');
     var input_first_name = $('#'+id+' input[name="first_name"]');

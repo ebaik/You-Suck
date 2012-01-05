@@ -23,9 +23,9 @@ youSuck.modules.login_form = function(id) {
     bindUI = function() {
         login_form.submit(function(e) {
             e.preventDefault();
-            console.log('submit');
-            console.log(username.val());
-            console.log(password.val());
+//            console.log('suconsole.logbmit');
+//            console.log(username.val());
+//            console.log(password.val());
             if(username.val() && password.val()) {
                 $.post('/login/auth', {
                     'username': username.val(),

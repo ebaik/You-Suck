@@ -8,7 +8,7 @@ youSuck.controllers.post_show = new function() {
         var complaints_list_id = 'complaints_list';
         var complaints_list;
         var search_box_id = 'search_box';
-        var renderComplaintsList = function(query) {console.log('renderComplaintsList', query);
+        var renderComplaintsList = function(query) {
             $.getJSON('/post/search?query='+query, function(data) {
                     complaints_list = new youSuck.modules.complaints_list(complaints_list_id, {'query': query});
                     complaints_list.render(data);

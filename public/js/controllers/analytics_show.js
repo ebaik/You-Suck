@@ -13,7 +13,7 @@ function drawChart() {
         var company = $.query.get('company');
         var scale = $.query.get('scale');
         $.getJSON('/analytics/getdata?company='+company+'&scale='+scale, function(response) {
-            console.log(response);
+            //console.log(response);
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Day');
             data.addColumn('number', 'Complaints');
@@ -49,7 +49,7 @@ function drawChart() {
 
 
 youSuck.controllers.analytics_show = new function() {
-    console.log('in analytics show');
+    //console.log('in analytics show');
     
     /**
      * redering the search box and complaints list
