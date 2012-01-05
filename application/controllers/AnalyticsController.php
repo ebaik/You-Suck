@@ -24,7 +24,8 @@ class AnalyticsController extends BaseController
     }
     
     public function showAction() {
-        
+        $company_name = trim($this->_getParam('company'));
+        $this->view->company_name = $company_name;
     }
     
     public function getdataAction() {
