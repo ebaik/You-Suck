@@ -309,8 +309,14 @@ button, input {
 }
 .upper {
 	padding: 0;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 	text-align: center;
+}
+.indexComplaints {
+	font-family: 'GothamHTFUltra';
+	font-size: 1.375em;
+	text-transform: uppercase;
+	color: #3E2E1D;
 }
 .feature {
 	display: inline-block;
@@ -438,12 +444,13 @@ button, input {
 	text-shadow: 0 1px black;
 }
 .feature .subhead {
-  font-family: 'GothamHTFUltra';
-  text-transform: uppercase;
   text-align: left;
   color: #3E2E1D;
-  font-size: 1.375em;
   margin-right: 20px;
+}
+.feature img {
+	width: 161px;
+	height: 188px;
 }
 .feature p {
   margin: 5px 0;
