@@ -753,6 +753,7 @@ p.read-more a {
 		width: 75%;
 	}
 	.magnify {
+		margin: 0;
 		padding: 9px 7%;
 		font-size: 1.5em;
 	}
