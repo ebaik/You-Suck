@@ -9,7 +9,7 @@ youSuck.controllers.user_register = new function() {
         });
         /* All the events registered */
         FB.Event.subscribe('auth.login', function(response) {
-            console.log('auth.login', response);
+            //console.log('auth.login', response);
             // pass the access token to the server
             var access_token = response.authResponse.accessToken;
             if(access_token) {
@@ -25,20 +25,20 @@ youSuck.controllers.user_register = new function() {
             
         });
         FB.Event.subscribe('auth.logout', function(response) {
-         console.log('auth.logout', response);
+         //console.log('auth.logout', response);
          // do something with response
          //logout();
         });
 
         FB.getLoginStatus(function(response) {
-         console.log('getLoginStatus', response);
+         //console.log('getLoginStatus', response);
          if (response.session) {
              // logged in and connected user, someone you know
              //login();
          }
         });
         FB.api('/me', function(user) {
-         console.log('/me', user);
+         //console.log('/me', user);
         //            if (user) {
         //              var image = document.getElementById('image');
         //              image.src = 'http://graph.facebook.com/' + user.id + '/picture';
@@ -58,7 +58,7 @@ youSuck.controllers.user_register = new function() {
      // render the register form
      
      youSuck.use('modules-register_form', function(youSuck) {
-         console.log('register form loaded');
+         //console.log('register form loaded');
          
          var register_form = new youSuck.modules.register_form('formLogin');
          

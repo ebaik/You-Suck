@@ -184,7 +184,7 @@ var youSuck = {
         if(path) {
             loadingURL = _this.combo+'?f='+path;
             $.getScript(loadingURL, function(data, status) {
-                console.log('finish loading '+loadingURL);
+                //console.log('finish loading '+loadingURL);
                 var j=0, size2=modules.length;
                 for(;j<size2;j++) {
                     modules[j].loaded=1;
@@ -192,7 +192,7 @@ var youSuck = {
                 callback(_this);
             });
         } else {
-            console.log('no need to download but directly make the callback');
+            //console.log('no need to download but directly make the callback');
             callback(_this);
         }
         

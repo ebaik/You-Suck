@@ -28,7 +28,7 @@ youSuck.modules.complaints_form = function(id) {
         $('#'+id).submit(function(e) {
             e.preventDefault();
             // form post
-            console.log('posted');
+            //console.log('posted');
             
             var input_company = $('input[name="company"]');
             var company = input_company.val();
@@ -41,12 +41,12 @@ youSuck.modules.complaints_form = function(id) {
             var input_check_anonymous = $('#'+id+' input[name="make_anonymos"]');
             var check_anonymous = input_check_anonymous.length?input_check_anonymous.attr('checked'):undefined;
             check_anonymous = check_anonymous?1:0;
-            console.log('#'+id+' input[name="name"]');
-            console.log('#'+id+' input[name="email"]');
-            console.log('#'+id+' input[name="make_anonymos"]');
-            console.log('name:',name );
-            console.log('email:', email);
-            console.log('check_anonymous', check_anonymous);
+//            console.log('#'+id+' input[name="name"]');
+//            console.log('#'+id+' input[name="email"]');
+//            console.log('#'+id+' input[name="make_anonymos"]');
+//            console.log('name:',name );
+//            console.log('email:', email);
+//            console.log('check_anonymous', check_anonymous);
             // on the client side, we only submit the form data
             // the server side will check the credential of the user
             // and decide whehter to store it as an anonymous post or not

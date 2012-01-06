@@ -105,7 +105,8 @@ class PostController extends BaseController
     
     public function showAction()
     {
-        
+        $company_name = trim($this->_getParam('query'));
+        $this->view->company_name = $company_name;
     }
     
     public function itemAction()
@@ -117,8 +118,11 @@ class PostController extends BaseController
             $post = $ps->getPost($id);
             $cs = new CommentService();
             $comments = $cs->getCommentsByPostId($id);
+            $company_service = new CompanyService();
+            $company = $company_service->getCompany($post->getCompanyId());error_log(json_encode($company));
             $this->view->post = $post;
             $this->view->comments = $comments;
+            $this->view->company = $company;
         } 
         else 
         {

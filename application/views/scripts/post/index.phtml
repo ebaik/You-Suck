@@ -23,6 +23,18 @@
       	<input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
         <?php }?>
       </div>
+        <?php if(!($this->user)) {?>  
+	<div class="grid_12 clearfix loginModule">
+		<p class="or first"><a href="/login/default">Login</a><span>or</span></p>
+	  	<div class="login">
+	  		<label for="name" class="accessAid">Name</label>
+            <input type="text" id="name" name="name" class="" placeholder="Name" value="" />
+            <label for="email" class="accessAid">Email</label>
+            <input type="text" id="email" name="email" class="" placeholder="Email" value="" />
+            <input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
+	 	</div>
+	</div>
+<?php }?>
     </form>
     </div>
     <div class="grid_4 trending">
@@ -54,17 +66,6 @@
     	<img src="img/available_at_iphone.png" />
     </div>
 
-<?php if(!($this->user)) {?>  
-	<div class="grid_12 clearfix loginModule">
-		<p class="or first"><a href="/login/default">Login</a><span>or</span></p>
-	  	<div class="login">
-	  		<label for="name" class="accessAid">Name</label>
-            <input type="text" id="name" name="name" class="" placeholder="Name" value="" />
-            <label for="email" class="accessAid">Email</label>
-            <input type="text" id="email" name="email" class="" placeholder="Email" value="" />
-            <input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
-	 	</div>
-	</div>
-<?php }?>
+
 
   

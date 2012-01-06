@@ -61,11 +61,11 @@ youSuck.modules.search_box = function(id, controller, renderComplaintsList) {
         youSuck.use('jquery.autocomplete', function(youSuck) {
             
             var selectItem = function(li) {
-                console.log('***selectItem', li);
+                //console.log('***selectItem', li);
             };
     
             var findValue = function(li) {
-                console.log('***findValue', li);
+                //console.log('***findValue', li);
             };
     
             var formatItem = function(row) {
