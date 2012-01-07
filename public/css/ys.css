@@ -349,6 +349,9 @@ button, input {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 1px #000000;
+	-moz-box-shadow: 0 1px 1px #000000;
+	box-shadow: 0 1px 1px #000000;
 }
 .main .logo {
 	float: left;
@@ -576,6 +579,8 @@ p.read-more a {
 	margin-bottom: 30px;
 }
 .moreposts {
+	padding-right: 5px;
+	padding-bottom: 5px;
     overflow: auto;
 }
 .moreposts button {
