@@ -158,7 +158,6 @@
 	padding-right: 91.666%;
 }
 /* END LAYOUT -------------------------------------------*/
-
 body {
   margin:0;
   width:100%;
@@ -689,7 +688,7 @@ p.read-more a {
 	margin-right: 5%;
 }
 .login {
-	width: 30%;
+	padding-bottom: 5px;
 }
 .login input[type=text], .login input[type=password] {
 	display: block;
