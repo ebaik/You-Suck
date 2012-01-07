@@ -173,7 +173,12 @@ input, textarea {
     padding: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 5px;  
+}
+input:focus, textarea:focus {
+	-moz-box-shadow: 0 0 2px 2px #f90 inset;
+	-webkit-box-shadow: 0 0 2px 2px #f90 inset;
+	box-shadow: 0 0 2px 2px #f90 inset;
 }
 input[type="search"], input[type="submit"] {
 	-webkit-appearance: none;	
