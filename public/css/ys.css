@@ -341,6 +341,18 @@ button, input {
 	text-align: center;
 	display: block;
 }
+.feedback {
+	padding: 10px;
+	border: 1px solid #ED9D3B;
+	line-height: 22px;
+	background-color: #FBDFB8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 1px #000000;
+	-moz-box-shadow: 0 1px 1px #000000;
+	box-shadow: 0 1px 1px #000000;
+}
 .recentComplaints {
 	overflow: auto;
 	margin-bottom: 20px;
@@ -491,6 +503,7 @@ button, input {
   text-align: left;
   color: #3E2E1D;
   margin-right: 20px;
+  font-size: 1.1em;
 }
 .feature img {
 	width: 161px;
@@ -744,13 +757,19 @@ p.read-more a {
 }
 .commentsList {
 	margin-top: 15px;
+	margin-bottom: 15px;
 }
 .analytics {
 	clear: both;
 }
 .flag {
 	display: block;
+	margin-top: 40px;
 	text-align: center;
+}
+.usersIcon {
+	width: 50px;
+	height: 50px;
 }
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
@@ -816,6 +835,7 @@ p.read-more a {
 	.vent {
 		display: block;
 		margin-top: 15px;
+		margin-right: 3px;
 		text-align: center;
 	}
 	header.main, .tasks, .upper {
@@ -837,13 +857,10 @@ p.read-more a {
 	.trending {
 		display: none;
 	}
-	.postComplaint {
-		margin: 20px 0;
-	}
 	.you, .complaints span {
 		display: inline;
 	}
-	.comps, .posts {
+	.comps {
 		padding: 0;
 	}
 	.appStore {
@@ -885,6 +902,12 @@ p.read-more a {
 	}
 	#postUserInfo ul {
 		margin-left: 0;
+	}
+	.flag {
+		margin-top: 0;
+	}
+	.posts {
+		margin: 20px 0;
 	}
 	.suffer img, .heard img, .right img {
 		width: 40%;

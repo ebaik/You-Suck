@@ -1,6 +1,7 @@
-<h1><?php echo $this->company->getCompanyName().' You Suck';?></h1>
+
 <div class="grid_9">
-	<p class="first"><?php echo $this->post->getText();?></p>
+	<h1><?php echo $this->company->getCompanyName().' You Suck';?></h1>	
+	<p class="first feedback"><?php echo $this->post->getText();?></p>
 </div>
 <div class="grid_3">
 	<a href="" class="button flag">Flag for abuse</a>
@@ -23,11 +24,11 @@
             <?php if(!isset($this->user)) {?>
 	<p><a class="button" href="/login/default"/>Log in to Comment</a></p>
             <?php } else {?>
- 	<div class="grid_3">
-		<img src="../img/people/blank_face.jpg" />
-		<?php echo $this->user->getFirstName();?>
+ 	<div class="grid_1">
+		<img src="../img/people/blank_face.jpg" class="usersIcon"/>
 	</div>
-	<div class="grid_9">
+	<div class="grid_11">
+	<p class="first"><?php echo $this->user->getFirstName();?></p>
 	<form id="commentsForm">
   		<textarea></textarea>
       	<p><input type="submit" class="button" value="Post a Comment" /></p>
