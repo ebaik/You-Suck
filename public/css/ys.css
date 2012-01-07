@@ -162,6 +162,8 @@ body {
   margin:0;
   width:100%;
   max-width:none;
+  background: #333;
+  background: rgba(051, 051, 051, 0.9);
 }
 a {
   color:#67A595;
@@ -204,9 +206,11 @@ header.main {
 	background:transparent url(../img/logo_splash.png) no-repeat -21px -25px;
 	color: white;
 }
-#youSuck, .youSuck {
-  margin: 0 auto;
-  max-width: 960px;
+.youSuck {
+	padding: 0 5px;
+  	margin: 0 auto;
+  	background-color: #fff;
+  	max-width: 960px;
 }
 .searchStuff {
 	float: left;
@@ -459,6 +463,9 @@ button, input {
 	display: block;
 	text-align: center;
 	padding: 8px;
+	border: 1px solid #900;
+	border-top: 1px solid #fc0;
+	border-left: 1px solid #fc0;
 	font-size: 2em;
 	font-family: 'GothamHTFUltra';
   	color: #fff;
@@ -469,6 +476,12 @@ button, input {
 	-moz-text-shadow: 0 1px black;
 	-webkit-text-shadow: 0 1px black;
 	text-shadow: 0 1px black;
+	background-image: linear-gradient(top, #fcb040 0%, #c30 100%);
+	background-image: -o-linear-gradient(top, #fcb040 0%, #c30 100%);
+	background-image: -moz-linear-gradient(top, #fcb040 0%, #c30 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fcb040), to(#c30));
+	background-image: -ms-linear-gradient(top, #fcb040 0%, #c30 100%);
+	background-color: #FCB040;
 }
 .feature .subhead {
   text-align: left;
