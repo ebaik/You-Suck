@@ -231,9 +231,9 @@ header li {
 }
 .footer {
 	margin-top: 20px;
+	margin-bottom: 10px;
 }
 footer {
-	background-color: #fff;
 	overflow: auto;
 	display:block;
 	width: 100%;
@@ -319,7 +319,7 @@ button, input {
 }
 .upper {
 	padding: 0;
-	margin-bottom: 40px;
+	margin-bottom: 25px;
 	text-align: center;
 }
 .indexComplaints {
@@ -345,7 +345,8 @@ button, input {
 	overflow: auto;
 	margin-bottom: 20px;
 	padding: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid #ED9D3B;
+	background-color: #FBDFB8;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -355,7 +356,7 @@ button, input {
 }
 .main .logo {
 	float: left;
-	margin: 8px 50px 0 11px;
+	margin: 8px 30px 0 11px;
 	font-family: 'GothamHTFUltra';
   	text-transform: uppercase;
   	line-height: 21px;
@@ -371,7 +372,7 @@ button, input {
 .tasks {
 	float: right;
 	margin-top: 10px;
-	margin-bottom: 35px;
+	margin-bottom: 20px;
 }
 .complaints {
 	text-align: left;
@@ -466,16 +467,16 @@ button, input {
 	display: block;
 	text-align: center;
 	padding: 8px;
-	border: 1px solid #900;
-	border-top: 1px solid #fc0;
-	border-left: 1px solid #fc0;
+	border: 1px solid #c00;
+	border-top: 1px solid #FBAE3F;
+	border-left: 1px solid #FBAE3F;
 	font-size: 2em;
 	font-family: 'GothamHTFUltra';
   	color: #fff;
 	background-color: #FCB040;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 	-moz-text-shadow: 0 1px black;
 	-webkit-text-shadow: 0 1px black;
 	text-shadow: 0 1px black;
@@ -574,6 +575,9 @@ p.read-more a {
 }
 .month a {
 	color: #000;
+}
+.posts {
+	margin-top: 35px;
 }
 .post_item {
 	margin-bottom: 30px;
