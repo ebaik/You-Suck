@@ -780,7 +780,7 @@ p.read-more a {
 }
 .flag {
 	display: block;
-	margin-top: 40px;
+	margin: 40px 3px 3px 0;
 	text-align: center;
 }
 .usersIcon {
@@ -916,7 +916,7 @@ p.read-more a {
 		width: 250px;
 	}
 	#postSubmit {
-		width: 100%;
+		width: 99%;
 	}
 	#postUserInfo ul {
 		margin-left: 0;
@@ -960,10 +960,13 @@ p.read-more a {
 	.mob {
 		margin-bottom: 20px;
 		display: block;
-		width: 100%;
+		width: 99%;
 	}
 	.commentsList {
 		margin-top: 30px;
+	}
+	.abuse {
+		padding: 0 3px 3px 0;
 	}
 }
 /* Tablets-----------------------------------------*/
@@ -1013,6 +1016,7 @@ p.read-more a {
 	}
 	.flag {
 		float: right;
+		margin-top: 0;
 		width: 35%;
 	}
 	#loginArea {
