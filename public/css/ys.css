@@ -581,6 +581,7 @@ p.read-more a {
 .month {
 	margin: 0;
     padding: 16px 0 16px 10px;
+   	border-top: 1px solid #FBAE3F;
     border-bottom: 1px solid #930;
     background-image: linear-gradient(top, #fcb040 0%, #c60 100%);
 	background-image: -o-linear-gradient(top, #fcb040 0%, #c60 100%);
