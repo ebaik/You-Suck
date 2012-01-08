@@ -479,18 +479,25 @@ button, input {
 	height: 50px;
 }
 .totalComments {
-	text-align: center;
+	margin: 0;
 	float: right;
+	text-align: center;
 }
 .totalComments span {
-	margin: 0 auto 10px;
 	display: block;
-	text-align: center;
-	padding: 8px;
+}
+.comments {
+	margin-top: 5px;
+	text-align: right;
+}
+.commentNumber {
+	float: right;
+	margin: 0 0 5px;
+	padding: 5px 8px;
 	border: 1px solid #930;
 	border-top: 1px solid #FBAE3F;
 	border-left: 1px solid #FBAE3F;
-	font-size: 2em;
+	font-size: 1.25em;
 	font-family: 'GothamHTFUltra';
   	color: #fff;
 	background-color: #FCB040;
@@ -880,13 +887,15 @@ p.read-more a {
 	}
 	.totalComments {
     	float: none;
+    	overflow: auto;
     	display: block;
     	clear: both;
-    	text-align: right;
 	}
 	.totalComments span {
-		display: inline-block;
-		margin-right: 5px;
+		float: left;
+	}
+	.commentNumber {
+		margin: 0 5px 0 60px;
 	}
 	.userIcon {
 		margin-right: 1.669449081803%;
