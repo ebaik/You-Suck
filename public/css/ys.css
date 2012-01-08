@@ -166,7 +166,7 @@ body {
   background: rgba(051, 051, 051, 0.9);
 }
 a {
-  color:#67A595;
+  color: #046A6A;
 }
 input, textarea {
 	border: 1px solid #999;
@@ -319,7 +319,7 @@ button, input {
 }
 .upper {
 	padding: 0;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	text-align: center;
 }
 .indexComplaints {
@@ -343,28 +343,30 @@ button, input {
 }
 .feedback {
 	padding: 10px;
-	border: 1px solid #ED9D3B;
 	line-height: 22px;
+	border: 1px solid #F5C58A;
 	background-color: #FBDFB8;
+	background: rgba(251, 223, 184, 0.7);
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	-webkit-box-shadow: 0 1px 1px #000000;
-	-moz-box-shadow: 0 1px 1px #000000;
-	box-shadow: 0 1px 1px #000000;
+	-webkit-box-shadow: 0 1px 1px #999;
+	-moz-box-shadow: 0 1px 1px #999;
+	box-shadow: 0 1px 1px #999;
 }
 .recentComplaints {
 	overflow: auto;
 	margin-bottom: 20px;
 	padding: 10px;
-	border: 1px solid #ED9D3B;
+	border: 1px solid #F5C58A;
 	background-color: #FBDFB8;
+	background: rgba(251, 223, 184, 0.7);
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	-webkit-box-shadow: 0 1px 1px #000000;
-	-moz-box-shadow: 0 1px 1px #000000;
-	box-shadow: 0 1px 1px #000000;
+	-webkit-box-shadow: 0 1px 1px #999;
+	-moz-box-shadow: 0 1px 1px #999;
+	box-shadow: 0 1px 1px #999;
 }
 .main .logo {
 	float: left;
@@ -379,7 +381,7 @@ button, input {
 }
 .main li a {
   font-size: 0.75em;
-  color: #67A595;
+  color: #046A6A;
 }
 .tasks {
 	float: right;
@@ -387,6 +389,7 @@ button, input {
 	margin-bottom: 20px;
 }
 .complaints {
+	margin-bottom: 5px;
 	text-align: left;
 }
 .complaints span {
@@ -428,6 +431,11 @@ button, input {
 	-webkit-box-shadow: 1px 1px #333;
 	-moz-box-shadow: 1px 1px #333;
 	box-shadow: 1px 1px #333;
+}
+.button:active, input.button:active, .magnify:active {
+	-webkit-box-shadow: 0 0 10px 10px #066 inset;
+	-moz-box-shadow: 0 0 10px 10px #066 inset;
+	box-shadow: 0 0 10px 10px #066 inset;
 }
 .magnify {
 	display: inline-block; 
@@ -479,7 +487,7 @@ button, input {
 	display: block;
 	text-align: center;
 	padding: 8px;
-	border: 1px solid #c00;
+	border: 1px solid #930;
 	border-top: 1px solid #FBAE3F;
 	border-left: 1px solid #FBAE3F;
 	font-size: 2em;
@@ -492,11 +500,11 @@ button, input {
 	-moz-text-shadow: 0 1px black;
 	-webkit-text-shadow: 0 1px black;
 	text-shadow: 0 1px black;
-	background-image: linear-gradient(top, #fcb040 0%, #c30 100%);
-	background-image: -o-linear-gradient(top, #fcb040 0%, #c30 100%);
-	background-image: -moz-linear-gradient(top, #fcb040 0%, #c30 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fcb040), to(#c30));
-	background-image: -ms-linear-gradient(top, #fcb040 0%, #c30 100%);
+	background-image: linear-gradient(top, #fcb040 0%, #c60 100%);
+	background-image: -o-linear-gradient(top, #fcb040 0%, #c60 100%);
+	background-image: -moz-linear-gradient(top, #fcb040 0%, #c60 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fcb040), to(#c60));
+	background-image: -ms-linear-gradient(top, #fcb040 0%, #c60 100%);
 	background-color: #FCB040;
 }
 .feature .subhead {
@@ -505,10 +513,7 @@ button, input {
   margin-right: 20px;
   font-size: 1.1em;
 }
-.feature img {
-	width: 161px;
-	height: 188px;
-}
+
 .feature p {
   margin: 5px 0;
   color: #3E2E1D;
@@ -613,6 +618,7 @@ p.read-more a {
 #postUserInfo {
 	margin: 20px 0 0;
     overflow: auto;
+    padding-bottom: 3px;
     width: 490px;
 }
 
