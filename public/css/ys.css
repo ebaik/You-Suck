@@ -575,8 +575,7 @@ p.read-more a {
 	float: right;
 }
 .postList {
-	padding: 10px;
-	margin-bottom: 20px;
+	padding: 10px 10px 0;
 }
 .monthPost {
 	margin-bottom: 20px;
@@ -608,7 +607,12 @@ p.read-more a {
 	margin-top: 35px;
 }
 .post_item {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #666;
+}
+.post_item:last-child {
+	border-bottom: 0;
 }
 .moreposts {
 	padding-right: 5px;
