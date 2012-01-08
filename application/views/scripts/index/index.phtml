@@ -28,7 +28,7 @@
                 	<img src="<?php echo $post['profile_photo'];?>"/>
              	</div>
            		<div class='blurb'><p class="first"><?php echo $post['firstname'];?></p><h4><a href='<?php echo "http://yousuckapp.com:8083/analytics/show?company=".$post['company_name']."&scale=day";?>'><?php echo $post['company_name'];?> You Suck</a></h4><p><?php echo $post['text'];?></p><p class='read-more'><a href="/post/item?id=<?php echo $post['id'];?>" class='button'>Read More</a></p></div>
-         		<div class='totalComments'><span class="commentNumber">7</span><span class="comments">comments</span></div>
+         		<div class='totalComments'><span class="commentNumber"><?php echo $post['comments_count'];?></span><span class="comments">comments</span></div>
    			</div>
  		<?php }?>
    		<div class="moreposts"><button class="button">View More Posts</button></div>
