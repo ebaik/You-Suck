@@ -581,18 +581,20 @@ p.read-more a {
 .month {
 	margin: 0;
     padding: 16px 0 16px 10px;
-    background-image: linear-gradient(top, #ffc 0%, #fcb040 100%);
-	background-image: -o-linear-gradient(top, #ffc 0%, #fcb040 100%);
-	background-image: -moz-linear-gradient(top, #ffc 0%, #fcb040 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc), to(#fcb040));
-	background-image: -ms-linear-gradient(top, #ffc 0%, #fcb040 100%);
+    border-bottom: 1px solid #930;
+    background-image: linear-gradient(top, #fcb040 0%, #c60 100%);
+	background-image: -o-linear-gradient(top, #fcb040 0%, #c60 100%);
+	background-image: -moz-linear-gradient(top, #fcb040 0%, #c60 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fcb040), to(#c60));
+	background-image: -ms-linear-gradient(top, #fcb040 0%, #c60 100%);
 	background-color: #FCB040;
 	-webkit-border-radius: 10px 10px 0 0;
 	-moz-border-radius: 10px 10px 0 0;
 	border-radius: 10px 10px 0 0;   
 }
 .month a {
-	color: #000;
+	color: #fff;
+	font-weight: bold;
 }
 .posts {
 	margin-top: 35px;
