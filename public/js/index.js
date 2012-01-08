@@ -80,6 +80,18 @@ var youSuck = {
             'path': 'js/controllers/post_item.js',
             'loaded': 0
         },
+        'controllers-index_about': {
+            'path': 'js/controllers/index_about.js',
+            'loaded': 0
+        },
+        'controllers-index_help': {
+            'path': 'js/controllers/index_help.js',
+            'loaded': 0
+        },
+        'controllers-index_terms': {
+            'path': 'js/controllers/index_terms.js',
+            'loaded': 0
+        },
         // UI modules
         'modules-search_box': {
             'path': 'js/modules/search_box.js',
