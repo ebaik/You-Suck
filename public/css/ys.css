@@ -650,6 +650,9 @@ p.read-more a {
 .label {
 	display: block;
 }
+.trending * {
+	display: none;
+}
 .trending {
 	font-size: 0.8em;
 }
