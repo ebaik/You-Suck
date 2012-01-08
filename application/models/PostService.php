@@ -82,6 +82,7 @@ class PostService {
         foreach($res as $i=>$rec) 
         {
             $data[$i]['id'] = $rec['id'];
+            $data[$i]['post_id'] = $rec['id'];
             $data[$i]['text'] = substr($rec['text'], 0, 70).'...';
             $data[$i]['firstname'] = $rec['firstname'];
             $data[$i]['company_name'] = $rec['company_name'];
