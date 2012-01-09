@@ -372,9 +372,9 @@ button, input {
 	float: left;
 	margin: 8px 30px 0 11px;
 	font-family: 'GothamHTFUltra';
-  	text-transform: uppercase;
+  	/*text-transform: uppercase;*/
   	line-height: 21px;
-  	font-size: 1.8125em;
+  	font-size: 1.35em;
 }
 .main a {
 	color: #fff;
@@ -644,20 +644,12 @@ p.read-more a {
 	margin-top: 0;
 	font-size:1.5em;
 }
-.anonymous {
-	margin-top: 15px;
-}
-.anonymous input {
-	margin-left: 0;
-	height: auto;
-}
-.userInfo {
+
+#postUserInfo ul {
+	list-style:none;
 	float: left;
 	padding:0;
-	margin: 0 0 20px 10px;
-}
-.submit {
-	clear: both;
+	margin:10px;
 }
 .label {
 	display: block;
@@ -790,9 +782,6 @@ p.read-more a {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
-.commentsList h2 {
-	margin-bottom: 20px;
-}
 .analytics {
 	clear: both;
 }
@@ -800,6 +789,10 @@ p.read-more a {
 	display: block;
 	margin: 40px 3px 3px 0;
 	text-align: center;
+}
+.usersIcon {
+	width: 50px;
+	height: 50px;
 }
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
