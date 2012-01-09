@@ -33,7 +33,8 @@ function drawChart() {
     //        ]);
 
             var options = {
-                width: 600, height: 340,
+                width: 600, 
+                height: 340,
                 title: 'Complaints per '+scale+' for '+company
             };
 
