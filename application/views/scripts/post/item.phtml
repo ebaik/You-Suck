@@ -9,13 +9,13 @@
 <div id="comments_list" class="grid_12 commentsList">
 	<h2>Comments</h2>
             <?php foreach($this->comments as $comment) {?>
-            <div class="userComment">
-                    <div class="grid_3">
+            <div class="userComment clearfix">
+                    <div class="grid_1">
                             <img src="../img/people/blank_face.jpg" />
-                            <?php echo $comment->firstname;?>
                     </div>
-                    <div class="grid_9">
-                            <p class="first"><?php echo $comment->content;?></p>
+                    <div class="grid_11">
+                    	<p class="first"><?php echo $comment->firstname;?></p>
+                        <p><?php echo $comment->content;?></p>
                     </div>
             </div>
             <?php }?>

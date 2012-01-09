@@ -782,6 +782,9 @@ p.read-more a {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
+.commentsList h2 {
+	margin-bottom: 20px;
+}
 .analytics {
 	clear: both;
 }
@@ -789,10 +792,6 @@ p.read-more a {
 	display: block;
 	margin: 40px 3px 3px 0;
 	text-align: center;
-}
-.usersIcon {
-	width: 50px;
-	height: 50px;
 }
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
