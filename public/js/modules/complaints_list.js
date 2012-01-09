@@ -35,6 +35,11 @@ youSuck.modules.complaints_list = function(id, params) {
         });
     };
     
+    _this.purge = function() {
+        $('#'+id+' .recentComplaints').remove();
+        
+    };
+    
      _this.render = function(dataObj) {
         if(dataObj) {
             youSuck.use('templates-complaints_list', function(youSuck) {
@@ -66,7 +71,6 @@ youSuck.modules.complaints_list = function(id, params) {
 //                        readMore.show();
 //                    }
 //                });
-
                 bindUI();
             }
         }
