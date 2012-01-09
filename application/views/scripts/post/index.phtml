@@ -12,15 +12,15 @@
       </div>
       <div id="postUserInfo" >
         <?php if($this->user) {?>  
-      	<img src="img/people/blank_face.jpg"/>
-      	<ul>
-      		<li><?php echo $this->user->getFirstName();?></li>
-      		<li>
-      		  <input type="checkbox" name="make_anonymos" />
-      		  <span><b>Make me anonymous</b> (Don't show my name)</span>
-      		</li>      		
-      	</ul>
-      	<input id="postSubmit" class="button" type="submit" name="submit" value="submit" />
+      	<img src="img/people/blank_face2.jpg"/>
+      	<div class="userInfo">
+      		<div><?php echo $this->user->getFirstName();?></div>
+      		<div class="anonymous">
+      		  <input type="checkbox" name="make_anonymos" id="anonymous" />
+      		  <label for="anonymous"><b>Make me anonymous</b> (Don't show my name)</label>
+      		</div>      		
+      	</div>
+      	<div class="submit"><input id="postSubmit" class="button" type="submit" name="submit" value="submit" /></div>
         <?php }?>
       </div>
         <?php if(!($this->user)) {?>  

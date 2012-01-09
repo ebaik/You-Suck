@@ -644,12 +644,20 @@ p.read-more a {
 	margin-top: 0;
 	font-size:1.5em;
 }
-
-#postUserInfo ul {
-	list-style:none;
+.anonymous {
+	margin-top: 15px;
+}
+.anonymous input {
+	margin-left: 0;
+	height: auto;
+}
+.userInfo {
 	float: left;
 	padding:0;
-	margin:10px;
+	margin: 0 0 20px 10px;
+}
+.submit {
+	clear: both;
 }
 .label {
 	display: block;
