@@ -69,7 +69,8 @@ class CompanyService {
         }
         $exe = Zend_Registry::get("exe");
         $em = $exe->getMetaDataEntityManager();
-        $stmt = $em->getConnection()->prepare("select DATE(p.post_time) as date, count(p.id) as cnt from posts p join companies c on (p.company_id=c.id) where c.company_name='$company' group by DATE(p.post_time);");
+        $stmt = $em->getConnection()->prepare("select monthname(p.post_time) as date, count(p.id) as cnt from posts p join companies c on (p.company_id=c.id) where c.company_name='$company' and date(p.post_time)>date(subdate(now(), interval 2 month)) group by month(p.post_time);");
+        //echo "select monthname(p.post_time) as date, count(p.id) as cnt from posts p join companies c on (p.company_id=c.id) where c.company_name='$company' group by month(p.post_time)";
         $stmt->execute();
         $res = $stmt->fetchAll();
         $data = array();

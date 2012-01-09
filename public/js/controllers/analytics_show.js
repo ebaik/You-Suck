@@ -37,7 +37,7 @@ function drawChart() {
                 title: 'Complaints per '+scale+' for '+company
             };
 
-            var chart = new google.visualization.LineChart(document.getElementById('chart'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
             chart.draw(data, options);        
         });
     });
