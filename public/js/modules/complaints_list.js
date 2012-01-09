@@ -40,6 +40,10 @@ youSuck.modules.complaints_list = function(id, params) {
         
     };
     
+    _this.updateTitle = function(title) {
+        $('#'+id+' h1').html('COMPLAINTS ABOUT '+title.toUpperCase());
+    };
+    
      _this.render = function(dataObj) {
         if(dataObj) {
             youSuck.use('templates-complaints_list', function(youSuck) {

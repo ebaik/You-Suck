@@ -11,6 +11,7 @@ youSuck.controllers.post_show = new function() {
         var renderComplaintsList = function(query) {
             $.getJSON('/post/search?query='+query, function(data) {
                     complaints_list = new youSuck.modules.complaints_list(complaints_list_id, {'query': query});
+                    complaints_list.updateTitle(query);
                     complaints_list.purge();
                     complaints_list.render(data);
             });
