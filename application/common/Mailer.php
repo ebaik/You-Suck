@@ -10,7 +10,7 @@ class Mailer {
         // configure base stuff
         $mail->addTo($to);
         $mail->setSubject($subject);
-        $mail->setFrom('admin@yousuckapp.com');
+        $mail->setFrom('admin@feedbakloop.com');
         $mail->setBodyHtml($bodyText);
         $mail->send();
 

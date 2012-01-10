@@ -9,7 +9,7 @@
 	        <?php foreach($this->posts as $post) {?>
 	        <div class="post_item">
 	        	<div class="nameDate">
-		            <a class="companyName" href="http://yousuckapp.com:8083/analytics/show?company=<?php echo $post->company_name;?>&scale=day"><?php echo $post->company_name;?></a>
+		            <a class="companyName" href="/analytics/show?company=<?php echo $post->company_name;?>&scale=day"><?php echo $post->company_name;?></a>
 		            <time datetime="2011-11-11" class="date">Nov 11, 2011</time>
 	            </div>
 	            <p><?php echo $post->text;?></p>
