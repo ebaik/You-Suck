@@ -1,12 +1,12 @@
 
 youSuck.templates.comment_item = 
-'<div class="container_12 userComment">\n\
-    <div class="grid_3">\n\
-        <img src="../img/people/blank_face.jpg" />\n\
-        {{firstname}}\n\
+'<div class="userComment clearfix">\n\
+    <div class="grid_1">\n\
+        <img src="../img/people/blank_face2.jpg" />\n\
     </div>\n\
-    <div class="grid_9">\n\
-        <p class="first">{{content}}</p>\n\
+    <div class="grid_11">\n\
+        <p class="first">{{firstname}}</p>\n\
+        <p>{{content}}</p>\n\
     </div>\n\
 </div>';
 
