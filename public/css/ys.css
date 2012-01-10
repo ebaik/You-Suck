@@ -1036,4 +1036,12 @@ p.read-more a {
 	.footer {
 		overflow: auto;
 	}
+	.container_12 .postComment .itemUser {
+		float: left;
+		width: 9%;
+	}
+	.container_12 .postComment .itemComment {
+		float: left;
+		width: 86%;
+	}
 }
