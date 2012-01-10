@@ -1036,11 +1036,11 @@ p.read-more a {
 	.footer {
 		overflow: auto;
 	}
-	.container_12 .postComment .itemUser {
+	.container_12 .itemUser {
 		float: left;
 		width: 9%;
 	}
-	.container_12 .postComment .itemComment {
+	.container_12 .itemComment {
 		float: left;
 		width: 86%;
 	}

@@ -10,10 +10,10 @@
 	<h2>Comments</h2>
             <?php foreach($this->comments as $comment) {?>
             <div class="userComment clearfix">
-                    <div class="grid_1">
+                    <div class="grid_1 itemUser">
                             <img src="../img/people/blank_face2.jpg" />
                     </div>
-                    <div class="grid_11">
+                    <div class="grid_11 itemComment">
                     	<p class="first"><?php echo $comment->firstname;?></p>
                         <p><?php echo $comment->content;?></p>
                     </div>
@@ -24,7 +24,7 @@
             <?php if(!isset($this->user)) {?>
 	<p><a class="button" href="/login/default"/>Log in to Comment</a></p>
             <?php } else {?>
- 	<div class="grid_1 class itemUser">
+ 	<div class="grid_1 itemUser">
 		<img src="../img/people/blank_face2.jpg" class="usersIcon"/>
 	</div>
 	<div class="grid_11 itemComment">
