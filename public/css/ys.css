@@ -370,11 +370,10 @@ button, input {
 }
 .main .logo {
 	float: left;
-	margin: 8px 30px 0 11px;
+	margin: 8px 25px 0 11px;
 	font-family: 'GothamHTFUltra';
-  	text-transform: uppercase;
   	line-height: 21px;
-  	font-size: 1.8125em;
+  	font-size: 1.35em;
 }
 .main a {
 	color: #fff;
