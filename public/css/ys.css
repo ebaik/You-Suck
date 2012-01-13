@@ -441,6 +441,21 @@ button, input {
 	-moz-box-shadow: 0 0 10px 10px #066 inset;
 	box-shadow: 0 0 10px 10px #066 inset;
 }
+.button.secondary, input.button.secondary {
+	color: #333;
+	background-image: linear-gradient(top, #ffc 0%, #fc9 100%);
+	background-image: -o-linear-gradient(top, #ffc 0%, #fc9 100%);
+	background-image: -moz-linear-gradient(top, #ffc 0%, #fc9 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc), to(#fc9));
+	background-image: -ms-linear-gradient(top, #ffc 0%, #fc9 100%);
+	background-color: #fc9;
+	text-shadow: 0 1px #fff;
+}
+.button.secondary:active, input.button.secondary:active {
+	-webkit-box-shadow: 0 0 10px 10px #fc9 inset;
+	-moz-box-shadow: 0 0 10px 10px #fc9 inset;
+	box-shadow: 0 0 10px 10px #fc9 inset;
+}
 .magnify {
 	display: inline-block; 
 	margin: 0 20px 0 10px;
@@ -804,6 +819,16 @@ p.read-more a {
 	display: block;
 	margin: 40px 3px 3px 0;
 	text-align: center;
+}
+.nextPrevious {
+	text-align: right;
+	padding: 0 3px 3px 0;
+}
+.next {
+	margin: 0 0 0 15px;
+}
+.nextPrevious a {
+	display: inline-block;
 }
 /* MQ Smart Phones---------------------------*/
 @media screen and (max-device-width: 320px) {
