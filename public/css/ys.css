@@ -404,6 +404,12 @@ button, input {
 .goHome {
 	text-decoration: none;
 }
+.goHome span {
+	display: block;
+}
+.loop {
+	margin-left: 8px;
+}
 .button, input.button {
 	border: 1px solid #999;
 	border-top: 1px solid #ccc;
