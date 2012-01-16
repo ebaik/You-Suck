@@ -159,6 +159,47 @@ class PostService {
         
     }
     
+    private function getPrevPostId($id) {
+        $exe = Zend_Registry::get("exe");
+        $em = $exe->getMetaDataEntityManager();
+        $sql = "select id from posts where post_time<(select post_time from posts where id=$id) order by post_time desc limit 0,1";
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute();
+        $rec = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        if(!empty($rec)) {
+            return $rec[0];
+        } else {
+            return 0;
+        }
+    }
+    
+    private function getNextPostId($id) {
+        $exe = Zend_Registry::get("exe");
+        $em = $exe->getMetaDataEntityManager();
+        $sql = "select id from posts where post_time>(select post_time from posts where id=$id) order by post_time limit 0,1";
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute();
+        $rec = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        if(!empty($rec)) {
+            return $rec[0];
+        } else {
+            return 0;
+        }
+    }
+    
+    public function getPrevNextPostIds($id) {
+        $prevnext_postids = array('prev'=>0, 'next'=>0);
+        $prev_postid = $this->getPrevPostId($id);
+        $next_postid = $this->getNextPostId($id);
+        if($prev_postid !==0 ) {
+            $prevnext_postids['next'] = $prev_postid; 
+        }
+        if($next_postid !==0 ) {
+            $prevnext_postids['prev'] = $next_postid; 
+        }
+        return $prevnext_postids;
+    }
+    
 
 }
 

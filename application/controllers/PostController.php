@@ -120,9 +120,11 @@ class PostController extends BaseController
             $comments = $cs->getCommentsByPostId($id);
             $company_service = new CompanyService();
             $company = $company_service->getCompany($post->getCompanyId());
+            $prevnext_postids = $ps->getPrevNextPostIds($id);
             $this->view->post = $post;
             $this->view->comments = $comments;
             $this->view->company = $company;
+            $this->view->prevnext_postids = $prevnext_postids;
         } 
         else 
         {
