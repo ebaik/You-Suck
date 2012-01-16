@@ -61,7 +61,8 @@ class Posts
 
     public function getText()
     {
-        return $this->text;
+        //return $this->text;
+        return str_replace("\n", '<br>', $this->text);
     }
 
     public function setUserId($user_id)
