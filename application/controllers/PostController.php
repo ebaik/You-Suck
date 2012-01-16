@@ -119,7 +119,7 @@ class PostController extends BaseController
             $cs = new CommentService();
             $comments = $cs->getCommentsByPostId($id);
             $company_service = new CompanyService();
-            $company = $company_service->getCompany($post->getCompanyId());error_log(json_encode($company));
+            $company = $company_service->getCompany($post->getCompanyId());
             $this->view->post = $post;
             $this->view->comments = $comments;
             $this->view->company = $company;
