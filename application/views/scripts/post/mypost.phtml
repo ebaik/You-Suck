@@ -3,21 +3,23 @@
     <div class="userprofile">
         <img src="../img/people/blank_face.jpg" />
     </div>
+    <?php foreach($this->posts_bymonth as $month=>$posts) {?>
     <div class="monthPost">
-    	<p class="month"><a href="post_list" class="monthLink">November (2)</a></p>
-	    <div id="post_list" class="postList">
-	        <?php foreach($this->posts as $post) {?>
+        <p class="month"><a href="post_list" class="monthLink"><?php echo $month;?> (<?php echo sizeof($posts);?>)</a></p>
+        <div id="post_list" class="postList">
+            <?php foreach($posts as $post) {?>
 	        <div class="post_item">
 	        	<div class="nameDate">
 		            <a class="companyName" href="/analytics/show?company=<?php echo $post->company_name;?>&scale=day"><?php echo $post->company_name;?></a>
-		            <time datetime="2011-11-11" class="date">Nov 11, 2011</time>
+		            <time datetime="<?php echo $post->post_time;?>" class="date"><?php echo $post->post_time;?></time>
 	            </div>
 	            <p><?php echo $post->text;?></p>
 	            <p class="read-more"><a href="/post/item?id=<?php echo $post->id;?>" class="button">Read More</a></p>
 	        </div>
 	        <?php }?>
-	    </div>
-    </div>      
+        </div>
+    </div>    
+    <?php }?>
 </div>
 <script>
 	$(function(){

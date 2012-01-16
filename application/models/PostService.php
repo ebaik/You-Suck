@@ -100,17 +100,39 @@ class PostService {
         if(!empty($user_id)) {
             $exe = Zend_Registry::get("exe");
             $em = $exe->getMetaDataEntityManager();
-            $sql = "select posts.id, posts.text, companies.company_name, posts.post_time
+            if($offset >= 0) {
+                $sql = "select posts.id, posts.text, companies.company_name, date(posts.post_time) as post_time
                     from posts join companies on posts.company_id=companies.id
                     where user_id=$user_id
                     order by posts.post_time desc
                     limit $offset,$size";
+            } else {
+                $sql = "select posts.id, posts.text, companies.company_name, date(posts.post_time) as post_time
+                    from posts join companies on posts.company_id=companies.id
+                    where user_id=$user_id
+                    order by posts.post_time desc";   
+            }
+            
             $stmt = $em->getConnection()->prepare($sql);
             $stmt->execute();
             $posts = $stmt->fetchAll(PDO::FETCH_CLASS);
         }
         
         return $posts;
+    }
+    
+    public function getMorePostsByUserGroupbyMonth($user_id) {
+        $posts = $this->getMorePostsByUser($user_id, -1);
+        $posts_bymonth = array();
+        foreach($posts as $post) {
+            $post_time = $post->post_time;
+            if(!isset($posts_bymonth[date('F', $post_time)])) {
+                $posts_bymonth[date('F', $post_time)] = array();
+            }
+            $post->post_time = date('F j, Y', strtotime($post_time));
+            array_push($posts_bymonth[date('F', $post_time)], $post);
+        } 
+        return $posts_bymonth;
     }
     
     public function getPostByCompanyName($company_name, $offset=0, $size=10) {

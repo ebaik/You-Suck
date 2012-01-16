@@ -149,9 +149,9 @@ class PostController extends BaseController
         $user = UserService::getLoggedInUser();
         $user_id = $user->getId();
         $ps = new PostService;
-        $posts = $ps->getMorePostsByUser($user_id);
+        $posts_bymonth = $ps->getMorePostsByUserGroupbyMonth($user_id);
         $this->view->user = $user;
-        $this->view->posts = $posts;
+        $this->view->posts_bymonth = $posts_bymonth;
     }
     
     
