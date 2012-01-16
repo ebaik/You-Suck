@@ -118,7 +118,7 @@ class PostService {
         if(!empty($company_name)) {
             $exe = Zend_Registry::get("exe");
             $em = $exe->getMetaDataEntityManager();
-            $sql = "select users.firstname, concat(substring(posts.text, 1, 70), '...') as text, posts.post_time, companies.company_name, posts.id as post_id, count(comments.id) as comments_count
+            $sql = "select users.firstname, concat(substring(posts.text, 1, 70), '...') as text, posts.post_time, companies.company_name, posts.id as post_id, posts.id as id, count(comments.id) as comments_count
                     from
                     posts join users on (posts.user_id=users.id)
                     join companies on (posts.company_id=companies.id)
