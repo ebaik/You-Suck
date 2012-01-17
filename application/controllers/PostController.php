@@ -8,6 +8,7 @@ require_once APPLICATION_MODELS . '/UserService.php';
 require_once APPLICATION_MODELS . '/CompanyService.php';
 require_once APPLICATION_MODELS . '/PostService.php';
 require_once APPLICATION_MODELS . '/CommentService.php';
+require_once APPLICATION_COMMON.'/Mailer.php';
 
 class PostController extends BaseController
 {
@@ -137,9 +138,24 @@ class PostController extends BaseController
         $content = $this->_getParam('content');
         $user = UserService::getLoggedInUser();
         $author_id = $user->getId();
+        $author_firstname = $user->getFirstName();
         
         $cs = new CommentService();
         $cs->create($content, $author_id, $post_id);
+        
+        // we need send an email to the poster
+        $ps = new PostService;
+        $post = $ps->getPost($post_id);
+        $poster_id = $post->getUserId();
+        $user_service = new UserService;
+        $poster = $user_service->getUser($poster_id);
+        $poster_email = $poster->getEmail();
+        $poster_firstname = $poster->getFirstName();
+        $server_host = $_SERVER['HTTP_HOST'];
+        $subject = $poster_firstname.' commented your post';
+        $bodyText = "Hi $poster_firstname,<br><br>$author_firstname commented your post. Please follow the link <a href='http://$server_host/post/item?id=$post_id'>$server_host/post/item?id=$post_id</a> to view the comment.<br><br>feedbakLoop team";
+        $to = $poster_email;
+        Mailer::sendMail($subject, $bodyText, $to);
         
         $this->_helper->layout->disableLayout();
 	$this->_helper->viewRenderer->setNoRender(TRUE);
