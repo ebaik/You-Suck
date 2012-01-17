@@ -2,6 +2,7 @@
 
 require_once APPLICATION_MODELS . '/UserService.php';
 require_once 'BaseController.php';
+require_once APPLICATION_COMMON.'/Mailer.php';
 
 class UserController extends BaseController
 {
@@ -17,7 +18,7 @@ class UserController extends BaseController
 
     public function registersubmitAction(){
         // action body
-error_log("submit");
+
         $userservice = new UserService();
         $user = $userservice->createUser($_REQUEST);
         $myAuth = Zend_Auth::getInstance();
@@ -33,6 +34,14 @@ error_log("submit");
         $user = $userservice->createUser($_REQUEST);
         $myAuth = Zend_Auth::getInstance();
         $myAuth->getStorage()->write('id=' . $user->getId() . '&email=' . $user->getFirstname());
+        
+        // send an email to the registered user
+        $subject = "Thank you for using feedbakLOOP. Don't let your voice go unheard";
+        $firstname = $user->getFirstname();
+        $bodyText = "Hi $firstname, <br><br> Thank you for using feedbakLoop, letting your voice go heard. Don't suffer in silence. Tell the story of how you were wronged to the world. Obtain critical mass by submitting your complaint. Hold companies responsible so it doesn't happen again.<br><br>feedbakLOOP team";
+        $to = $user->getEmail();
+        Mailer::sendMail($subject, $bodyText, $to);
+        
         $this->_helper->layout->disableLayout();
 	$this->_helper->viewRenderer->setNoRender(TRUE);
         echo 1;

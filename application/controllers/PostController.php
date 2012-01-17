@@ -153,7 +153,7 @@ class PostController extends BaseController
         $poster_firstname = $poster->getFirstName();
         $server_host = $_SERVER['HTTP_HOST'];
         $subject = $poster_firstname.' commented your post';
-        $bodyText = "Hi $poster_firstname,<br><br>$author_firstname commented your post. Please follow the link <a href='http://$server_host/post/item?id=$post_id'>$server_host/post/item?id=$post_id</a> to view the comment.<br><br>feedbakLoop team";
+        $bodyText = "Hi $poster_firstname,<br><br>$author_firstname commented your post. Please follow the link <a href='http://$server_host/post/item?id=$post_id'>$server_host/post/item?id=$post_id</a> to view the comment.<br><br>feedbakLOOP team";
         $to = $poster_email;
         Mailer::sendMail($subject, $bodyText, $to);
         
