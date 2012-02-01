@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -R -v ../* /var/www/yousuckapp
+cp -R -v /var/www/stage /var/www/yousuckapp
 
 release=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 

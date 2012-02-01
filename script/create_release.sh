@@ -9,6 +9,7 @@ fi
 
 # create remote branch from local branch
 git checkout dev
+git pull
 branch_name=$1
 git push origin dev:${branch_name}
 
