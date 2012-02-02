@@ -38,7 +38,7 @@ class UserController extends BaseController
         // send an email to the registered user
         $subject = "Thank you for using feedbakLOOP. Don't let your voice go unheard";
         $firstname = $user->getFirstname();
-        $bodyText = "Hi $firstname, <br><br> Thank you for using feedbakLoop, letting your voice go heard. Don't suffer in silence. Tell the story of how you were wronged to the world. Obtain critical mass by submitting your complaint. Hold companies responsible so it doesn't happen again.<br><br>feedbakLOOP team";
+        $bodyText = "Hi $firstname,<br><br>Your account has been created. We hope that you continue to come back to share your experiences with bad companies, products, and services with others. As we build this community and it grows, the feedbakLOOP service will become more and more useful for everyone. And together, we'll help improve the world for the better.<br><br>Thank you for using feedbakLoop!<br><br>The feedbakLOOP Team";
         $to = $user->getEmail();
         Mailer::sendMail($subject, $bodyText, $to);
         
