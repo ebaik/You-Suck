@@ -35,7 +35,7 @@ class AnalyticsController extends BaseController
         $cs = new CompanyService();
         $result = $cs->getCompanyAnalytics($company, $scale);
         $size = count($result);
-        date_default_timezone_set('UTC');
+        date_default_timezone_set('America/Los_Angeles');
         $curr_month = date('F', time());
         $prev_month = date('F', strtotime('-1 month'));
         $prev2_month = date('F', strtotime('-2 month'));

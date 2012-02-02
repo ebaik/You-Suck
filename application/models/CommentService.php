@@ -16,12 +16,18 @@ class CommentService {
     
     public function create($content, $author_id, $post_id) {
         if(!empty($content) && !empty($author_id) && !empty($post_id)) {
+            date_default_timezone_set('America/Los_Angeles');
             $created = date('Y-m-d H:i:s');
             $updated = $created;
             $sql = "insert into comments(content, author_id, post_id, created, updated) 
-                    values('$content', $author_id, $post_id, '$created', '$updated')";
-            
+                    values(:content, :author_id, :post_id, :created, :updated)";
+            error_log($sql);
             $stmt = $this->em->getConnection()->prepare($sql);
+            $stmt->bindParam(':content', $content);
+            $stmt->bindParam(':author_id', $author_id);
+            $stmt->bindParam(':post_id', $post_id);
+            $stmt->bindParam(':created', $created);
+            $stmt->bindParam(':updated', $updated);
             $stmt->execute();
             return true;
         } else {
