@@ -70,7 +70,7 @@ class PostService {
     public function getMorePost($offset=0, $size=10) {
         $exe = Zend_Registry::get("exe");
         $em = $exe->getMetaDataEntityManager();
-        $sql = "select p.id, p.text, if(p.anonymous_flag, 'Anonymous', u.firstname) as firstname, if(u.fbuid, concat('http://graph.facebook.com/', u.fbuid, '/picture?type=small'), 'img/people/blank_face.jpg') as profile_photo,c.company_name, count(cm.id) as comments_count 
+        $sql = "select p.id, p.text, if(p.anonymous_flag, 'Anonymous', u.firstname) as firstname, if(u.fbuid && p.anonymous_flag=0, concat('http://graph.facebook.com/', u.fbuid, '/picture?type=small'), 'img/people/blank_face.jpg') as profile_photo,c.company_name, count(cm.id) as comments_count 
                 from 
                     posts p join users u on u.id=p.user_id
                     join companies c on p.company_id=c.id
